@@ -1,0 +1,92 @@
+name: Bounded reconstruction experiments
+'on':
+  push:
+    branches: [codex/reconstruction-linux-experiments]
+    paths: [.github/workflows/reconstruction-experiments.yml]
+  workflow_dispatch:
+    inputs:
+      experiment:
+        description: Bounded experiment to execute
+        required: true
+        default: both
+        type: choice
+        options: [both, ata, amm]
+permissions:
+  contents: read
+concurrency:
+  group: reconstruction-experiments-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  ata-source-order:
+    if: github.event_name == 'push' || inputs.experiment != 'amm'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            repro/ata/reconstructed-order
+            evidence/dependencies/associated_token
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: solana-labs/solana-program-library
+          ref: f5ce86d43dd31ddefb96d4e8cdd67dd073dc5dca
+          path: work/ata-source
+          persist-credentials: false
+      - name: Test source-built symbol order guards
+        run: |
+          python3 -B repro/ata/reconstructed-order/test_prepare_order.py
+          python3 -B repro/ata/reconstructed-order/test_driver.py
+      - name: Reproduce pinned baseline and test one explicit linker order
+        run: >-
+          python3 -B repro/ata/reconstructed-order/run.py
+          --source work/ata-source --output work/ata-order-run
+          --reference evidence/dependencies/associated_token/deployed.so
+      - name: Retain actual success or failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ata-source-order-${{ github.run_id }}-${{ github.run_attempt }}
+          path: work/ata-order-run
+          if-no-files-found: error
+          retention-days: 30
+  amm-self-transfer:
+    if: github.event_name == 'push' || inputs.experiment != 'ata'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            programs/pump-amm
+            evidence
+            repro/pump_amm/error-recovery-next
+            repro/pump_amm/owner6048-v144/main/build-01
+            repro/pump_amm/owner6048-v144/runtime/runtime-01
+            research/imported-lab/analysis/pump_fun
+      - name: Install pinned Python dependencies and host Rust
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          rustup toolchain install 1.94.0 --profile minimal --no-self-update
+      - name: Verify original evidence and proposed guard
+        run: |
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/verify.py
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/test_verify.py
+      - name: Build baseline and correction then compare complete failure logs
+        run: >-
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/linux_build.py
+          --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/amm-self-transfer"
+      - name: Retain source, actual exits, compiler outputs and runtime evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: amm-self-transfer-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/amm-self-transfer/evidence
+            !${{ runner.temp }}/amm-self-transfer/evidence/downloads/**
+          if-no-files-found: error
+          retention-days: 30
