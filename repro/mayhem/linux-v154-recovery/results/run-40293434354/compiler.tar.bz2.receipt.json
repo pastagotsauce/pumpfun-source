@@ -1,0 +1,8 @@
+{
+  "complete": true,
+  "expected_bytes": 520154357,
+  "expected_sha256": "fcc41631c7f77561bf5412218bf297501dccf0305ea280f338f0ace2aab9f31e",
+  "observed_bytes": 520154357,
+  "observed_sha256": "fcc41631c7f77561bf5412218bf297501dccf0305ea280f338f0ace2aab9f31e",
+  "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.54/platform-tools-linux-x86_64.tar.bz2"
+}

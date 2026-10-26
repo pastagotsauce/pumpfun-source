@@ -1,0 +1,10 @@
+{
+  "candidate.so": {
+    "bytes": 599776,
+    "sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88"
+  },
+  "unstripped.so": {
+    "bytes": 720352,
+    "sha256": "9a3d7ed93fd47670ef48c36cb3540fa6847906c9292fc138f302ca1a1aedf2bd"
+  }
+}

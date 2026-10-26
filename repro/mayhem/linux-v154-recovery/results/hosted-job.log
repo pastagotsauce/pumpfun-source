@@ -1,0 +1,276 @@
+﻿2026-10-26T08:36:29.4424865Z Current runner version: '2.338.0'
+2026-10-26T08:36:29.4451772Z ##[group]Runner Image Provisioner
+2026-10-26T08:36:29.4452832Z Hosted Compute Agent
+2026-10-26T08:36:29.4453863Z Version: 20261021.618
+2026-10-26T08:36:29.4454582Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-26T08:36:29.4455286Z Build Date: 2026-10-21T00:45:21Z
+2026-10-26T08:36:29.4456108Z Worker ID: {8c9fc1af-aeb4-40aa-9d88-59f0f85c8979}
+2026-10-26T08:36:29.4456815Z Region: mexicocentral
+2026-10-26T08:36:29.4457425Z Cloud: Azure
+2026-10-26T08:36:29.4457988Z ##[endgroup]
+2026-10-26T08:36:29.4459507Z ##[group]Operating System
+2026-10-26T08:36:29.4460278Z Ubuntu
+2026-10-26T08:36:29.4460797Z 24.04.5
+2026-10-26T08:36:29.4461341Z LTS
+2026-10-26T08:36:29.4461893Z ##[endgroup]
+2026-10-26T08:36:29.4462433Z ##[group]Runner Image
+2026-10-26T08:36:29.4463114Z Image: ubuntu-24.04
+2026-10-26T08:36:29.4464077Z Version: 20261012.334.1
+2026-10-26T08:36:29.4465441Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-26T08:36:29.4467007Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-26T08:36:29.4468068Z ##[endgroup]
+2026-10-26T08:36:29.4469571Z ##[group]GITHUB_TOKEN Permissions
+2026-10-26T08:36:29.4471848Z Actions: read
+2026-10-26T08:36:29.4472475Z Contents: read
+2026-10-26T08:36:29.4473126Z Metadata: read
+2026-10-26T08:36:29.4474011Z ##[endgroup]
+2026-10-26T08:36:29.4476229Z Secret source: Actions
+2026-10-26T08:36:29.4477335Z Cache mode: write
+2026-10-26T08:36:29.4478017Z Prepare workflow directory
+2026-10-26T08:36:29.4844477Z Prepare all required actions
+2026-10-26T08:36:29.4897307Z Getting action download info
+2026-10-26T08:36:29.8206701Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-26T08:36:29.9415782Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-26T08:36:30.1520547Z Complete job name: mayhem-linux-v154
+2026-10-26T08:36:30.2744624Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-10-26T08:36:30.2745740Z with:
+2026-10-26T08:36:30.2746202Z   persist-credentials: false
+2026-10-26T08:36:30.2747264Z   sparse-checkout: repro/mayhem/linux-v154-recovery
+programs/mayhem
+repro/mayhem/compiler-v154-main/main
+evidence/original/mayhem
+
+2026-10-26T08:36:30.2748405Z   repository: pastagotsauce/pumpfun-source
+2026-10-26T08:36:30.2752080Z   token: ***
+2026-10-26T08:36:30.2752515Z   ssh-strict: true
+2026-10-26T08:36:30.2752960Z   ssh-user: git
+2026-10-26T08:36:30.2753568Z   clean: true
+2026-10-26T08:36:30.2754032Z   sparse-checkout-cone-mode: true
+2026-10-26T08:36:30.2754561Z   fetch-depth: 1
+2026-10-26T08:36:30.2754985Z   fetch-tags: false
+2026-10-26T08:36:30.2755422Z   show-progress: true
+2026-10-26T08:36:30.2755855Z   lfs: false
+2026-10-26T08:36:30.2756259Z   submodules: false
+2026-10-26T08:36:30.2756701Z   set-safe-directory: true
+2026-10-26T08:36:30.2757230Z   allow-unsafe-pr-checkout: false
+2026-10-26T08:36:30.2758068Z ##[endgroup]
+2026-10-26T08:36:30.4005115Z Syncing repository: pastagotsauce/pumpfun-source
+2026-10-26T08:36:30.4007717Z ##[group]Getting Git version info
+2026-10-26T08:36:30.4008972Z Working directory is '/home/runner/work/pumpfun-source/pumpfun-source'
+2026-10-26T08:36:30.4010711Z [command]/usr/bin/git version
+2026-10-26T08:36:30.4710603Z git version 2.55.0
+2026-10-26T08:36:30.4751758Z ##[endgroup]
+2026-10-26T08:36:30.4763841Z Temporarily overriding HOME='/home/runner/work/_temp/5e1e197b-c3fa-4a7b-ac62-c5e7e5cce7e8' before making global git config changes
+2026-10-26T08:36:30.4766229Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-26T08:36:30.4770353Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pumpfun-source/pumpfun-source
+2026-10-26T08:36:30.4834358Z Deleting the contents of '/home/runner/work/pumpfun-source/pumpfun-source'
+2026-10-26T08:36:30.4840055Z ##[group]Initializing the repository
+2026-10-26T08:36:30.4884433Z [command]/usr/bin/git init /home/runner/work/pumpfun-source/pumpfun-source
+2026-10-26T08:36:31.5167961Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-26T08:36:31.5171315Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-26T08:36:31.5174642Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-26T08:36:31.5176977Z hint: call:
+2026-10-26T08:36:31.5179664Z hint:
+2026-10-26T08:36:31.5181267Z hint: 	git config --global init.defaultBranch <name>
+2026-10-26T08:36:31.5183170Z hint:
+2026-10-26T08:36:31.5185018Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-26T08:36:31.5187428Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-26T08:36:31.5189462Z hint:
+2026-10-26T08:36:31.5190642Z hint: 	git branch -m <name>
+2026-10-26T08:36:31.5192208Z hint:
+2026-10-26T08:36:31.5194179Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-26T08:36:31.5196301Z Initialized empty Git repository in /home/runner/work/pumpfun-source/pumpfun-source/.git/
+2026-10-26T08:36:31.5199940Z [command]/usr/bin/git remote add origin https://github.com/pastagotsauce/pumpfun-source
+2026-10-26T08:36:31.5246169Z ##[endgroup]
+2026-10-26T08:36:31.5249171Z ##[group]Disabling automatic garbage collection
+2026-10-26T08:36:31.5251425Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-26T08:36:31.5293247Z ##[endgroup]
+2026-10-26T08:36:31.5296582Z ##[group]Setting up auth
+2026-10-26T08:36:31.5301787Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T08:36:31.5343236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T08:36:31.5738065Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T08:36:31.5784980Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T08:36:31.6029644Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T08:36:31.6072247Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T08:36:31.6317736Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-26T08:36:31.6365895Z ##[endgroup]
+2026-10-26T08:36:31.6368104Z ##[group]Fetching the repository
+2026-10-26T08:36:31.6380368Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin +cff253dc6d84874d95a74805a631c7d3096b8c7a:refs/remotes/origin/codex/reconstruction-linux-experiments
+2026-10-26T08:36:32.6227399Z From https://github.com/pastagotsauce/pumpfun-source
+2026-10-26T08:36:32.6242279Z  * [new ref]         cff253dc6d84874d95a74805a631c7d3096b8c7a -> origin/codex/reconstruction-linux-experiments
+2026-10-26T08:36:32.6246761Z ##[endgroup]
+2026-10-26T08:36:32.6247549Z ##[group]Determining the checkout info
+2026-10-26T08:36:32.6248096Z ##[endgroup]
+2026-10-26T08:36:32.6248559Z ##[group]Setting up sparse checkout
+2026-10-26T08:36:32.6249393Z [command]/usr/bin/git sparse-checkout set repro/mayhem/linux-v154-recovery programs/mayhem repro/mayhem/compiler-v154-main/main evidence/original/mayhem
+2026-10-26T08:36:32.6298486Z ##[endgroup]
+2026-10-26T08:36:32.6299409Z ##[group]Checking out the ref
+2026-10-26T08:36:32.6303598Z [command]/usr/bin/git checkout --progress --force -B codex/reconstruction-linux-experiments refs/remotes/origin/codex/reconstruction-linux-experiments
+2026-10-26T08:36:33.9704961Z Updating files:   0% (1/113)
+2026-10-26T08:36:33.9707376Z Updating files:   1% (2/113)
+2026-10-26T08:36:33.9707959Z Updating files:   2% (3/113)
+2026-10-26T08:36:33.9708506Z Updating files:   3% (4/113)
+2026-10-26T08:36:33.9708948Z Updating files:   4% (5/113)
+2026-10-26T08:36:33.9711724Z Updating files:   5% (6/113)
+2026-10-26T08:36:33.9712863Z Updating files:   6% (7/113)
+2026-10-26T08:36:33.9716154Z Updating files:   7% (8/113)
+2026-10-26T08:36:33.9717886Z Updating files:   8% (10/113)
+2026-10-26T08:36:33.9746141Z Updating files:   9% (11/113)
+2026-10-26T08:36:33.9746885Z Updating files:  10% (12/113)
+2026-10-26T08:36:33.9772951Z Updating files:  11% (13/113)
+2026-10-26T08:36:33.9774067Z Updating files:  12% (14/113)
+2026-10-26T08:36:33.9779850Z Updating files:  13% (15/113)
+2026-10-26T08:36:33.9780594Z Updating files:  14% (16/113)
+2026-10-26T08:36:33.9784040Z Updating files:  15% (17/113)
+2026-10-26T08:36:33.9787293Z Updating files:  16% (19/113)
+2026-10-26T08:36:33.9787749Z Updating files:  17% (20/113)
+2026-10-26T08:36:33.9790361Z Updating files:  18% (21/113)
+2026-10-26T08:36:33.9791042Z Updating files:  19% (22/113)
+2026-10-26T08:36:33.9792110Z Updating files:  20% (23/113)
+2026-10-26T08:36:33.9792669Z Updating files:  21% (24/113)
+2026-10-26T08:36:33.9796216Z Updating files:  22% (25/113)
+2026-10-26T08:36:33.9798461Z Updating files:  23% (26/113)
+2026-10-26T08:36:33.9800431Z Updating files:  24% (28/113)
+2026-10-26T08:36:33.9801303Z Updating files:  25% (29/113)
+2026-10-26T08:36:33.9803294Z Updating files:  26% (30/113)
+2026-10-26T08:36:33.9805447Z Updating files:  27% (31/113)
+2026-10-26T08:36:33.9819559Z Updating files:  28% (32/113)
+2026-10-26T08:36:33.9820105Z Updating files:  29% (33/113)
+2026-10-26T08:36:33.9820395Z Updating files:  30% (34/113)
+2026-10-26T08:36:33.9820640Z Updating files:  31% (36/113)
+2026-10-26T08:36:33.9820879Z Updating files:  32% (37/113)
+2026-10-26T08:36:33.9821220Z Updating files:  33% (38/113)
+2026-10-26T08:36:33.9821498Z Updating files:  34% (39/113)
+2026-10-26T08:36:33.9821742Z Updating files:  35% (40/113)
+2026-10-26T08:36:33.9822030Z Updating files:  36% (41/113)
+2026-10-26T08:36:33.9895665Z Updating files:  37% (42/113)
+2026-10-26T08:36:33.9920556Z Updating files:  38% (43/113)
+2026-10-26T08:36:33.9921813Z Updating files:  39% (45/113)
+2026-10-26T08:36:33.9928140Z Updating files:  40% (46/113)
+2026-10-26T08:36:33.9928620Z Updating files:  41% (47/113)
+2026-10-26T08:36:33.9978365Z Updating files:  42% (48/113)
+2026-10-26T08:36:33.9979152Z Updating files:  43% (49/113)
+2026-10-26T08:36:34.0015594Z Updating files:  44% (50/113)
+2026-10-26T08:36:34.0050599Z Updating files:  45% (51/113)
+2026-10-26T08:36:34.0052810Z Updating files:  46% (52/113)
+2026-10-26T08:36:34.0053715Z Updating files:  47% (54/113)
+2026-10-26T08:36:34.0054677Z Updating files:  48% (55/113)
+2026-10-26T08:36:34.0056248Z Updating files:  49% (56/113)
+2026-10-26T08:36:34.0056848Z Updating files:  50% (57/113)
+2026-10-26T08:36:34.0057866Z Updating files:  51% (58/113)
+2026-10-26T08:36:34.0058545Z Updating files:  52% (59/113)
+2026-10-26T08:36:34.0079705Z Updating files:  53% (60/113)
+2026-10-26T08:36:34.0086297Z Updating files:  54% (62/113)
+2026-10-26T08:36:34.0146225Z Updating files:  55% (63/113)
+2026-10-26T08:36:34.0147977Z Updating files:  56% (64/113)
+2026-10-26T08:36:34.0148655Z Updating files:  57% (65/113)
+2026-10-26T08:36:34.0149023Z Updating files:  58% (66/113)
+2026-10-26T08:36:34.0150247Z Updating files:  59% (67/113)
+2026-10-26T08:36:34.0174128Z Updating files:  60% (68/113)
+2026-10-26T08:36:34.0177058Z Updating files:  61% (69/113)
+2026-10-26T08:36:34.0177772Z Updating files:  62% (71/113)
+2026-10-26T08:36:34.0178355Z Updating files:  63% (72/113)
+2026-10-26T08:36:34.0178881Z Updating files:  64% (73/113)
+2026-10-26T08:36:34.0179369Z Updating files:  65% (74/113)
+2026-10-26T08:36:34.0183192Z Updating files:  66% (75/113)
+2026-10-26T08:36:34.0184274Z Updating files:  67% (76/113)
+2026-10-26T08:36:34.0185406Z Updating files:  68% (77/113)
+2026-10-26T08:36:34.0186755Z Updating files:  69% (78/113)
+2026-10-26T08:36:34.0187776Z Updating files:  70% (80/113)
+2026-10-26T08:36:34.0188826Z Updating files:  71% (81/113)
+2026-10-26T08:36:34.0189989Z Updating files:  72% (82/113)
+2026-10-26T08:36:34.0190798Z Updating files:  73% (83/113)
+2026-10-26T08:36:34.0191709Z Updating files:  74% (84/113)
+2026-10-26T08:36:34.0192561Z Updating files:  75% (85/113)
+2026-10-26T08:36:34.0193975Z Updating files:  76% (86/113)
+2026-10-26T08:36:34.0218458Z Updating files:  77% (88/113)
+2026-10-26T08:36:34.0225148Z Updating files:  78% (89/113)
+2026-10-26T08:36:34.0225756Z Updating files:  79% (90/113)
+2026-10-26T08:36:34.0227580Z Updating files:  80% (91/113)
+2026-10-26T08:36:34.0229014Z Updating files:  81% (92/113)
+2026-10-26T08:36:34.0230460Z Updating files:  82% (93/113)
+2026-10-26T08:36:34.0231761Z Updating files:  83% (94/113)
+2026-10-26T08:36:34.0255981Z Updating files:  84% (95/113)
+2026-10-26T08:36:34.0259049Z Updating files:  85% (97/113)
+2026-10-26T08:36:34.0260879Z Updating files:  86% (98/113)
+2026-10-26T08:36:34.0262141Z Updating files:  87% (99/113)
+2026-10-26T08:36:34.0262850Z Updating files:  88% (100/113)
+2026-10-26T08:36:34.0263935Z Updating files:  89% (101/113)
+2026-10-26T08:36:34.0265973Z Updating files:  90% (102/113)
+2026-10-26T08:36:34.0274199Z Updating files:  91% (103/113)
+2026-10-26T08:36:34.0274636Z Updating files:  92% (104/113)
+2026-10-26T08:36:34.0283939Z Updating files:  93% (106/113)
+2026-10-26T08:36:34.0293009Z Updating files:  94% (107/113)
+2026-10-26T08:36:34.0308004Z Updating files:  95% (108/113)
+2026-10-26T08:36:34.0310893Z Updating files:  96% (109/113)
+2026-10-26T08:36:34.0314693Z Updating files:  97% (110/113)
+2026-10-26T08:36:34.0319792Z Updating files:  98% (111/113)
+2026-10-26T08:36:34.0320535Z Updating files:  99% (112/113)
+2026-10-26T08:36:34.0334847Z Updating files: 100% (113/113)
+2026-10-26T08:36:34.0335303Z Updating files: 100% (113/113), done.
+2026-10-26T08:36:34.1355011Z Switched to a new branch 'codex/reconstruction-linux-experiments'
+2026-10-26T08:36:34.1360852Z branch 'codex/reconstruction-linux-experiments' set up to track 'origin/codex/reconstruction-linux-experiments'.
+2026-10-26T08:36:34.1386245Z ##[endgroup]
+2026-10-26T08:36:34.1435385Z [command]/usr/bin/git log -1 --format=%H
+2026-10-26T08:36:34.1462899Z cff253dc6d84874d95a74805a631c7d3096b8c7a
+2026-10-26T08:36:34.1473281Z ##[group]Removing auth
+2026-10-26T08:36:34.1477890Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T08:36:34.1511464Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T08:36:34.1835892Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T08:36:34.1872688Z http.https://github.com/.extraheader
+2026-10-26T08:36:34.1883824Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-26T08:36:34.1926178Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T08:36:34.2262847Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T08:36:34.2305400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T08:36:34.2635029Z ##[endgroup]
+2026-10-26T08:36:34.2842959Z ##[group]Run python3 -B -m unittest discover -s repro/mayhem/linux-v154-recovery -p 'test_*.py'
+2026-10-26T08:36:34.2843902Z [36;1mpython3 -B -m unittest discover -s repro/mayhem/linux-v154-recovery -p 'test_*.py'[0m
+2026-10-26T08:36:34.3120621Z shell: /usr/bin/bash -e {0}
+2026-10-26T08:36:34.3120921Z ##[endgroup]
+2026-10-26T08:36:34.4956599Z .............
+2026-10-26T08:36:34.4957547Z ----------------------------------------------------------------------
+2026-10-26T08:36:34.4958490Z Ran 13 tests in 0.039s
+2026-10-26T08:36:34.4959442Z 
+2026-10-26T08:36:34.4959774Z OK
+2026-10-26T08:36:34.5204782Z ##[group]Run python3 -B repro/mayhem/linux-v154-recovery/run.py --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/mayhem-linux-v154"
+2026-10-26T08:36:34.5205766Z [36;1mpython3 -B repro/mayhem/linux-v154-recovery/run.py --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/mayhem-linux-v154"[0m
+2026-10-26T08:36:34.5270133Z shell: /usr/bin/bash -e {0}
+2026-10-26T08:36:34.5270393Z ##[endgroup]
+2026-10-26T08:39:35.8637398Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-26T08:39:35.8637835Z with:
+2026-10-26T08:39:35.8638049Z   name: mayhem-linux-v154-40293434354-1
+2026-10-26T08:39:35.8638403Z   path: /home/runner/work/_temp/mayhem-linux-v154/evidence
+2026-10-26T08:39:35.8638733Z   if-no-files-found: error
+2026-10-26T08:39:35.8638967Z   include-hidden-files: true
+2026-10-26T08:39:35.8639200Z   retention-days: 30
+2026-10-26T08:39:35.8639416Z   compression-level: 6
+2026-10-26T08:39:35.8639626Z   overwrite: false
+2026-10-26T08:39:35.8639843Z ##[endgroup]
+2026-10-26T08:39:36.0315677Z (node:4478) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-26T08:39:36.0316578Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-26T08:39:36.0476906Z With the provided path, there will be 47 files uploaded
+2026-10-26T08:39:36.0483166Z Artifact name is valid!
+2026-10-26T08:39:36.0484216Z Root directory input is valid!
+2026-10-26T08:39:36.3918354Z Beginning upload of artifact content to blob storage
+2026-10-26T08:39:36.5412820Z (node:4478) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-26T08:39:37.1202371Z Uploaded bytes 1555883
+2026-10-26T08:39:37.2105783Z Finished uploading artifact content to blob storage!
+2026-10-26T08:39:37.2107020Z SHA256 digest of uploaded artifact zip is f4c6b08f2e38f3a9447b0dbc35b39b60f2836bcca851b57a969f6ca63c3bb397
+2026-10-26T08:39:37.2108582Z Finalizing artifact upload
+2026-10-26T08:39:37.6880756Z Artifact mayhem-linux-v154-40293434354-1.zip successfully finalized. Artifact ID 12636926978
+2026-10-26T08:39:37.6882663Z Artifact mayhem-linux-v154-40293434354-1 has been successfully uploaded! Final size is 1555883 bytes. Artifact ID is 12636926978
+2026-10-26T08:39:37.6887446Z Artifact download URL: https://github.com/pastagotsauce/pumpfun-source/actions/runs/40293434354/artifacts/12636926978
+2026-10-26T08:39:37.7122291Z Post job cleanup.
+2026-10-26T08:39:37.7992532Z [command]/usr/bin/git version
+2026-10-26T08:39:37.8038864Z git version 2.55.0
+2026-10-26T08:39:37.8083053Z Temporarily overriding HOME='/home/runner/work/_temp/5c082d78-3934-4278-83fa-c0e563ea2242' before making global git config changes
+2026-10-26T08:39:37.8084671Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-26T08:39:37.8089514Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pumpfun-source/pumpfun-source
+2026-10-26T08:39:37.8128709Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T08:39:37.8164725Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T08:39:37.8541157Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T08:39:37.8600756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T08:39:37.8939226Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T08:39:37.8977791Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T08:39:37.9493794Z Cleaning up orphan processes
+2026-10-26T08:39:37.9843812Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

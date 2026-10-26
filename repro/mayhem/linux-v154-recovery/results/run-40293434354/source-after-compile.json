@@ -1,0 +1,58 @@
+{
+  "programs/mayhem/Cargo.lock": {
+    "bytes": 57423,
+    "sha256": "03c991d636c42f72dda4e72e7aa5344ae8cba80aff672ec601d7176e596049b3"
+  },
+  "programs/mayhem/Cargo.toml": {
+    "bytes": 642,
+    "sha256": "7745554bb59a2ba6d4daae31ccebcda50a75bcdba23251fe73a42e0c11fb7967"
+  },
+  "programs/mayhem/src/checked_program.rs": {
+    "bytes": 3665,
+    "sha256": "fbf8eeaec04bc5ac5534b4a375f221fd8c3787a9a443e63d332ecc0a6395b7fb"
+  },
+  "programs/mayhem/src/instructions/burn.rs": {
+    "bytes": 3846,
+    "sha256": "cb287a0009a1195efd5bdac08c5042a26dfc68d71a9a46c54c275453a11fd367"
+  },
+  "programs/mayhem/src/instructions/buy.rs": {
+    "bytes": 8964,
+    "sha256": "10a99ac5097a2cd8faee56a1a7baa3a8115c59baf37737f1c1336febb1693bf0"
+  },
+  "programs/mayhem/src/instructions/buy_pump_swap.rs": {
+    "bytes": 12591,
+    "sha256": "d824aa4129b4645ac4e60fe9a0f9d827f173965c9dec1e631114ec076bff0801"
+  },
+  "programs/mayhem/src/instructions/buy_v2.rs": {
+    "bytes": 10904,
+    "sha256": "e76d57d6eca28de9c1164a856ce15f303bf160f5920f31a63ac34b4598255daf"
+  },
+  "programs/mayhem/src/instructions/mod.rs": {
+    "bytes": 153,
+    "sha256": "da69605543cf37e3508c931529df76b4319755f73ec10c6110c3b5f2419cce4c"
+  },
+  "programs/mayhem/src/instructions/pump_swap_types.rs": {
+    "bytes": 4786,
+    "sha256": "9c37cb187c6225fdd6ef4f521f2ac6d794598828e7594b20628cd05631c129d5"
+  },
+  "programs/mayhem/src/instructions/sell.rs": {
+    "bytes": 9737,
+    "sha256": "fd9263e97aa01f3394165297844286509094d87f38019c5df7c4a4e64b4fef64"
+  },
+  "programs/mayhem/src/instructions/sell_pump_swap.rs": {
+    "bytes": 10987,
+    "sha256": "2bf58880030a7859b8eaafcef3ddfde9ae0d7769a01c7dc54d8ba6805d1def31"
+  },
+  "programs/mayhem/src/instructions/sell_v2.rs": {
+    "bytes": 9970,
+    "sha256": "e7b64a1f67e13026b6962a5fc229e39546939d0e701e9d4d1d6114713aea5f15"
+  },
+  "programs/mayhem/src/lib.rs": {
+    "bytes": 23707,
+    "sha256": "def14c8135f370f8657b327c2bc2da3f8802ef3223778ad29b51958ba89c3649"
+  },
+  "programs/mayhem/src/state.rs": {
+    "bytes": 1482,
+    "sha256": "6da988a2efbf673e87465a21f38fe0b42b919948fe34c552755d02ee352658f2"
+  }
+}

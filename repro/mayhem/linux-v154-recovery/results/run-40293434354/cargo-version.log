@@ -1,0 +1,8 @@
+cargo 1.89.0 (d96b80636 2026-01-27)
+release: 1.89.0
+commit-hash: d96b806368b1a00ea55a3e2f08876edc4e86bc3e
+commit-date: 2026-01-27
+host: x86_64-unknown-linux-gnu
+libgit2: 1.9.0 (sys:0.20.2 vendored)
+libcurl: 8.12.1-DEV (sys:0.4.80+curl-8.12.1 vendored ssl:OpenSSL/3.0.2)
+os: Ubuntu 24.4.0 (noble) [64-bit]

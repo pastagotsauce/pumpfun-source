@@ -1,0 +1,10 @@
+{
+  "candidate_bytes": 599776,
+  "candidate_sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88",
+  "differing_shared_positions": 323297,
+  "first_difference": 24,
+  "full_byte_equality": false,
+  "length_difference": -177632,
+  "reference_bytes": 777408,
+  "reference_sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb"
+}

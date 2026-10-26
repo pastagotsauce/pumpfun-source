@@ -1,7 +1,12 @@
 # Mayhem: one official Linux v1.54 distribution measurement
 
-**Planned source build; no Linux candidate or runtime result is claimed yet.**
-The selected Mayhem `ca5d4f54…` remains unchanged. This tests one observed
+**The Linux source build reproduced the original alloc Location payload. Whole
+Mayhem byte identity remains false.** [Hosted run 40293434354](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40293434354)
+completed one source compilation and one strip, both with exit zero. The raw
+599,776-byte output has SHA256
+`e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88`.
+No VM or target runtime was executed. The selected Mayhem `ca5d4f54…` remains
+unchanged. This tests one observed
 standard-library data discrepancy while preserving all fourteen source/lock
 inputs, the supported `sbpf-solana-solana` target, release profile, ordinary
 `-Zremap-cwd-prefix=` setting, and separate v1.52 strip phase.
@@ -28,13 +33,15 @@ asset 368583779, was downloaded and checked against its publisher SHA256
 `781c60a5d9e28a72bca31f6b811591ef0ad1446fc4afab649534e6fe97de7c76`.
 The original Linux path occurs once in its `lib.rmeta` member; the Darwin path
 does not occur. Bundled `alloc/src/string.rs` contains the `Display::fmt`
-`.expect(...)` at 2830:14. This is source/metadata evidence, not yet an emitted
-Linux program Location match. The whole archive and selected member pins are
-in `inputs.json`.
+`.expect(...)` at 2830:14. The subsequent Linux build emits that full 85-byte
+path including NUL, length 85, and coordinate 2830:14 at the actual symbol-bound
+ErrorCode conversion. Its new Location record is at 558872 and path at 539642;
+pointer addresses themselves are not claimed equal to the original. The whole
+archive and selected member pins are in `inputs.json`.
 
-The falsifiable prediction is that compiling the unchanged source with this
+The tested prediction was that compiling the unchanged source with this
 official distribution emits the original **raw path bytes, length, line and
-column** at this conversion site. The comparison includes the terminal NUL.
+column** at this conversion site. The measured comparison includes the terminal NUL.
 It does not predict complete Mayhem byte identity or recover a unique historical
 compiler recipe. The seven unmatched admitted handlers and other source gaps
 remain separate. No path replacement, invented source coordinate, ELF editing,
@@ -84,10 +91,43 @@ ELF input, missing relocation, changed source/pins, extra/ancestor configuration
 truthful failed-output/source-change retention, existing-output refusal, raw
 length mismatch and NUL-sensitive Location equality. These tests pass locally.
 
+## Actual retained result
+
+`results/run-40293434354/` retains all 47 original artifact members byte-for-byte:
+both ELF outputs, actual logs/commands, executed helper copies, fourteen copied
+source inputs and their before/after measurements, and all 215 locked registry
+packages/tool distributions' before/after hashes. The provider archive is
+artifact 12636926978, SHA256
+`f4c6b08f2e38f3a9447b0dbc35b39b60f2836bcca851b57a969f6ca63c3bb397`.
+The runtime status remains untested; the historical uploader recipe remains unknown.
+
+Against the 777,408-byte captured original, the output differs at 323,297 shared
+positions and is 177,632 bytes shorter. Against the selected 599,784-byte Darwin
+output, it differs at 47,115 shared positions and is eight bytes shorter. The
+Linux/Darwin `.text` extents are both 538,640 bytes, with 15,310 changed positions;
+this result is not an instruction-equivalence claim or merely a literal edit.
+No whole-program acceptance or selected-artifact update follows.
+
+```sh
+python3 -B repro/mayhem/linux-v154-recovery/verify_saved.py
+python3 -B repro/mayhem/linux-v154-recovery/test_saved.py
+```
+
+The saved verifier checks the actual 47-member provenance seal independently
+of the rewritable package manifest, exact provider run/head/artifact identity
+and published ZIP digest, executed helpers, source/dependency/tool receipts,
+complete raw byte comparisons, stripped-to-symbol image binding, and the fresh
+symbol/relocation/Location chain. The fixed member seal anchors the retained
+download; it is not a publisher attestation. The verifier performs no new build,
+download or target execution. A relocated package accepts `--repo PATH` for the
+two external reference images. Eight saved-evidence tests reject rewritten
+binary, registry, command, helper and provider receipts, even after ordinary
+manifests are regenerated.
+
 ## Existing-work check
 
 `upstream-check.json` records a bounded check of upstream main at `0b29240…`,
-its Mayhem directory, recent commits and Mayhem/Linux search. The repository has
+its Mayhem directory, recent commits and Mayhem/Linux search before this run. The repository has
 a separate older v1.52 Linux plan and several Darwin v1.54 experiments; no exact
 fourteen-input Linux v1.54 execution was found in those checked records. This is
 not a claim to have searched every private or unindexed branch. New upstream

@@ -1,0 +1,17 @@
+{
+  "function_bytes": 584,
+  "function_start": 464304,
+  "location": {
+    "column": 14,
+    "file_display": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+    "file_length": 85,
+    "file_pointer": 539642,
+    "file_raw_hex": "2f686f6d652f72756e6e65722f776f726b2f706c6174666f726d2d746f6f6c732f706c6174666f726d2d746f6f6c732f6f75742f727573742f6c6962726172792f616c6c6f632f7372632f737472696e672e727300",
+    "line": 2830,
+    "location_record": 558872,
+    "record_raw": "00000000fa3b080055000000000000000e0b00000e000000",
+    "reference_pc": 464840,
+    "reference_raw": "18050000188708000000000000000000"
+  },
+  "symbol": "_ZN102_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..ErrorCode$GT$$GT$4from17hae9e16a150ab27efE"
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "mayhem-linux-v154-recovery-inputs-v1",
+  "source_sha256": {
+    "programs/mayhem/Cargo.lock": "03c991d636c42f72dda4e72e7aa5344ae8cba80aff672ec601d7176e596049b3",
+    "programs/mayhem/Cargo.toml": "7745554bb59a2ba6d4daae31ccebcda50a75bcdba23251fe73a42e0c11fb7967",
+    "programs/mayhem/src/checked_program.rs": "fbf8eeaec04bc5ac5534b4a375f221fd8c3787a9a443e63d332ecc0a6395b7fb",
+    "programs/mayhem/src/instructions/burn.rs": "cb287a0009a1195efd5bdac08c5042a26dfc68d71a9a46c54c275453a11fd367",
+    "programs/mayhem/src/instructions/buy.rs": "10a99ac5097a2cd8faee56a1a7baa3a8115c59baf37737f1c1336febb1693bf0",
+    "programs/mayhem/src/instructions/buy_pump_swap.rs": "d824aa4129b4645ac4e60fe9a0f9d827f173965c9dec1e631114ec076bff0801",
+    "programs/mayhem/src/instructions/buy_v2.rs": "e76d57d6eca28de9c1164a856ce15f303bf160f5920f31a63ac34b4598255daf",
+    "programs/mayhem/src/instructions/mod.rs": "da69605543cf37e3508c931529df76b4319755f73ec10c6110c3b5f2419cce4c",
+    "programs/mayhem/src/instructions/pump_swap_types.rs": "9c37cb187c6225fdd6ef4f521f2ac6d794598828e7594b20628cd05631c129d5",
+    "programs/mayhem/src/instructions/sell.rs": "fd9263e97aa01f3394165297844286509094d87f38019c5df7c4a4e64b4fef64",
+    "programs/mayhem/src/instructions/sell_pump_swap.rs": "2bf58880030a7859b8eaafcef3ddfde9ae0d7769a01c7dc54d8ba6805d1def31",
+    "programs/mayhem/src/instructions/sell_v2.rs": "e7b64a1f67e13026b6962a5fc229e39546939d0e701e9d4d1d6114713aea5f15",
+    "programs/mayhem/src/lib.rs": "def14c8135f370f8657b327c2bc2da3f8802ef3223778ad29b51958ba89c3649",
+    "programs/mayhem/src/state.rs": "6da988a2efbf673e87465a21f38fe0b42b919948fe34c552755d02ee352658f2"
+  },
+  "source_receipt": {
+    "path": "repro/mayhem/compiler-v154-main/main/build-attempt.json",
+    "sha256": "b5139cc0bec724260d495e6c6abd5e0a0a9bb91883b524f6cc5c6a0bb292c8a7"
+  },
+  "selected": {
+    "path": "repro/mayhem/compiler-v154-main/main/candidate.so",
+    "sha256": "ca5d4f54b14e2f67c4eca56fcac29b54801906cecf23c463801916fd9d6b6621",
+    "bytes": 599784
+  },
+  "selected_symbols": {
+    "path": "repro/mayhem/compiler-v154-main/main/unstripped.so",
+    "sha256": "f9de20e991c9e14e77f2d9cded7da9c2dff892353f06f7c6f00ea18bfa8e911e"
+  },
+  "original": {
+    "path": "evidence/original/mayhem/deployed.so",
+    "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+    "bytes": 777408
+  },
+  "compiler": {
+    "version": "v1.54",
+    "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.54/platform-tools-linux-x86_64.tar.bz2",
+    "asset_id": 368583779,
+    "bytes": 520154357,
+    "sha256": "fcc41631c7f77561bf5412218bf297501dccf0305ea280f338f0ace2aab9f31e",
+    "publisher_digest_observed": true,
+    "release_commit": "d8420293c0466ce81b79c3dbce86eae3caa20e23",
+    "selected_members": {
+      "version.md": {
+        "sha256": "c33d3fa3cae3d9ece4ea08bc8e51a754041286a351067bc3afd2635595619895",
+        "bytes": 240
+      },
+      "rust/lib/rustlib/src/rust/library/alloc/src/string.rs": {
+        "sha256": "46dadb69bbe909b50146366020dc23d4fa88f53b93435b7e0f70c6692d0ba629",
+        "bytes": 111988
+      },
+      "rust/lib/rustlib/sbpf-solana-solana/lib/liballoc-91c82d13bc4939af.rlib": {
+        "sha256": "781c60a5d9e28a72bca31f6b811591ef0ad1446fc4afab649534e6fe97de7c76",
+        "bytes": 6746928
+      }
+    }
+  },
+  "stripper": {
+    "version": "v1.52",
+    "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.52/platform-tools-linux-x86_64.tar.bz2",
+    "bytes": 519270959,
+    "sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+    "objcopy_sha256": "673b3b86f0b1b8eadd755e29e2f66a7582248ef3bda7a267fbb370b733c1cb69"
+  },
+  "scope": "One unchanged source build with official Linux distribution; no historical recipe or runtime acceptance claim"
+}

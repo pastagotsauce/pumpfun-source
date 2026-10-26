@@ -1,0 +1,237 @@
+[
+  {
+    "name": "candidate.so",
+    "bytes": 599776,
+    "sha256": "e59f9f970813102e04327ce0502f8359dd217cfaebec942172614ab84dd6ac88"
+  },
+  {
+    "name": "cargo-version.log",
+    "bytes": 305,
+    "sha256": "98930289e230c1e1b8938df7d7dd6f43758fc2040101c8e1b89dfebf3a832d7e"
+  },
+  {
+    "name": "commands.json",
+    "bytes": 11349,
+    "sha256": "f679e4e8199dc1abced357fc136644ed964ff3a9c0b34e0dbc5d82d313a5e538"
+  },
+  {
+    "name": "compile.log",
+    "bytes": 247014,
+    "sha256": "4f5f4725f1f171f60d639391c53017949a2aea14e44fd355f8f361ccd9a8259e"
+  },
+  {
+    "name": "compiled-location.json",
+    "bytes": 800,
+    "sha256": "23213b2d820b06c0679151cbd1c1ca2869971d9d312fbef04cffd31757951b2e"
+  },
+  {
+    "name": "compiler-version.log",
+    "bytes": 145,
+    "sha256": "bd581b2380526757cc42110f27d35db1d3577f0840092aeefca19adc727155d7"
+  },
+  {
+    "name": "compiler.tar.bz2.receipt.json",
+    "bytes": 378,
+    "sha256": "eb0dfd09c647c0ed01bcd0be1ed21194b286411db70d2c346edb6eef2916a39e"
+  },
+  {
+    "name": "driver-bindings.json",
+    "bytes": 371,
+    "sha256": "c77116be0f75dcf312dbded631dd5dbd2c00ef514b86f100b7a18cb81658afc1"
+  },
+  {
+    "name": "driver/evidence.py",
+    "bytes": 5850,
+    "sha256": "86a58255d17c262e51b3ce1edfa6cb6e3193bb1c1d981411c56031feb61ea30d"
+  },
+  {
+    "name": "driver/inputs.json",
+    "bytes": 3835,
+    "sha256": "f7a141ef09a60c773db988ebe5b07eb7a51d6d9c0da9c807cd901550a9ced20d"
+  },
+  {
+    "name": "driver/run.py",
+    "bytes": 16856,
+    "sha256": "b2c0537c5336abc26d17e643281895a39aee03b94a3be9282c00e3a197f2067b"
+  },
+  {
+    "name": "host-linker-version.log",
+    "bytes": 245,
+    "sha256": "3e8cc208c40f60832f67377aa1b03c3e7e858f20cd5d365464944700c0bd7ad1"
+  },
+  {
+    "name": "host.json",
+    "bytes": 483,
+    "sha256": "e7f34d431b4519e3216043010f2e11a2b91f7c5c16cd7452085d270adc88e567"
+  },
+  {
+    "name": "input-pins.json",
+    "bytes": 3835,
+    "sha256": "f7a141ef09a60c773db988ebe5b07eb7a51d6d9c0da9c807cd901550a9ced20d"
+  },
+  {
+    "name": "locked-fetch.log",
+    "bytes": 7559,
+    "sha256": "a890dba069cfd2ffcfa022afcde613e22161c51ad933fefac4aa1d28b7f34b25"
+  },
+  {
+    "name": "manifest.json",
+    "bytes": 6437,
+    "sha256": "aa341098d00ec1f1e4fc9d55613b0fdf51e61c21a52bcdb4047a21b29c4444ba"
+  },
+  {
+    "name": "original-location.json",
+    "bytes": 558,
+    "sha256": "7f17cb877a6f5724af5fa10a921f6849d91f93492d5c4815ace797be7ef61109"
+  },
+  {
+    "name": "produced-outputs.json",
+    "bytes": 258,
+    "sha256": "15c58c393a0f3b8dc18528d67b5fd6067ce5dd8d1d260823bc586398dc297649"
+  },
+  {
+    "name": "registry-after.json.gz",
+    "bytes": 274696,
+    "sha256": "eaccca59fe252b022bd76c20d8f7a5736b0d0993b254ca842df7444831727d88"
+  },
+  {
+    "name": "registry-before.json.gz",
+    "bytes": 274696,
+    "sha256": "eaccca59fe252b022bd76c20d8f7a5736b0d0993b254ca842df7444831727d88"
+  },
+  {
+    "name": "result.json",
+    "bytes": 668,
+    "sha256": "153999840305e7d655a90976fc3a8698db4e693faabed26c00601c550741e86d"
+  },
+  {
+    "name": "selected-darwin-comparison.json",
+    "bytes": 364,
+    "sha256": "e9334f80fccdd2d34c1824b0d7005f2c53ced6e7c559eb07798b29e8d5efcbb5"
+  },
+  {
+    "name": "source-after-compile.json",
+    "bytes": 2125,
+    "sha256": "f8df56ad5bed5abed51b62eb0f2ff395eef2e46824eb0741208800ea29e59777"
+  },
+  {
+    "name": "source-after.json",
+    "bytes": 2125,
+    "sha256": "f8df56ad5bed5abed51b62eb0f2ff395eef2e46824eb0741208800ea29e59777"
+  },
+  {
+    "name": "source-before.json",
+    "bytes": 1576,
+    "sha256": "0d0c81296f0ec134b1a6420862c6ce177e2e98edfa44569a38ffabbeaa439fdf"
+  },
+  {
+    "name": "source/programs/mayhem/Cargo.lock",
+    "bytes": 57423,
+    "sha256": "03c991d636c42f72dda4e72e7aa5344ae8cba80aff672ec601d7176e596049b3"
+  },
+  {
+    "name": "source/programs/mayhem/Cargo.toml",
+    "bytes": 642,
+    "sha256": "7745554bb59a2ba6d4daae31ccebcda50a75bcdba23251fe73a42e0c11fb7967"
+  },
+  {
+    "name": "source/programs/mayhem/src/checked_program.rs",
+    "bytes": 3665,
+    "sha256": "fbf8eeaec04bc5ac5534b4a375f221fd8c3787a9a443e63d332ecc0a6395b7fb"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/burn.rs",
+    "bytes": 3846,
+    "sha256": "cb287a0009a1195efd5bdac08c5042a26dfc68d71a9a46c54c275453a11fd367"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/buy.rs",
+    "bytes": 8964,
+    "sha256": "10a99ac5097a2cd8faee56a1a7baa3a8115c59baf37737f1c1336febb1693bf0"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/buy_pump_swap.rs",
+    "bytes": 12591,
+    "sha256": "d824aa4129b4645ac4e60fe9a0f9d827f173965c9dec1e631114ec076bff0801"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/buy_v2.rs",
+    "bytes": 10904,
+    "sha256": "e76d57d6eca28de9c1164a856ce15f303bf160f5920f31a63ac34b4598255daf"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/mod.rs",
+    "bytes": 153,
+    "sha256": "da69605543cf37e3508c931529df76b4319755f73ec10c6110c3b5f2419cce4c"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/pump_swap_types.rs",
+    "bytes": 4786,
+    "sha256": "9c37cb187c6225fdd6ef4f521f2ac6d794598828e7594b20628cd05631c129d5"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/sell.rs",
+    "bytes": 9737,
+    "sha256": "fd9263e97aa01f3394165297844286509094d87f38019c5df7c4a4e64b4fef64"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/sell_pump_swap.rs",
+    "bytes": 10987,
+    "sha256": "2bf58880030a7859b8eaafcef3ddfde9ae0d7769a01c7dc54d8ba6805d1def31"
+  },
+  {
+    "name": "source/programs/mayhem/src/instructions/sell_v2.rs",
+    "bytes": 9970,
+    "sha256": "e7b64a1f67e13026b6962a5fc229e39546939d0e701e9d4d1d6114713aea5f15"
+  },
+  {
+    "name": "source/programs/mayhem/src/lib.rs",
+    "bytes": 23707,
+    "sha256": "def14c8135f370f8657b327c2bc2da3f8802ef3223778ad29b51958ba89c3649"
+  },
+  {
+    "name": "source/programs/mayhem/src/state.rs",
+    "bytes": 1482,
+    "sha256": "6da988a2efbf673e87465a21f38fe0b42b919948fe34c552755d02ee352658f2"
+  },
+  {
+    "name": "strip.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "stripper-version.log",
+    "bytes": 117,
+    "sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee"
+  },
+  {
+    "name": "stripper.tar.bz2.receipt.json",
+    "bytes": 378,
+    "sha256": "4e2ccf8fb4434e7bbcdfe956a6d7c90ec55243b77b237499c196255870350679"
+  },
+  {
+    "name": "target-cfg.log",
+    "bytes": 862,
+    "sha256": "b5f8c8f185d4edb3033f13231ac5d70fa6e9413a23d741c9699d0ea8f6cd0e86"
+  },
+  {
+    "name": "tools-after.json.gz",
+    "bytes": 305377,
+    "sha256": "ffa9797af2bcd8bd37f5b7c79251bf9a2914aa97e9d045c6c13ed4405d44fef0"
+  },
+  {
+    "name": "tools-before.json.gz",
+    "bytes": 305377,
+    "sha256": "ffa9797af2bcd8bd37f5b7c79251bf9a2914aa97e9d045c6c13ed4405d44fef0"
+  },
+  {
+    "name": "unstripped.so",
+    "bytes": 720352,
+    "sha256": "9a3d7ed93fd47670ef48c36cb3540fa6847906c9292fc138f302ca1a1aedf2bd"
+  },
+  {
+    "name": "whole-original-comparison.json",
+    "bytes": 370,
+    "sha256": "6a1e9e057e85eeabdd73a119d002c180259abc76811d4634a22b237bf12f1c41"
+  }
+]
