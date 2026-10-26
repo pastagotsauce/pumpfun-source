@@ -10,7 +10,7 @@ name: Bounded reconstruction experiments
         required: true
         default: both
         type: choice
-        options: [both, ata, amm, replay]
+        options: [both, ata, amm, replay, sweep]
 permissions:
   contents: read
   actions: read
@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   ata-source-order:
-    if: github.event_name == 'push' || inputs.experiment == 'both' || inputs.experiment == 'ata'
+    if: inputs.experiment == 'both' || inputs.experiment == 'ata'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
@@ -53,7 +53,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
   amm-self-transfer:
-    if: github.event_name == 'push' || inputs.experiment == 'both' || inputs.experiment == 'amm'
+    if: inputs.experiment == 'both' || inputs.experiment == 'amm'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
@@ -92,6 +92,43 @@ jobs:
           if-no-files-found: error
           retention-days: 30
           include-hidden-files: true
+  amm-sweep-observation:
+    if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'sweep'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            evidence
+            repro/pump_amm/sweep-error-observation
+            research/imported-lab/analysis/pump_fun
+      - name: Install pinned offline replay dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+      - name: Retrieve existing source-built AMM outputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/sweep-observation"
+          gh api repos/pastagotsauce/pumpfun-source/actions/artifacts/12634605630 > "$RUNNER_TEMP/sweep-observation/build-artifact.json"
+          gh run download 40286252822 --repo pastagotsauce/pumpfun-source --name amm-self-transfer-40286252822-1 --dir "$RUNNER_TEMP/amm-built"
+      - name: Observe full signed sweep results with unchanged source-built outputs
+        run: >-
+          .venv/bin/python -B repro/pump_amm/sweep-error-observation/probe.py
+          --repo "$GITHUB_WORKSPACE" --built "$RUNNER_TEMP/amm-built"
+          --output "$RUNNER_TEMP/sweep-observation/runtime.json"
+      - name: Retain observed results or failed attempt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: amm-sweep-observation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/sweep-observation
+          if-no-files-found: error
+          retention-days: 30
   amm-replay:
     if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'replay'
     runs-on: ubuntu-24.04
