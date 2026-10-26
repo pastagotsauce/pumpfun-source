@@ -10,7 +10,7 @@ name: Bounded reconstruction experiments
         required: true
         default: both
         type: choice
-        options: [both, ata, amm, replay, sweep, mayhem, sweep-correction, next, creator, pump-extend]
+        options: [both, ata, amm, replay, sweep, mayhem, sweep-correction, next, creator, pump-extend, pump-extend-replay, metaplex-tools]
 permissions:
   contents: read
   actions: read
@@ -18,6 +18,69 @@ concurrency:
   group: reconstruction-experiments-${{ github.ref }}-${{ inputs.experiment || 'push' }}
   cancel-in-progress: false
 jobs:
+  metaplex-compiler-observation:
+    if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'metaplex-tools'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: repro/metaplex/compiler-image-observation
+      - name: Inspect the recorded compiler image without source mounts or compilation
+        run: >-
+          python3 -B repro/metaplex/compiler-image-observation/observe.py
+          --output "$RUNNER_TEMP/metaplex-compiler-observation"
+      - name: Retain compiler observation or failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: metaplex-compiler-observation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/metaplex-compiler-observation/evidence
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
+  pump-extend-replay:
+    if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'pump-extend-replay'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            programs/pump
+            evidence/original/pump
+            evidence/upstream
+            repro/pump/extend-diagnostics
+      - name: Install pinned offline replay dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+      - name: Retrieve the exact retained pair from the completed source builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/pump-replay-input"
+          gh api repos/pastagotsauce/pumpfun-source/actions/artifacts/12640124116 > "$RUNNER_TEMP/pump-replay-input/artifact.json"
+          gh api repos/pastagotsauce/pumpfun-source/actions/artifacts/12640124116/zip > "$RUNNER_TEMP/pump-replay-input/artifact.zip"
+      - name: Validate retained compiler outputs and replay corrected schema checks
+        run: >-
+          .venv/bin/python -B repro/pump/extend-diagnostics/replay.py
+          --repo "$GITHUB_WORKSPACE"
+          --archive "$RUNNER_TEMP/pump-replay-input/artifact.zip"
+          --metadata "$RUNNER_TEMP/pump-replay-input/artifact.json"
+          --output "$RUNNER_TEMP/pump-extend-replay"
+      - name: Retain replay results and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pump-extend-replay-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/pump-extend-replay/evidence
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
   pump-extend-diagnostics:
     if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'pump-extend'
     runs-on: ubuntu-24.04
