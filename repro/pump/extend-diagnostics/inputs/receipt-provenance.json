@@ -1,0 +1,84 @@
+{
+  "scope": "Exact previously published archive members, only losslessly compressed for this packet; no new runtime",
+  "repository": "pastagotsauce/pumpfun-source",
+  "read_commit": "3765b8c245368a912e4681e52bc9c7a9b3384f47",
+  "layout_path": "repro/pump/remaining-guards-fortyeight/layout.json",
+  "layout_raw_sha256": "02b139d0b940bbed68df2e89fa09a4b7f409df1e3ea3aa4aa41af23405c7ede4",
+  "archive_members_path": "repro/pump/remaining-guards-fortyeight/payload/archive-members.json",
+  "archive_members_raw_sha256": "f5f32f364c262bcabf020fe78adb9994bb64adadbb913b7287700c231faec328",
+  "runtime_archive": {
+    "sha256": "bd21f6f02605481390a1f912f26e1397ecffca4eeeb1b2e705675f83404ee9b7",
+    "bytes": 92650002,
+    "mode": 420,
+    "parts": [
+      {
+        "path": "chunks/bd21f6f02605481390a1f912f26e1397ecffca4eeeb1b2e705675f83404ee9b7/0000.part",
+        "offset": 0,
+        "bytes": 67108864,
+        "sha256": "6c250da63bd6cdc3f47bf1819ba73793e0c1d8a4ad803c054e3fb053d1b99e16"
+      },
+      {
+        "path": "chunks/bd21f6f02605481390a1f912f26e1397ecffca4eeeb1b2e705675f83404ee9b7/0001.part",
+        "offset": 67108864,
+        "bytes": 25541138,
+        "sha256": "00e0517c92c4c5e00991a5a0d6e4ebce5e7c497a5ab5e85150646da5d1d2acab"
+      }
+    ]
+  },
+  "copies": {
+    "selected-extension.json.gz": {
+      "original_member": "work/pump-admin-cto-error-batch-build/differential/extension.json.gz",
+      "original": {
+        "sha256": "93bc8f449743ad130a54dee3619b63b4b558514ea1e2e6b27686451f48ffa117",
+        "bytes": 59422,
+        "mode": 420
+      },
+      "retained_gzip_sha256": "93bc8f449743ad130a54dee3619b63b4b558514ea1e2e6b27686451f48ffa117",
+      "decoded_sha256": "5d4dddc8e15a0cefcf42d60fa5b12868f516f2b6666267ae5b19506d06ffb109",
+      "decoded_bytes": 3332462,
+      "representation": "unchanged original gzip"
+    },
+    "selected-signed.json.gz": {
+      "original_member": "work/pump-admin-cto-error-batch-build/surfpool/extend/raw-transactions.json",
+      "original": {
+        "sha256": "044a5ea4a53df4bbcfd6c112cf73426a2bf372125158d258bf27ddc8367703d9",
+        "bytes": 206348,
+        "mode": 420
+      },
+      "retained_gzip_sha256": "f09ac11d790d5a0cfd725e9ae5f3fe81e16a899a923403a4a561a8280c98d786",
+      "decoded_sha256": "044a5ea4a53df4bbcfd6c112cf73426a2bf372125158d258bf27ddc8367703d9",
+      "decoded_bytes": 206348,
+      "representation": "new lossless gzip of original raw JSON"
+    },
+    "selected-fixtures.json.gz": {
+      "original_member": "work/pump-admin-cto-error-batch-build/surfpool/extend/fixtures.json",
+      "original": {
+        "sha256": "696da7df86b583ebb9932e3257aba61ea33c91e7bbcdf8ac28fe8ff53392f108",
+        "bytes": 25156,
+        "mode": 420
+      },
+      "retained_gzip_sha256": "ba1d012cd0638399e1ca3e3451aa1799e65f0d3ccaf0a33dfab2ffd7714e15ae",
+      "decoded_sha256": "696da7df86b583ebb9932e3257aba61ea33c91e7bbcdf8ac28fe8ff53392f108",
+      "decoded_bytes": 25156,
+      "representation": "new lossless gzip of original raw JSON"
+    }
+  },
+  "selected_build_inputs": {
+    "selected-build-attempt.json": {
+      "repository_path": "repro/pump/remaining-guards-main-fortyeight/main/build-attempt.json",
+      "retained_sha256": "93743a7575ba6635cbc6cd26f31d213725dc1bc6f118fa80dcefeaa8fab056f7",
+      "raw_sha256": "93743a7575ba6635cbc6cd26f31d213725dc1bc6f118fa80dcefeaa8fab056f7",
+      "raw_bytes": 9024,
+      "representation": "exact raw JSON"
+    },
+    "selected-gate-before.json.gz": {
+      "repository_path": "repro/pump/remaining-guards-main-fortyeight/main/controls/gate-before.json",
+      "retained_sha256": "e6f01d3d30558da977cdea540fa1cc258f437c363a7aaf477f8de019bbb774ca",
+      "raw_sha256": "3b68639472759dfc8f7e3a68f4a1c19a55065c324ef299c5354a9e1816a6521b",
+      "raw_bytes": 21536,
+      "representation": "lossless gzip of original raw JSON"
+    }
+  },
+  "upstream_repository": "lalalune/pumpfun-source",
+  "read_commit_scope": "actual fork checkout used to read immutable inherited Git blobs; not claimed an upstream published revision"
+}

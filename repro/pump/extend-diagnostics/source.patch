@@ -1,0 +1,16 @@
+--- a/programs/pump/src/extend.rs
++++ b/programs/pump/src/extend.rs
+@@ -22,7 +22,12 @@
+             _ => return err!(PumpError::AccountTypeNotSupported),
+         }
+     };
+-    if current >= size {
++    if current == size {
++        msg!("Account already has the correct size");
++        return Ok(());
++    }
++    if current > size {
++        msg!("Account already has more than {} bytes: {}", size, current);
+         return Ok(());
+     }
+     let rent = Rent::get()?;
