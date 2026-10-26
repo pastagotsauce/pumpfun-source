@@ -10,14 +10,79 @@ name: Bounded reconstruction experiments
         required: true
         default: both
         type: choice
-        options: [both, ata, amm, replay, sweep]
+        options: [both, ata, amm, replay, sweep, mayhem, sweep-correction, next]
 permissions:
   contents: read
   actions: read
 concurrency:
-  group: reconstruction-experiments-${{ github.ref }}
+  group: reconstruction-experiments-${{ github.ref }}-${{ inputs.experiment || 'push' }}
   cancel-in-progress: false
 jobs:
+  mayhem-linux-v154:
+    if: github.event_name == 'workflow_dispatch' && (inputs.experiment == 'mayhem' || inputs.experiment == 'next')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            repro/mayhem/linux-v154-recovery
+            programs/mayhem
+            repro/mayhem/compiler-v154-main/main
+            evidence/original/mayhem
+      - name: Check static evidence and build guard tests
+        run: python3 -B -m unittest discover -s repro/mayhem/linux-v154-recovery -p 'test_*.py'
+      - name: Compile unchanged Mayhem source with the authenticated Linux distribution
+        run: >-
+          python3 -B repro/mayhem/linux-v154-recovery/run.py
+          --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/mayhem-linux-v154"
+      - name: Retain actual compiler and distribution-data results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: mayhem-linux-v154-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/mayhem-linux-v154/evidence
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
+  amm-sweep-correction:
+    if: github.event_name == 'workflow_dispatch' && (inputs.experiment == 'sweep-correction' || inputs.experiment == 'next')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            programs/pump-amm
+            evidence
+            repro/pump_amm/error-recovery-next
+            repro/pump_amm/sweep-error-observation
+            repro/pump_amm/owner6048-v144/main/build-01
+            repro/pump_amm/owner6048-v144/runtime/runtime-01
+            research/imported-lab/analysis/pump_fun
+      - name: Install pinned offline replay dependencies and host Rust
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          rustup toolchain install 1.94.0 --profile minimal --no-self-update
+      - name: Compile the evidenced sweep corrections and check signed runtime behavior
+        run: >-
+          .venv/bin/python -B repro/pump_amm/sweep-error-observation/linux_build.py
+          --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/amm-sweep-correction"
+      - name: Retain actual success or failure and all emitted evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: amm-sweep-correction-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/amm-sweep-correction/evidence
+            !${{ runner.temp }}/amm-sweep-correction/evidence/downloads/**
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
   ata-source-order:
     if: inputs.experiment == 'both' || inputs.experiment == 'ata'
     runs-on: ubuntu-24.04
