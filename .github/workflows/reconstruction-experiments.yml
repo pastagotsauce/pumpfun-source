@@ -68,6 +68,10 @@ jobs:
           python3 -m venv .venv
           .venv/bin/python -m pip install -r requirements.txt
           rustup toolchain install 1.94.0 --profile minimal --no-self-update
+      - name: Check original sweep evidence and recovery guards
+        run: |
+          .venv/bin/python -B repro/pump_amm/sweep-error-observation/verify_evidence.py
+          .venv/bin/python -B -m unittest discover -s repro/pump_amm/sweep-error-observation -p 'test_*.py'
       - name: Compile the evidenced sweep corrections and check signed runtime behavior
         run: >-
           .venv/bin/python -B repro/pump_amm/sweep-error-observation/linux_build.py
