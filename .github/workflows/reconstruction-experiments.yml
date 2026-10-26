@@ -10,7 +10,7 @@ name: Bounded reconstruction experiments
         required: true
         default: both
         type: choice
-        options: [both, ata, amm, replay, sweep, mayhem, sweep-correction, next, creator]
+        options: [both, ata, amm, replay, sweep, mayhem, sweep-correction, next, creator, pump-extend]
 permissions:
   contents: read
   actions: read
@@ -18,6 +18,43 @@ concurrency:
   group: reconstruction-experiments-${{ github.ref }}-${{ inputs.experiment || 'push' }}
   cancel-in-progress: false
 jobs:
+  pump-extend-diagnostics:
+    if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'pump-extend'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            programs/pump
+            evidence/original/pump
+            evidence/upstream
+            repro/pump/extend-diagnostics
+            repro/pump_amm/owner6048-v144/main/build-01/sdk
+      - name: Install pinned offline replay dependencies and host Rust
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          rustup toolchain install 1.94.0 --profile minimal --no-self-update
+      - name: Check captured extension evidence and source guards
+        run: .venv/bin/python -B -m unittest discover -s repro/pump/extend-diagnostics -p 'test_*.py'
+      - name: Build the fixed Pump baseline and extension correction then compare results
+        run: >-
+          .venv/bin/python -B repro/pump/extend-diagnostics/linux_build.py
+          --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/pump-extend"
+      - name: Retain actual paired build and replay success or failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pump-extend-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/pump-extend/evidence
+            !${{ runner.temp }}/pump-extend/evidence/downloads/**
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
   amm-creator-diagnostics:
     if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'creator'
     runs-on: ubuntu-24.04
