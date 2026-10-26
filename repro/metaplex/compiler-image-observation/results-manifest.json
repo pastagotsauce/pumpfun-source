@@ -1,0 +1,52 @@
+[
+  {
+    "path": "archive.json",
+    "bytes": 1365,
+    "sha256": "a9deb8c5173b208b3f75d5ae288ead090110401a9a038160ba1eadd33a35b12f"
+  },
+  {
+    "path": "historical-tool-versions.json",
+    "bytes": 555,
+    "sha256": "2cc4c0b8aa6b9641d860d575aa8652521ab47493daf1b5c9457e005f8c6d6ece"
+  },
+  {
+    "path": "image-attempt/artifact-members.json",
+    "bytes": 984,
+    "sha256": "2e9b3093e96faa7b9544f3deea7d3d15314efbe2af2a4f12adff7b834da3fcef"
+  },
+  {
+    "path": "image-attempt/artifact.json",
+    "bytes": 759,
+    "sha256": "82fe7f6f9051f114f4dc482219451b2d09e3f38def2e0bf91da4269817e254ea"
+  },
+  {
+    "path": "image-attempt/artifact.zip",
+    "bytes": 6891,
+    "sha256": "c97b0968511ffc9aefc569c561f27c590fd025c790aa4625514ea71efc29c25a"
+  },
+  {
+    "path": "image-attempt/hosted-job.log.gz",
+    "bytes": 4419,
+    "sha256": "a93c17c9a68d66a54ac93a7760ad7dcad48f09b0c8ac217c6b06720906ef7e03"
+  },
+  {
+    "path": "image-attempt/jobs.json",
+    "bytes": 10683,
+    "sha256": "14a2d6f68e46b97090041c1a1b6c35a1d2af124ae287cd629f8ee8ec6eab9167"
+  },
+  {
+    "path": "image-attempt/run.json",
+    "bytes": 13289,
+    "sha256": "b93e92989cf122e269f791786eeddb7fccaa704618de13f6dbc88bc5c39655eb"
+  },
+  {
+    "path": "release.json",
+    "bytes": 12539,
+    "sha256": "7eabef874783e47945523e0bfd71f253fa32aedb519aa931c403584304439754"
+  },
+  {
+    "path": "version.md",
+    "bytes": 249,
+    "sha256": "34887eda294cf872fa8ca0f444ea95308ce8b5b1b8db24de4b32ef298e889b38"
+  }
+]

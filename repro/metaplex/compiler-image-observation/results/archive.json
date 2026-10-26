@@ -1,0 +1,36 @@
+{
+  "archive_sha256": "8d5153589dbe19635affe937663cf4555a7e69a62d91ab4a1df064aaa8d5f066",
+  "bytes": 362756282,
+  "asset_id": 101838771,
+  "publisher_digest": null,
+  "asset_url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.37/platform-tools-linux-x86_64.tar.bz2",
+  "tag_target_commit": "390112a3f6d25e17662e83bf73d73f3d483b556e",
+  "selected_members": [
+    {
+      "name": "./rust/lib/librustc_driver-f767167903553d17.so",
+      "bytes": 197537432,
+      "mode": 493,
+      "type": "0",
+      "sha256": "e7d221509c0d5f5430175547b6d972e300892258bfa6e1b0cf1c4058a73ad9f2"
+    },
+    {
+      "name": "./rust/bin/rustc",
+      "bytes": 17264,
+      "mode": 493,
+      "type": "0",
+      "sha256": "7194df9c12e893cfa88fff5dd821d02d45910b4d375e13677b4723f45769a384"
+    },
+    {
+      "name": "./version.md",
+      "bytes": 249,
+      "mode": 420,
+      "type": "0",
+      "sha256": "34887eda294cf872fa8ca0f444ea95308ce8b5b1b8db24de4b32ef298e889b38",
+      "retained": "version-2.md",
+      "text": "764ce69bd00903f5c59f44b6aa72649b173f568c  https://github.com/solana-labs/rust.git\n5964fe4317496af85c5785d07a61c3afd37c0351  https://github.com/solana-labs/cargo.git\n17accd30fa332294756bb4ce8ca63de315127218  https://github.com/solana-labs/newlib.git\n"
+    }
+  ],
+  "member_count": 2426,
+  "recorded_rustc_matches": true,
+  "executed_files": 0
+}

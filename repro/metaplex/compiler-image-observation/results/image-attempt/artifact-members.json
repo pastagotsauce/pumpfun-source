@@ -1,0 +1,37 @@
+[
+  {
+    "name": "inspect-image.log",
+    "bytes": 4373,
+    "sha256": "0deb6939d7f0a7a4a6caf35e710ed9793a29056736ec414eab13221cd9b91a4e"
+  },
+  {
+    "name": "observation.json",
+    "bytes": 4083,
+    "sha256": "26e421d710fa6efee5d82403e1f6e48cfc757181593d88fe1ff47a416da454de"
+  },
+  {
+    "name": "observe.py",
+    "bytes": 7033,
+    "sha256": "5a7cd366d420a7370eef26d029afa888328204cf07151c7d16bc332701906467"
+  },
+  {
+    "name": "pull-image.log",
+    "bytes": 1598,
+    "sha256": "3557ace8b9bc3446b2479098ada4c16c36c71c68507efcc6c9fd37fddff36a72"
+  },
+  {
+    "name": "rustc-resolved.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "start-container.log",
+    "bytes": 65,
+    "sha256": "6919c89ff82bce5ae6ed20dd4c5f1e79c75613df5759f7694088a545bc197380"
+  },
+  {
+    "name": "stop-container.log",
+    "bytes": 120,
+    "sha256": "e17457c48114f5b69f6114d37a63ce86e66c12eef2e731a700f99fe8701920a3"
+  }
+]
