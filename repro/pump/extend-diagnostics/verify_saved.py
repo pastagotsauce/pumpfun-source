@@ -13,13 +13,14 @@ from replay import (authenticated_members, verify_build, inherited_acceptance,
                     ARTIFACT_ID, BUILD_RUN, BUILD_HEAD, ARCHIVE_SHA, OUTPUTS)
 from verify_runtime import validate
 from compare import compare
+from analyze import elf_layout
 
 REPLAY_RUN = 40304336017
 REPLAY_HEAD = "4678ffb0fe56c63d46d1851e6fc648fc77695b30"
 REPLAY_ARTIFACT = 12641518219
 REPLAY_ZIP_SHA = "2733df482c1a02243e8fb65854b29b56041bb21bca8adf0f2fca0bb62f82c511"
 REPLAY_MEMBERS_SHA = "fb1b6923199f1f1805c435bcc8e4ae788d6ca83428a706fc274237aa2020aadb"
-RESULTS_SHA = "b3d2beed1a7305eca446df56397dfbbd2dd943f5f9bee67de1de1397564e0b8c"
+RESULTS_SHA = "c8d29f84466d52cb603c67fb99cdab84a29198ef455900c5f1662cc96b2b3f72"
 # The raw replay receipt inherited this constant from the shared Attempt helper.
 # It is preserved as observed, never interpreted as the replay checkout revision.
 SHARED_HELPER_DEFAULT_REVISION = "4ffe8bd88761059693e481ae972443c10204f7af"
@@ -46,6 +47,28 @@ def member_rows(contents):
 
 def seal(rows):
     return digest(json.dumps(rows, sort_keys=True, separators=(",", ":")).encode())
+
+
+def executable_comparison(original, candidates):
+    """Use declared ELF file extents, never trailing-zero stripping or padding."""
+    layout = elf_layout(original)
+    require(layout["trailing_all_zero"], "captured allocation remainder is nonzero")
+    extent = layout["elf_extent"]
+    padding = original[extent:]
+    results = {}
+    for kind, raw in candidates.items():
+        candidate_layout = elf_layout(raw)
+        require(candidate_layout["elf_extent"] == len(raw) and candidate_layout["trailing_bytes"] == 0,
+                "compiler output has bytes beyond its declared ELF extent")
+        results[kind] = {"layout": candidate_layout, "comparison": compare(original[:extent], raw)}
+    return {
+        "scope": "Complete original ELF file extent versus entire unpadded compiler outputs; allocation remainder verified separately.",
+        "extent_rule": "scripts/analyze.py elf_layout: maximum of ELF header, program/section header tables, all file-backed sections and all program file spans; SHT_NOBITS has no file payload.",
+        "original_layout": layout,
+        "original_allocation_remainder": {"offset": extent, "bytes": len(padding), "sha256": digest(padding), "all_zero": True},
+        "outputs": results,
+        "binary_writes_or_padding": False,
+    }
 
 
 def replay_contents(raw):
@@ -159,12 +182,16 @@ def verify(package=PACKAGE, repo=ROOT):
     require(summary["passed"] is True and summary["new_builds"] == 0 and summary["focused"] == focused
             and summary["inherited"] == inherited and summary["corrected_vs_baseline"] == compare(
                 contents["baseline/candidate.so"], contents["corrected/candidate.so"]), "replay summary differs")
+    executable = executable_comparison(original, {kind: contents[kind + "/candidate.so"] for kind in OUTPUTS})
+    require(executable == load_json(package / "results/executable-comparison.json"), "complete executable comparison differs")
     return {"scope": "Saved evidence rechecked only; no new build or VM execution", "replay_head_sha": REPLAY_HEAD,
             "raw_attempt_source_revision_is_shared_helper_default": state["source_revision"],
             "source_builds_in_initial_attempt": 2, "replay_new_builds": 0,
             "focused": focused, "corrected_inherited": inherited, "actual_receipt_mutation_tests": 10,
+            "executable_comparison": {kind: row["comparison"] for kind, row in executable["outputs"].items()},
+            "original_allocation_remainder": executable["original_allocation_remainder"],
             "whole_original_comparison": comparisons, "production_or_selection_changed": False,
-            "qualification": "Two missing no-growth diagnostics recovered; whole byte identity remains false."}
+            "qualification": "Two missing no-growth diagnostics recovered; complete executable equality remains false; unused original allocation remainder is independently verified all zero."}
 
 
 if __name__ == "__main__":

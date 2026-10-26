@@ -1,0 +1,289 @@
+{
+  "binary_writes_or_padding": false,
+  "extent_rule": "scripts/analyze.py elf_layout: maximum of ELF header, program/section header tables, all file-backed sections and all program file spans; SHT_NOBITS has no file payload.",
+  "original_allocation_remainder": {
+    "all_zero": true,
+    "bytes": 8550915,
+    "offset": 1934800,
+    "sha256": "385776da1b62c6d0a3f3b6dbf83be2787814b2722b2e1f8357118b12c2856f04"
+  },
+  "original_layout": {
+    "allocation_bytes": 10485715,
+    "elf_extent": 1934800,
+    "elf_sha256": "05249b60f8ddf02a53d0f8a43980fde40cce33f73526355b4ef08e292279819f",
+    "entry": 1404464,
+    "flags": 0,
+    "machine": 263,
+    "sections": [
+      {
+        "address": 0,
+        "flags": 0,
+        "name": "",
+        "offset": 0,
+        "size": 0,
+        "type": 0
+      },
+      {
+        "address": 288,
+        "flags": 6,
+        "name": ".text",
+        "offset": 288,
+        "size": 1792208,
+        "type": 1
+      },
+      {
+        "address": 1792496,
+        "flags": 18,
+        "name": ".rodata",
+        "offset": 1792496,
+        "size": 32031,
+        "type": 1
+      },
+      {
+        "address": 1824528,
+        "flags": 3,
+        "name": ".data.rel.ro",
+        "offset": 1824528,
+        "size": 10352,
+        "type": 1
+      },
+      {
+        "address": 1834880,
+        "flags": 3,
+        "name": ".dynamic",
+        "offset": 1834880,
+        "size": 176,
+        "type": 6
+      },
+      {
+        "address": 1835056,
+        "flags": 2,
+        "name": ".dynsym",
+        "offset": 1835056,
+        "size": 456,
+        "type": 11
+      },
+      {
+        "address": 1835512,
+        "flags": 2,
+        "name": ".dynstr",
+        "offset": 1835512,
+        "size": 288,
+        "type": 3
+      },
+      {
+        "address": 1835800,
+        "flags": 2,
+        "name": ".rel.dyn",
+        "offset": 1835800,
+        "size": 98352,
+        "type": 9
+      },
+      {
+        "address": 0,
+        "flags": 0,
+        "name": ".shstrtab",
+        "offset": 1934152,
+        "size": 72,
+        "type": 3
+      }
+    ],
+    "trailing_all_zero": true,
+    "trailing_bytes": 8550915
+  },
+  "outputs": {
+    "baseline": {
+      "comparison": {
+        "candidate_bytes": 1583992,
+        "candidate_sha256": "168eea079c77503ac0a17b4908f1181339c9547b64b4697d7b330db0680ab124",
+        "different_positions_in_shared_length": 882094,
+        "first_difference": 24,
+        "full_byte_equality": false,
+        "length_difference": -350808,
+        "original_bytes": 1934800,
+        "original_sha256": "05249b60f8ddf02a53d0f8a43980fde40cce33f73526355b4ef08e292279819f"
+      },
+      "layout": {
+        "allocation_bytes": 1583992,
+        "elf_extent": 1583992,
+        "elf_sha256": "168eea079c77503ac0a17b4908f1181339c9547b64b4697d7b330db0680ab124",
+        "entry": 1184688,
+        "flags": 0,
+        "machine": 263,
+        "sections": [
+          {
+            "address": 0,
+            "flags": 0,
+            "name": "",
+            "offset": 0,
+            "size": 0,
+            "type": 0
+          },
+          {
+            "address": 288,
+            "flags": 6,
+            "name": ".text",
+            "offset": 288,
+            "size": 1463520,
+            "type": 1
+          },
+          {
+            "address": 1463808,
+            "flags": 18,
+            "name": ".rodata",
+            "offset": 1463808,
+            "size": 29519,
+            "type": 1
+          },
+          {
+            "address": 1493328,
+            "flags": 3,
+            "name": ".data.rel.ro",
+            "offset": 1493328,
+            "size": 9480,
+            "type": 1
+          },
+          {
+            "address": 1502808,
+            "flags": 3,
+            "name": ".dynamic",
+            "offset": 1502808,
+            "size": 176,
+            "type": 6
+          },
+          {
+            "address": 1502984,
+            "flags": 2,
+            "name": ".dynsym",
+            "offset": 1502984,
+            "size": 456,
+            "type": 11
+          },
+          {
+            "address": 1503440,
+            "flags": 2,
+            "name": ".dynstr",
+            "offset": 1503440,
+            "size": 288,
+            "type": 3
+          },
+          {
+            "address": 1503728,
+            "flags": 2,
+            "name": ".rel.dyn",
+            "offset": 1503728,
+            "size": 79616,
+            "type": 9
+          },
+          {
+            "address": 0,
+            "flags": 0,
+            "name": ".shstrtab",
+            "offset": 1583344,
+            "size": 72,
+            "type": 3
+          }
+        ],
+        "trailing_all_zero": true,
+        "trailing_bytes": 0
+      }
+    },
+    "corrected": {
+      "comparison": {
+        "candidate_bytes": 1584520,
+        "candidate_sha256": "1d328c9a78ade28355516f9263ffde5582af8454f201bbe80e4c2699ed9c13f6",
+        "different_positions_in_shared_length": 883780,
+        "first_difference": 24,
+        "full_byte_equality": false,
+        "length_difference": -350280,
+        "original_bytes": 1934800,
+        "original_sha256": "05249b60f8ddf02a53d0f8a43980fde40cce33f73526355b4ef08e292279819f"
+      },
+      "layout": {
+        "allocation_bytes": 1584520,
+        "elf_extent": 1584520,
+        "elf_sha256": "1d328c9a78ade28355516f9263ffde5582af8454f201bbe80e4c2699ed9c13f6",
+        "entry": 1185016,
+        "flags": 0,
+        "machine": 263,
+        "sections": [
+          {
+            "address": 0,
+            "flags": 0,
+            "name": "",
+            "offset": 0,
+            "size": 0,
+            "type": 0
+          },
+          {
+            "address": 288,
+            "flags": 6,
+            "name": ".text",
+            "offset": 288,
+            "size": 1463848,
+            "type": 1
+          },
+          {
+            "address": 1464136,
+            "flags": 18,
+            "name": ".rodata",
+            "offset": 1464136,
+            "size": 29591,
+            "type": 1
+          },
+          {
+            "address": 1493728,
+            "flags": 3,
+            "name": ".data.rel.ro",
+            "offset": 1493728,
+            "size": 9512,
+            "type": 1
+          },
+          {
+            "address": 1503240,
+            "flags": 3,
+            "name": ".dynamic",
+            "offset": 1503240,
+            "size": 176,
+            "type": 6
+          },
+          {
+            "address": 1503416,
+            "flags": 2,
+            "name": ".dynsym",
+            "offset": 1503416,
+            "size": 456,
+            "type": 11
+          },
+          {
+            "address": 1503872,
+            "flags": 2,
+            "name": ".dynstr",
+            "offset": 1503872,
+            "size": 288,
+            "type": 3
+          },
+          {
+            "address": 1504160,
+            "flags": 2,
+            "name": ".rel.dyn",
+            "offset": 1504160,
+            "size": 79712,
+            "type": 9
+          },
+          {
+            "address": 0,
+            "flags": 0,
+            "name": ".shstrtab",
+            "offset": 1583872,
+            "size": 72,
+            "type": 3
+          }
+        ],
+        "trailing_all_zero": true,
+        "trailing_bytes": 0
+      }
+    }
+  },
+  "scope": "Complete original ELF file extent versus entire unpadded compiler outputs; allocation remainder verified separately."
+}

@@ -2,8 +2,8 @@
   "files": [
     {
       "name": "README.md",
-      "bytes": 10307,
-      "sha256": "10c05fc6d1814b52f329250da869d32fc6a8239f8bad9394288c7609c276ff05"
+      "bytes": 11377,
+      "sha256": "662fdbe298d2e20ee583780c6e873a326f149c4df9aca7c25894b0da3c13ca12"
     },
     {
       "name": "inputs/original-window.json",
@@ -101,6 +101,11 @@
       "sha256": "04c02942e1a1e566ec477c70e2934a04e6c6d45ab3bd46ac9bf0494d60e058d7"
     },
     {
+      "name": "results/executable-comparison.json",
+      "bytes": 7336,
+      "sha256": "800f844ae217bf14c14e558c38ec77ac8ed7e1683f504df6f1b89574cfb02954"
+    },
+    {
       "name": "results/executed-git-bindings.json",
       "bytes": 5661,
       "sha256": "49cdb972559710c9e6706bf3973a6383a9c2c911af751b9bc6f070fc283981e1"
@@ -162,8 +167,8 @@
     },
     {
       "name": "test_saved.py",
-      "bytes": 3019,
-      "sha256": "300a6658dfc135a6af338db0b175eff9abf2845d35386f7e18266208cc2806d2"
+      "bytes": 4591,
+      "sha256": "b7e1db30695343014079deb70aaa1ecbee4b5f2765107dd9b4ff3da0808ce997"
     },
     {
       "name": "verify_evidence.py",
@@ -177,8 +182,8 @@
     },
     {
       "name": "verify_saved.py",
-      "bytes": 10727,
-      "sha256": "77c36391e6261bf07fd340935d8470f6426de34a2a0da89864543d0b94f8b69d"
+      "bytes": 12566,
+      "sha256": "be6330f3b45e70f9120dfd7c7c24f4fc1d6cf32357e6b8157fcf53e96efaf403"
     }
   ]
 }

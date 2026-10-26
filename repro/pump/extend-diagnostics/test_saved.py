@@ -7,7 +7,7 @@ import unittest
 import test_runtime as actual_tests
 from recovery import ROOT, PACKAGE, load_json
 from verify_runtime import validate
-from verify_saved import verify, replay_contents, extract_for_checks, rows_for_files
+from verify_saved import verify, replay_contents, extract_for_checks, rows_for_files, executable_comparison
 
 
 class SavedArtifactGuards(unittest.TestCase):
@@ -39,6 +39,36 @@ class SavedArtifactGuards(unittest.TestCase):
 
     def test_rehashed_historical_failure_relabel_rejected(self):
         self.assert_rehashed_receipt_rejected("results/attempt-1/run.json", lambda data: data.update(conclusion="success"))
+
+
+class ExecutableExtentGuards(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.original = (ROOT / "evidence/original/pump/deployed.so").read_bytes()
+        contents = replay_contents((PACKAGE / "results/replay-2/artifact.zip").read_bytes())
+        cls.candidates = {kind: contents[kind + "/candidate.so"] for kind in ("baseline", "corrected")}
+
+    def test_full_declared_file_extent_keeps_terminal_zero_bytes(self):
+        result = executable_comparison(self.original, self.candidates)
+        self.assertEqual(result["original_layout"]["elf_extent"], 1934800)
+        self.assertEqual(self.original[1934800 - 1], 0)
+        self.assertEqual(result["original_allocation_remainder"]["bytes"], 8550915)
+        for row in result["outputs"].values():
+            self.assertEqual(row["comparison"]["original_bytes"], 1934800)
+            self.assertEqual(row["layout"]["trailing_bytes"], 0)
+            self.assertFalse(row["comparison"]["full_byte_equality"])
+
+    def test_nonzero_allocation_remainder_rejected(self):
+        altered = bytearray(self.original)
+        altered[1934800] = 1
+        with self.assertRaisesRegex(ValueError, "allocation remainder is nonzero"):
+            executable_comparison(bytes(altered), self.candidates)
+
+    def test_extra_zero_after_compiler_elf_rejected(self):
+        altered = dict(self.candidates)
+        altered["corrected"] += b"\0"
+        with self.assertRaisesRegex(ValueError, "beyond its declared ELF extent"):
+            executable_comparison(self.original, altered)
 
 
 class SavedActualReceipts(actual_tests.ActualReceipts):
