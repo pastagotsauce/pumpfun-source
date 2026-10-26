@@ -2,6 +2,7 @@
 import argparse
 import base64
 import json
+import copy
 from pathlib import Path
 from solders.pubkey import Pubkey
 from solders.keypair import Keypair
@@ -15,6 +16,30 @@ USER = Keypair.from_seed(bytes([228]) * 32).pubkey()
 TARGET = Pubkey.from_bytes(bytes([229]) * 32)
 EVENT = Pubkey.find_program_address([b"__event_authority"], PROGRAM)[0]
 EFFECTS = ("before", "after", "error", "events", "inner", "return")
+
+
+def fixture_effects(result, spec, discriminator):
+    """Exact measured shapes for these normally signed, one-byte-growth fixtures."""
+    before = result["before"][str(TARGET)]
+    require(before["owner"] == str(PROGRAM) and before["lamports"] == 10**9 and
+            bytes.fromhex(before["data"]) == discriminator + bytes(spec["size"] - 8), "wrong fixture state")
+    require(result["before"][str(PAYER)]["lamports"] == result["before"][str(USER)]["lamports"] == 10**12,
+            "wrong initial fee payer/user funding")
+    expected_after = copy.deepcopy(result["before"])
+    # Two genuine signatures cost 10,000 lamports in the retained fixed LiteSVM
+    # environment. This is a fixture assertion, not a network fee claim.
+    expected_after[str(PAYER)]["lamports"] -= 10000
+    target_size = TARGETS[spec["kind"]]
+    if spec["size"] >= target_size:
+        require(result["events"] == [] and result["inner"] == [[]], "no-growth CPI/event shape changed")
+    else:
+        delta = (target_size - spec["size"]) * 6960
+        expected_after[str(USER)]["lamports"] -= delta
+        expected_after[str(TARGET)]["lamports"] += delta
+        expected_after[str(TARGET)]["data"] += "00" * (target_size - spec["size"])
+        require(len(result["events"]) == 1 and len(result["inner"]) == 1 and len(result["inner"][0]) == 2,
+                "growth transfer/event CPI shape changed")
+    require(result["after"] == expected_after, "unauthorized fixture account change, fee or rent delta")
 
 
 def signed_payload(encoded, discriminator):
@@ -79,15 +104,7 @@ def validate(report, repo, candidate, build_record):
             expected_checkpoints.append({"case_index": index, "side": side, "case": spec,
                                          "transaction_base64": result["transaction_base64"]})
             signatures += signed_payload(result["transaction_base64"], discriminator)
-            before = result["before"][str(TARGET)]
-            require(before["owner"] == str(PROGRAM) and before["lamports"] == 10**9 and
-                    bytes.fromhex(before["data"]) == accounts[spec["kind"]] + bytes(spec["size"] - 8), "wrong fixture state")
-            after = result["after"][str(TARGET)]
-            require(len(bytes.fromhex(after["data"])) == max(spec["size"], TARGETS[spec["kind"]]), "wrong resulting size")
-            if spec["size"] >= TARGETS[spec["kind"]]:
-                require(before == after and result["events"] == [] and result["inner"] == [], "no-growth path changed effects")
-            else:
-                require(after["lamports"] > before["lamports"] and result["events"] and result["inner"], "growth control did not grow/fund/emit")
+            fixture_effects(result, spec, accounts[spec["kind"]])
         original_logs = full_logs_without_compute(first["logs"])
         candidate_logs = full_logs_without_compute(second["logs"])
         message = expected_message(spec)

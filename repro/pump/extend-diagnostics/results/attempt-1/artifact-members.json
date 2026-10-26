@@ -1,0 +1,657 @@
+[
+  {
+    "name": "attempt.json",
+    "bytes": 12511,
+    "sha256": "027f6ee8c14c7c628ddc7fbad49359a65f2c93f499e35ea338366435a43f7d86"
+  },
+  {
+    "name": "baseline/build-record.json",
+    "bytes": 9113,
+    "sha256": "655548f525948cdae8e07a2ccf10e6a6746448e70e7df0b308b45d4041854095"
+  },
+  {
+    "name": "baseline/candidate.so",
+    "bytes": 1583992,
+    "sha256": "168eea079c77503ac0a17b4908f1181339c9547b64b4697d7b330db0680ab124"
+  },
+  {
+    "name": "baseline/excluded-keypair-paths.json",
+    "bytes": 46,
+    "sha256": "2bb9ba822c8f30dd84f345f27af14404906472cbad1cea86d8074f1e57e7ff8a"
+  },
+  {
+    "name": "baseline/runtime.json",
+    "bytes": 186653,
+    "sha256": "67039d89b86b67700bb8b50818185562e9f4236189c54d0ff25725e815bf5eed"
+  },
+  {
+    "name": "baseline/unstripped.so",
+    "bytes": 2165256,
+    "sha256": "2c707df554965eb0fc58b6eb3620ccfcab90f2c32b429cd1da77426a618a5a95"
+  },
+  {
+    "name": "baseline/whole-original-comparison.json",
+    "bytes": 382,
+    "sha256": "26687e1100276c08a2c1e294c5f09cf5f3a41ae471a5ab6e6d8fd4288b60e4ba"
+  },
+  {
+    "name": "cargo-metadata-index.crates.io-1949cf8c6b5b557f.json",
+    "bytes": 40132,
+    "sha256": "eb72430e70b51e4fd90e5dfb5432489e502a67f79c74ed85b161e839744fcac1"
+  },
+  {
+    "name": "cargo-metadata-index.crates.io-6f17d22bba15001f.json",
+    "bytes": 40132,
+    "sha256": "eb72430e70b51e4fd90e5dfb5432489e502a67f79c74ed85b161e839744fcac1"
+  },
+  {
+    "name": "corrected/build-record.json",
+    "bytes": 9113,
+    "sha256": "977eb7e2b43ab016ba6dafb06312a6162c91932b96ed163a2242edd8abb3fc12"
+  },
+  {
+    "name": "corrected/candidate.so",
+    "bytes": 1584520,
+    "sha256": "1d328c9a78ade28355516f9263ffde5582af8454f201bbe80e4c2699ed9c13f6"
+  },
+  {
+    "name": "corrected/excluded-keypair-paths.json",
+    "bytes": 46,
+    "sha256": "2bb9ba822c8f30dd84f345f27af14404906472cbad1cea86d8074f1e57e7ff8a"
+  },
+  {
+    "name": "corrected/unstripped.so",
+    "bytes": 2166112,
+    "sha256": "f2896e2916a0b9b200a7da1320b069c6b39de7fe8619ab29c88feb6c313f8031"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/original-window.json",
+    "bytes": 16122,
+    "sha256": "0917c3526c20af24a138a0710e886362a25629d4216328533ebb6038314a2db8"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/receipt-provenance.json",
+    "bytes": 4050,
+    "sha256": "e3a5a090edc188b44071068368678c7b8b752492ad2d82b8f2baf7db62482c14"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-archive-members.json.gz",
+    "bytes": 98905,
+    "sha256": "c6596a138d7b2128fa0482cfd7d19dd2fbf80265446c0c3cc010592d74ad807e"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-build-attempt.json",
+    "bytes": 9024,
+    "sha256": "93743a7575ba6635cbc6cd26f31d213725dc1bc6f118fa80dcefeaa8fab056f7"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-extension.json.gz",
+    "bytes": 59422,
+    "sha256": "93bc8f449743ad130a54dee3619b63b4b558514ea1e2e6b27686451f48ffa117"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-fixtures.json.gz",
+    "bytes": 2324,
+    "sha256": "ba1d012cd0638399e1ca3e3451aa1799e65f0d3ccaf0a33dfab2ffd7714e15ae"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-gate-before.json.gz",
+    "bytes": 6228,
+    "sha256": "e6f01d3d30558da977cdea540fa1cc258f437c363a7aaf477f8de019bbb774ca"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-layout.json.gz",
+    "bytes": 11388,
+    "sha256": "47a9f15ba7be66818e7d11852199e3f9e1e59bceee25fbe2352deb33e5195275"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/inputs/selected-signed.json.gz",
+    "bytes": 13554,
+    "sha256": "f09ac11d790d5a0cfd725e9ae5f3fe81e16a899a923403a4a561a8280c98d786"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/linux_build.py",
+    "bytes": 18813,
+    "sha256": "24fe15532bbdae2e77c3fb99b38afa5f1bfa8acebc5182be63d766e191269dcf"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/pins.json",
+    "bytes": 1966,
+    "sha256": "413e0c33491d7228fb54151c9fa151ccef9baa96798d6156f06bb21546a304e2"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/recovery.py",
+    "bytes": 3360,
+    "sha256": "c9f2de8b5394a2f2ce58922bc058038b5d37512bc9999eb7afe0acd82ee560d6"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/runtime_probe.py",
+    "bytes": 4155,
+    "sha256": "174405b85736af14173bb75efca6494f504fdd2683261bb414977957e59ff202"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/source.patch",
+    "bytes": 473,
+    "sha256": "51fd2a71d8370e1a327f35fd3d9a4077f8b956fcff2c63967cb3d045c54e3ce1"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/test_runtime.py",
+    "bytes": 4189,
+    "sha256": "f9cd1795e17c4b3fe91644bc32a8e65e6e5c139c36f46232ca47c1695bff7cb2"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/verify_evidence.py",
+    "bytes": 10413,
+    "sha256": "e65ab4fbf538141dc2fe288d0d2b915cc61a511284941fedde830bce83e4de06"
+  },
+  {
+    "name": "executed-inputs/repro/pump/extend-diagnostics/verify_runtime.py",
+    "bytes": 7807,
+    "sha256": "4adbfa7fee39a3e139d2f0950a14c1d7291ecd5fc76952c4010439d278dbe150"
+  },
+  {
+    "name": "executed-inputs/scripts/compare.py",
+    "bytes": 2426,
+    "sha256": "9e33a6c239927728b96bb1305bffad0e144a701e9ac7723928bb2f8d49f63e67"
+  },
+  {
+    "name": "executed-inputs/scripts/core_linux_v144_build.py",
+    "bytes": 48897,
+    "sha256": "0e73e769f7ee982f47c9b8a07875955b855f5710a69494d96df8409859c7cffe"
+  },
+  {
+    "name": "executed-inputs/scripts/core_linux_v144_inputs.json",
+    "bytes": 16041,
+    "sha256": "aa57eb088362e973bf9be2f725a21cd0e5bb60d567ee0b3f55e2cf4b827a704c"
+  },
+  {
+    "name": "executed-inputs/scripts/pump_extend_differential.py",
+    "bytes": 5712,
+    "sha256": "3d89fd803fbdb23edba104420f4e9a0c6d02f0acd9e73f118439f6f6c531e5f0"
+  },
+  {
+    "name": "logs/apply-source-patch.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "logs/baseline-build.log",
+    "bytes": 15189,
+    "sha256": "5b28513f6dd30ec0f5e481eda0b740b1fc5d92f6c23d4c7e83d280ff08a78453"
+  },
+  {
+    "name": "logs/baseline-link-host.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "logs/baseline-runtime.log",
+    "bytes": 888,
+    "sha256": "480fdeae721a82431365140555866bef7d34b1bbe20e3cf73fed5c2312b9ea78"
+  },
+  {
+    "name": "logs/baseline-select-host.log",
+    "bytes": 39,
+    "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+  },
+  {
+    "name": "logs/check-source-patch.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "logs/cli-version.log",
+    "bytes": 52,
+    "sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73"
+  },
+  {
+    "name": "logs/compiler-version.log",
+    "bytes": 145,
+    "sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297"
+  },
+  {
+    "name": "logs/corrected-build.log",
+    "bytes": 15190,
+    "sha256": "b075e75cc99a0d0efda1296fddef63d669c09032e975ddac89e0b49f44f29f36"
+  },
+  {
+    "name": "logs/corrected-link-host.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "logs/corrected-select-host.log",
+    "bytes": 39,
+    "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+  },
+  {
+    "name": "logs/host-rustc-version.log",
+    "bytes": 196,
+    "sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69"
+  },
+  {
+    "name": "logs/locked-public-fetch.log",
+    "bytes": 8934,
+    "sha256": "c7e49e31375412fcbee3891faf7d05c6c612858bb0344a6bce1b30e65678c060"
+  },
+  {
+    "name": "logs/strip-version.log",
+    "bytes": 117,
+    "sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee"
+  },
+  {
+    "name": "logs/verify-original-and-selected-evidence.log",
+    "bytes": 3001,
+    "sha256": "79677a94d634fd5062608fac3de5285e4d4f56dc2c0eaaf36dfa04a1a84cbd24"
+  },
+  {
+    "name": "pipeline-caches.json",
+    "bytes": 467,
+    "sha256": "48ca541120e9cd945d09c8fc9e44874796bdfc566a6ef3431558e15425629ce8"
+  },
+  {
+    "name": "registry-preparation.json",
+    "bytes": 4767441,
+    "sha256": "8c3b86bd359b24ad1bea3caa36d4c18c0f7d1a6adc526211d506bd9ba580730c"
+  },
+  {
+    "name": "sdk-modes-baseline.json",
+    "bytes": 484,
+    "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+  },
+  {
+    "name": "sdk-modes-corrected.json",
+    "bytes": 484,
+    "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+  },
+  {
+    "name": "source-before.json",
+    "bytes": 8178,
+    "sha256": "48c09d51adb1c0c44e68aaed437645d792914dbe9d275530f44b19d11d1103ff"
+  },
+  {
+    "name": "source.patch",
+    "bytes": 473,
+    "sha256": "51fd2a71d8370e1a327f35fd3d9a4077f8b956fcff2c63967cb3d045c54e3ce1"
+  },
+  {
+    "name": "source/baseline/programs/pump/Cargo.lock",
+    "bytes": 70057,
+    "sha256": "486cbaa1eab7a945e849df5f72ca7c1e0b172ab8a17a1cd7a353fde123a84e95"
+  },
+  {
+    "name": "source/baseline/programs/pump/Cargo.toml",
+    "bytes": 552,
+    "sha256": "2e573ab4e47e5032b9dd3cb21391502bbd91c648ab37c63b99a63fa80afacf0e"
+  },
+  {
+    "name": "source/baseline/programs/pump/recovered/constant_product.rs",
+    "bytes": 684,
+    "sha256": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b"
+  },
+  {
+    "name": "source/baseline/programs/pump/recovered/constant_product_host.rs",
+    "bytes": 443,
+    "sha256": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825"
+  },
+  {
+    "name": "source/baseline/programs/pump/recovered/sell_accounting.rs",
+    "bytes": 1377,
+    "sha256": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983"
+  },
+  {
+    "name": "source/baseline/programs/pump/recovered/sell_accounting_host.rs",
+    "bytes": 528,
+    "sha256": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/admin_cto.rs",
+    "bytes": 17952,
+    "sha256": "918096a2dc44754f17b2172a0f2dcb834ce30f29b9f465b321961d35957c8282"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/buy_v2.rs",
+    "bytes": 14379,
+    "sha256": "2807d9bb8ff4958171ea5ce1a854fe3bec047ff3d392a01da8651231333a7e46"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/cashback.rs",
+    "bytes": 4570,
+    "sha256": "647c24a4c6ad68a2b8e43ae60da9cbf9fa805e2c9a3227ace595033c56232410"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/collect_v2.rs",
+    "bytes": 2860,
+    "sha256": "2915dc08ced5022aea32fa0440d6d24ab7f30197ef25f1055c9c6c73d8d22df1"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/create.rs",
+    "bytes": 4815,
+    "sha256": "d00b52848071d1b2edb8fddd8e716e7bd407f1e9c1c5b691dec95312fb7f0bbb"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/create_v2.rs",
+    "bytes": 10357,
+    "sha256": "603e907d858ff3aa00e5e4f52805f22ec036255783e468454b04bceefa5609b3"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/creator_migration.rs",
+    "bytes": 1720,
+    "sha256": "d4dda2ba7cdb175e227ffcd2d9262dad44237cb86d17287d47fc4910432fcd36"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/distribution.rs",
+    "bytes": 11125,
+    "sha256": "0987e4747d5729952d2109ce7ee42842fe47f49543e9c0709fb46c6cb8f96185"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/extend.rs",
+    "bytes": 1987,
+    "sha256": "e1a4e4cac477e0e9bd9d8ebe650839aa5410e7edf084f6478c1a1f404d3800f8"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/global_init.rs",
+    "bytes": 439,
+    "sha256": "c5d65cd6536d9d0b18c4152617052023bc800f6a0c5652e031c33d90f1747891"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/holder_distribution.rs",
+    "bytes": 4661,
+    "sha256": "29ac5561bc59baddf7e962e95013053099699dafeca5b95550b219c9e1a57d04"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/idl_authority.rs",
+    "bytes": 2078,
+    "sha256": "a930baa51a270dcddb70becc6ece7edb0a93afca3e73543cd1842dc04f73cbf2"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/legacy_buy.rs",
+    "bytes": 9802,
+    "sha256": "f28885fc019ee2ff44464272fab67191f0d0616c5549b79217b7d3f64a0e0847"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/legacy_sell.rs",
+    "bytes": 9311,
+    "sha256": "7078d27b768f0bd678d1463772a2177d5e092cebcbe4372c1711b5856574224b"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/lib.rs",
+    "bytes": 29435,
+    "sha256": "0634b73caafc19ce163f9ec464de7338bd7075f538d6198c67e9f68a00598281"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/migrate.rs",
+    "bytes": 10324,
+    "sha256": "b9e3dd278c84b413f8d6a823a6a95af516816e4b40c2d9e157d4f1bef71fe99f"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/migrate_v2.rs",
+    "bytes": 13409,
+    "sha256": "0e0be1e808ef796287fcd6a8631297e1c51e6d79663d42b21b9f7fbf22ceb522"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/minimum.rs",
+    "bytes": 2211,
+    "sha256": "ebc8f6f1a2c5aaa00211473cbd68ac1e006a0a80cbdba611046b10f8932c8631"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/multi_hop_curve.rs",
+    "bytes": 24210,
+    "sha256": "7175db4f8c7a6beb9f965562a2b32f61526d38fa3e8cef399b525a6371baba4a"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/nested_create.rs",
+    "bytes": 11825,
+    "sha256": "fa9b27bcd090e2f41e566263ea13c9e9a4e2b9c401b6dc6eda32881a92b693b3"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/quote_control/initialize_quote_control.rs",
+    "bytes": 941,
+    "sha256": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/quote_control/mod.rs",
+    "bytes": 180,
+    "sha256": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/quote_control/state.rs",
+    "bytes": 4294,
+    "sha256": "98df5c28a3c0006fcdef4f3cb0c3529ad0aca6393fe8b99852f12abc502d5213"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/quote_control/update_quote_control_mints.rs",
+    "bytes": 7216,
+    "sha256": "93140eca968e6753b64ab19b0fc66dbfe4e89d777690392377ff3a5f94e62945"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/sell_v2.rs",
+    "bytes": 12288,
+    "sha256": "a81d214a3153ccc0976194e1e4609a63ecfddd095113d5818ff729fb187bc033"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/set_creator.rs",
+    "bytes": 3681,
+    "sha256": "74cf477dc2607e6834d792123e0a0a7e8e374912aefc060f681c39cf30e5eb8b"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/set_params.rs",
+    "bytes": 3691,
+    "sha256": "43beba987f5347ea646fe4ebf3a48aede7ce71a7f77bcb0167d0beabe0aaaa0e"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/sweep.rs",
+    "bytes": 6647,
+    "sha256": "5d88bb58cc4d0818a1252da424e4cfa196d82caf43728646e4548dbad52e3167"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/trade.rs",
+    "bytes": 26614,
+    "sha256": "d8491a3fb3a7b61948938600024ff4a787cd6ed855895f71af2451c469d99fa4"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/trade_types.rs",
+    "bytes": 8340,
+    "sha256": "c7a00a49c44294f4984f7268c54b0547374484920022b54495acb50ef6700207"
+  },
+  {
+    "name": "source/baseline/programs/pump/src/volume_sync.rs",
+    "bytes": 1597,
+    "sha256": "309ef3db60b5cdf76e08b39eb73c0e33d146a9bb85a08bd4053217901a5026ad"
+  },
+  {
+    "name": "source/corrected/programs/pump/Cargo.lock",
+    "bytes": 70057,
+    "sha256": "486cbaa1eab7a945e849df5f72ca7c1e0b172ab8a17a1cd7a353fde123a84e95"
+  },
+  {
+    "name": "source/corrected/programs/pump/Cargo.toml",
+    "bytes": 552,
+    "sha256": "2e573ab4e47e5032b9dd3cb21391502bbd91c648ab37c63b99a63fa80afacf0e"
+  },
+  {
+    "name": "source/corrected/programs/pump/recovered/constant_product.rs",
+    "bytes": 684,
+    "sha256": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b"
+  },
+  {
+    "name": "source/corrected/programs/pump/recovered/constant_product_host.rs",
+    "bytes": 443,
+    "sha256": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825"
+  },
+  {
+    "name": "source/corrected/programs/pump/recovered/sell_accounting.rs",
+    "bytes": 1377,
+    "sha256": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983"
+  },
+  {
+    "name": "source/corrected/programs/pump/recovered/sell_accounting_host.rs",
+    "bytes": 528,
+    "sha256": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/admin_cto.rs",
+    "bytes": 17952,
+    "sha256": "918096a2dc44754f17b2172a0f2dcb834ce30f29b9f465b321961d35957c8282"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/buy_v2.rs",
+    "bytes": 14379,
+    "sha256": "2807d9bb8ff4958171ea5ce1a854fe3bec047ff3d392a01da8651231333a7e46"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/cashback.rs",
+    "bytes": 4570,
+    "sha256": "647c24a4c6ad68a2b8e43ae60da9cbf9fa805e2c9a3227ace595033c56232410"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/collect_v2.rs",
+    "bytes": 2860,
+    "sha256": "2915dc08ced5022aea32fa0440d6d24ab7f30197ef25f1055c9c6c73d8d22df1"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/create.rs",
+    "bytes": 4815,
+    "sha256": "d00b52848071d1b2edb8fddd8e716e7bd407f1e9c1c5b691dec95312fb7f0bbb"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/create_v2.rs",
+    "bytes": 10357,
+    "sha256": "603e907d858ff3aa00e5e4f52805f22ec036255783e468454b04bceefa5609b3"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/creator_migration.rs",
+    "bytes": 1720,
+    "sha256": "d4dda2ba7cdb175e227ffcd2d9262dad44237cb86d17287d47fc4910432fcd36"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/distribution.rs",
+    "bytes": 11125,
+    "sha256": "0987e4747d5729952d2109ce7ee42842fe47f49543e9c0709fb46c6cb8f96185"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/extend.rs",
+    "bytes": 2169,
+    "sha256": "950d3824e10a28495d9f54e15df6dbc5e5e76e385dc088e1df4560c41732e683"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/global_init.rs",
+    "bytes": 439,
+    "sha256": "c5d65cd6536d9d0b18c4152617052023bc800f6a0c5652e031c33d90f1747891"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/holder_distribution.rs",
+    "bytes": 4661,
+    "sha256": "29ac5561bc59baddf7e962e95013053099699dafeca5b95550b219c9e1a57d04"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/idl_authority.rs",
+    "bytes": 2078,
+    "sha256": "a930baa51a270dcddb70becc6ece7edb0a93afca3e73543cd1842dc04f73cbf2"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/legacy_buy.rs",
+    "bytes": 9802,
+    "sha256": "f28885fc019ee2ff44464272fab67191f0d0616c5549b79217b7d3f64a0e0847"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/legacy_sell.rs",
+    "bytes": 9311,
+    "sha256": "7078d27b768f0bd678d1463772a2177d5e092cebcbe4372c1711b5856574224b"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/lib.rs",
+    "bytes": 29435,
+    "sha256": "0634b73caafc19ce163f9ec464de7338bd7075f538d6198c67e9f68a00598281"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/migrate.rs",
+    "bytes": 10324,
+    "sha256": "b9e3dd278c84b413f8d6a823a6a95af516816e4b40c2d9e157d4f1bef71fe99f"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/migrate_v2.rs",
+    "bytes": 13409,
+    "sha256": "0e0be1e808ef796287fcd6a8631297e1c51e6d79663d42b21b9f7fbf22ceb522"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/minimum.rs",
+    "bytes": 2211,
+    "sha256": "ebc8f6f1a2c5aaa00211473cbd68ac1e006a0a80cbdba611046b10f8932c8631"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/multi_hop_curve.rs",
+    "bytes": 24210,
+    "sha256": "7175db4f8c7a6beb9f965562a2b32f61526d38fa3e8cef399b525a6371baba4a"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/nested_create.rs",
+    "bytes": 11825,
+    "sha256": "fa9b27bcd090e2f41e566263ea13c9e9a4e2b9c401b6dc6eda32881a92b693b3"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/quote_control/initialize_quote_control.rs",
+    "bytes": 941,
+    "sha256": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/quote_control/mod.rs",
+    "bytes": 180,
+    "sha256": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/quote_control/state.rs",
+    "bytes": 4294,
+    "sha256": "98df5c28a3c0006fcdef4f3cb0c3529ad0aca6393fe8b99852f12abc502d5213"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/quote_control/update_quote_control_mints.rs",
+    "bytes": 7216,
+    "sha256": "93140eca968e6753b64ab19b0fc66dbfe4e89d777690392377ff3a5f94e62945"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/sell_v2.rs",
+    "bytes": 12288,
+    "sha256": "a81d214a3153ccc0976194e1e4609a63ecfddd095113d5818ff729fb187bc033"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/set_creator.rs",
+    "bytes": 3681,
+    "sha256": "74cf477dc2607e6834d792123e0a0a7e8e374912aefc060f681c39cf30e5eb8b"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/set_params.rs",
+    "bytes": 3691,
+    "sha256": "43beba987f5347ea646fe4ebf3a48aede7ce71a7f77bcb0167d0beabe0aaaa0e"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/sweep.rs",
+    "bytes": 6647,
+    "sha256": "5d88bb58cc4d0818a1252da424e4cfa196d82caf43728646e4548dbad52e3167"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/trade.rs",
+    "bytes": 26614,
+    "sha256": "d8491a3fb3a7b61948938600024ff4a787cd6ed855895f71af2451c469d99fa4"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/trade_types.rs",
+    "bytes": 8340,
+    "sha256": "c7a00a49c44294f4984f7268c54b0547374484920022b54495acb50ef6700207"
+  },
+  {
+    "name": "source/corrected/programs/pump/src/volume_sync.rs",
+    "bytes": 1597,
+    "sha256": "309ef3db60b5cdf76e08b39eb73c0e33d146a9bb85a08bd4053217901a5026ad"
+  },
+  {
+    "name": "tool-bindings.json",
+    "bytes": 10096,
+    "sha256": "a76eec3974171a8c02c8936bd73173ad4b88eba8df2ab1152dee24f67fadb72b"
+  },
+  {
+    "name": "tooling-inputs.json",
+    "bytes": 2589,
+    "sha256": "12402799c5467945a2bc1d99f8dece882e092839ee2015a7f7a8675a6e8c697f"
+  }
+]
