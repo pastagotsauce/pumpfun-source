@@ -1,0 +1,1 @@
+{"migration_cases": 6, "migration_6081_rejections_per_binary": 3, "holder_precedence_controls_per_binary": 2, "successful_zero_controls_per_binary": 1, "prior_focused_regression_cases": 30, "verified_signatures": 78, "unique_transaction_bytes": 16}

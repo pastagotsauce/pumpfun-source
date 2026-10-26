@@ -1,0 +1,262 @@
+{
+  "build_attempts": 1,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/creator-fee-diagnostics/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics/source",
+      "log": "logs/check-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "check-source-patch",
+      "returncode": 0,
+      "seconds": 0.0020711419999983605,
+      "started_utc": "2026-10-26T09:14:39.731279+00:00"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/creator-fee-diagnostics/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics/source",
+      "log": "logs/apply-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "apply-source-patch",
+      "returncode": 0,
+      "seconds": 0.0017611960000039062,
+      "started_utc": "2026-10-26T09:14:39.735744+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "toolchain",
+        "link",
+        "host194",
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/link-host.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "link-host",
+      "returncode": 0,
+      "seconds": 0.005177053000011256,
+      "started_utc": "2026-10-26T09:16:47.184581+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "default",
+        "host194"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/select-host.log",
+      "log_sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d",
+      "name": "select-host",
+      "returncode": 0,
+      "seconds": 0.005047259000008353,
+      "started_utc": "2026-10-26T09:16:47.194625+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/host-rustc-version.log",
+      "log_sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69",
+      "name": "host-rustc-version",
+      "returncode": 0,
+      "seconds": 0.006407386000006454,
+      "started_utc": "2026-10-26T09:16:47.214120+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-creator-diagnostics/platform-v144/rust/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/compiler-version.log",
+      "log_sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297",
+      "name": "compiler-version",
+      "returncode": 0,
+      "seconds": 0.00920820199999639,
+      "started_utc": "2026-10-26T09:16:47.221325+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-creator-diagnostics/agave/solana-release/bin/cargo-build-sbf",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/cli-version.log",
+      "log_sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73",
+      "name": "cli-version",
+      "returncode": 0,
+      "seconds": 0.0017391579999923579,
+      "started_utc": "2026-10-26T09:16:47.231501+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-creator-diagnostics/platform-v152/llvm/bin/llvm-objcopy",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics",
+      "log": "logs/strip-version.log",
+      "log_sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee",
+      "name": "strip-version",
+      "returncode": 0,
+      "seconds": 0.0016146810000066125,
+      "started_utc": "2026-10-26T09:16:47.234212+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "fetch",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-creator-diagnostics/source/programs/pump-amm/Cargo.toml",
+        "--locked"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics/source",
+      "log": "logs/locked-public-fetch.log",
+      "log_sha256": "70ae9423a22109547164761d40575569c9aecb1e6d70e0d86b6fa9b6772791be",
+      "name": "locked-public-fetch",
+      "returncode": 0,
+      "seconds": 1.2340540900000008,
+      "started_utc": "2026-10-26T09:16:47.236635+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "build-sbf",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-creator-diagnostics/source/programs/pump-amm/Cargo.toml",
+        "--tools-version",
+        "v1.44",
+        "--offline",
+        "--sbf-sdk",
+        "/home/runner/work/_temp/amm-creator-diagnostics/sdk",
+        "--sbf-out-dir",
+        "/home/runner/work/_temp/amm-creator-diagnostics/artifacts",
+        "--",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-creator-diagnostics/source",
+      "log": "logs/combined-build.log",
+      "log_sha256": "4b5a8ec3016bf01af99dddc45042c372864c72fe12b9a9632997d9e36d1d01c2",
+      "name": "combined-build",
+      "returncode": 0,
+      "seconds": 72.020467464,
+      "started_utc": "2026-10-26T09:16:56.514603+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/creator-fee-diagnostics/runtime_probe.py",
+        "--repo",
+        "/home/runner/work/pumpfun-source/pumpfun-source",
+        "--candidate",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined/candidate.so",
+        "--build-record",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined/build-record.json",
+        "--output",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined/runtime.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/focused-migration-and-regressions.log",
+      "log_sha256": "5154d555766262ac96c4dee63d0d501fc5c5aae10607254b6cab56e7beca140a",
+      "name": "focused-migration-and-regressions",
+      "returncode": 0,
+      "seconds": 1.0907948160000274,
+      "started_utc": "2026-10-26T09:18:13.194224+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/creator-fee-diagnostics/test_runtime_creator.py",
+        "--built",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/test-actual-focused-receipts.log",
+      "log_sha256": "f6d1e34f945ef5d8c05b2ba80ab686db6f83cbfbb9fb9af64964b6803fb20b7d",
+      "name": "test-actual-focused-receipts",
+      "returncode": 0,
+      "seconds": 0.3151773179999964,
+      "started_utc": "2026-10-26T09:18:14.286432+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/scripts/pump_amm_creator_reassignment_differential.py",
+        "--candidate",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined/candidate.so",
+        "--output",
+        "/home/runner/work/_temp/amm-creator-diagnostics/evidence/combined/creator-reassignment.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/inherited-creator-reassignment.log",
+      "log_sha256": "ec33d94252f64b30a9fd5a965ebdc0d686f31da64f3589699943bfbf0d88bcb3",
+      "name": "inherited-creator-reassignment",
+      "returncode": 0,
+      "seconds": 1.1890288270000156,
+      "started_utc": "2026-10-26T09:18:14.602883+00:00"
+    }
+  ],
+  "downloads": [
+    {
+      "bytes": 490710349,
+      "expected_bytes": 490710349,
+      "expected_sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "file": "downloads/platform-v144.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/a3d0b527-d9f6-4305-9608-7be7edd56bbe",
+      "sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.44/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 519270959,
+      "expected_bytes": 519270959,
+      "expected_sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "file": "downloads/platform-v152.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/529c9606-2c25-4d54-8240-724d4315e9dc",
+      "sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.52/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 298782636,
+      "expected_bytes": 298782636,
+      "expected_sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "file": "downloads/agave-v2.1.21.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/750164628/1bf49da9-5e68-40cf-8fb4-d2eea3fd02ed",
+      "sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/agave/releases/download/v2.1.21/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+    },
+    {
+      "bytes": 677858,
+      "expected_bytes": 677858,
+      "expected_sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "file": "downloads/criterion-v2.3.3.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/30111969/98b27400-e1f1-11e8-8f10-e43f4ef84b92",
+      "sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "status": "verified",
+      "url": "https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2"
+    }
+  ],
+  "schema": 1,
+  "scope": "One pinned Linux migration build on the accepted liquidity/sweep corrections.",
+  "source_revision": "3765b8c245368a912e4681e52bc9c7a9b3384f47",
+  "started_utc": "2026-10-26T09:14:39.716990+00:00",
+  "status": "passed"
+}

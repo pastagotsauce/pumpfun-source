@@ -13,7 +13,59 @@ artifact `12637738214`, documented in `../sweep-error-observation/`. Its full
 30-file source snapshot and build record (SHA-256
 `cad21b8fd0e9ab05fc7e0664883eff40154632216cd54a2f3a10b22b09eab245`) are immutable
 inputs. Production source, selected artifacts and earlier evidence are unchanged.
-**The new compiled correction and runtime gates are pending.**
+**The new compiled correction and all bounded runtime gates passed in run
+40297988318.** Whole-binary identity remains false.
+
+## Actual combined output
+
+[Run 40297988318](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40297988318)
+at `3765b8c245368a912e4681e52bc9c7a9b3384f47` completed one clean source build and
+every required runtime/test gate. Artifact `12639108454`
+(`amm-creator-diagnostics-40297988318-1`) is 2,027,665 bytes; its provider and
+independently downloaded ZIP SHA-256 is
+`8c4c0a685e92ce08f753608c0d4f1c5c71b9b1688a6ced80f3927b9936cb3d14`.
+All 63 archive members are preserved exactly under `results/build/`, with large
+JSON losslessly gzipped, plus three provider provenance records. The fixed
+publication manifest SHA-256 is
+`e10f8d972502535406be4f9a1b1137b98f5ea4d699fc71cc33848c6d5b96422e`.
+
+Stripped output SHA-256:
+`7f6c301e7d39ced26a6280ae1053db6cff76a01c67dd9c4627e6022cb8384d52`
+(1,200,504 bytes). Unstripped output SHA-256:
+`b04d29a22a9206cf6a941c05ad00d6f1ebeaf3c4561feb238b0789d6162fc138`.
+The retained snapshot contains all 30 source inputs. Only the migrate guard in
+`creator_reassignment.rs` changes from the prior source; the entire `admin_cto`
+suffix, lockfile, liquidity fix and sweep fixes remain byte-identical.
+
+Verified results:
+
+- All six migration cases pass across original, prior sweep output and new
+  candidate: one successful zero-fee control, three 6081 rejections, and two
+  holder-flag controls that reject earlier with 6074. The prior Linux output
+  reproduces the numeric decoration; the new output matches the original logs
+  under the narrowly stated compute/source-coordinate exclusions.
+- All thirty prior focused cases pass again: twelve sweep and eighteen liquidity
+  cases with their exact committed effects and recovered diagnostics preserved.
+- All 78 raw signature fields verify independently, representing sixteen unique
+  signed messages over separately prepared fixture states. Account fee/holder
+  bytes are checked against the migration case labels.
+- All 327 inherited creator-reassignment cases have equal errors, before/after
+  accounts, CPIs, events and return data. The inherited suite excludes full logs.
+- All twelve actual-receipt mutation/positive tests pass both on the runner and
+  against the downloaded receipts; all ten preflight tests pass.
+
+The new output is 56 bytes smaller than the prior sweep build. Its comparison
+against the original has 672,033 differing shared positions and a 9,285,211-byte
+allocation gap: 272 fewer differing/missing positions in total than the prior
+output. This positional count is not a measure of semantic coverage or project
+completion. Whole-binary equality is still false.
+
+The permanent publication can be checked locally without compiling or executing
+SBF:
+
+```sh
+.venv/bin/python -B repro/pump_amm/creator-fee-diagnostics/verify_results.py
+```
 
 ## Existing source evidence
 
@@ -98,8 +150,9 @@ effects remain strict. Expected total: 78 raw signature fields across six
 migration comparisons and thirty previous focused comparisons. Unique signed
 message count is reported from actual bytes, not inferred from case count.
 
-Ten static evidence/signature/patch-scope tests currently pass. Fresh Linux
-execution remains required. The driver retains source/input/tool manifests,
+Ten static evidence/signature/patch-scope tests and twelve actual-receipt tests
+pass. To repeat the latter, run `test_runtime_creator.py` with
+`--built /absolute/extracted-artifact/combined`. The driver retains source/input/tool manifests,
 archive hashes, exact command logs/exits, both compiler outputs and failed
 partial receipts. Generated keypair files are never read, hashed or copied.
 This is bounded synthetic offline recovery, not historical replay, live

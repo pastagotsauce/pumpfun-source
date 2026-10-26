@@ -1,0 +1,17 @@
+test_6081_rejection_cannot_be_waived (__main__.main.<locals>.ActualCreatorTests.test_6081_rejection_cannot_be_waived) ... ok
+test_actual_receipt (__main__.main.<locals>.ActualCreatorTests.test_actual_receipt) ... ok
+test_build_record_cannot_impersonate_prior (__main__.main.<locals>.ActualCreatorTests.test_build_record_cannot_impersonate_prior) ... ok
+test_candidate_numeric_logs_rejected (__main__.main.<locals>.ActualCreatorTests.test_candidate_numeric_logs_rejected) ... ok
+test_effect_field_cannot_be_deleted_from_all_sides (__main__.main.<locals>.ActualCreatorTests.test_effect_field_cannot_be_deleted_from_all_sides) ... ok
+test_fixture_fee_binds_case_label (__main__.main.<locals>.ActualCreatorTests.test_fixture_fee_binds_case_label) ... ok
+test_holder_precedence_required (__main__.main.<locals>.ActualCreatorTests.test_holder_precedence_required) ... ok
+test_invalid_raw_signature_rejected (__main__.main.<locals>.ActualCreatorTests.test_invalid_raw_signature_rejected) ... ok
+test_missing_case_rejected (__main__.main.<locals>.ActualCreatorTests.test_missing_case_rejected) ... ok
+test_old_liquidity_log_fix_preserved (__main__.main.<locals>.ActualCreatorTests.test_old_liquidity_log_fix_preserved) ... ok
+test_old_sweep_log_fix_preserved (__main__.main.<locals>.ActualCreatorTests.test_old_sweep_log_fix_preserved) ... ok
+test_prior_defect_must_be_observed (__main__.main.<locals>.ActualCreatorTests.test_prior_defect_must_be_observed) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.243s
+
+OK

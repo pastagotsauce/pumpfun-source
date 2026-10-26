@@ -1,0 +1,11 @@
+--- a/programs/pump-amm/src/creator_reassignment.rs
++++ b/programs/pump-amm/src/creator_reassignment.rs
+@@ -29,7 +29,7 @@
+ pub fn migrate(ctx:Context<MigratePoolCoinCreator>)->Result<()>{
+  let pool=&mut ctx.accounts.pool;
+  require!(!pool.is_holder_reward,PumpAmmError::HolderRewardCreatorImmutable);
+- require_eq!(pool.creator_fees,0,PumpAmmError::CreatorFeesNotSwept);
++ require!(pool.creator_fees==0,PumpAmmError::CreatorFeesNotSwept);
+  let old_coin_creator=pool.coin_creator;pool.coin_creator=ctx.accounts.sharing_config.key();
+  let event=MigratePoolCoinCreatorEvent{timestamp:Clock::get()?.unix_timestamp,base_mint:pool.base_mint,pool:pool.key(),sharing_config:ctx.accounts.sharing_config.key(),old_coin_creator,new_coin_creator:pool.coin_creator};emit!(event.clone());emit_cpi!(event);Ok(())
+ }
