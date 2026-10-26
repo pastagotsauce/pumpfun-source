@@ -1,0 +1,11 @@
+--- a/programs/pump-amm/src/lib.rs
++++ b/programs/pump-amm/src/lib.rs
+@@ -511,7 +511,7 @@
+     for (mint, user, vault, quantity) in [(&a.base_mint, &a.user_base_token_account, &a.pool_base_token_account, base_amount), (&a.quote_mint, &a.user_quote_token_account, &a.pool_quote_token_account, quote_transfer_amount)] {
+         if quantity == 0 { continue; }
+         if user.key() == vault.key() {
+-            require_keys_eq!(user.owner, if deposit { a.user.key() } else { a.pool.key() }, PumpAmmError::SelfTransferNotAllowed);
++            require!(user.owner == if deposit { a.user.key() } else { a.pool.key() }, PumpAmmError::SelfTransferNotAllowed);
+         }
+         let program = if *mint.to_account_info().owner == anchor_spl::token::ID { a.token_program.to_account_info() } else { a.token_2022_program.to_account_info() };
+         let transfer = token_interface::TransferChecked { from: if deposit { user.to_account_info() } else { vault.to_account_info() },
