@@ -1,0 +1,328 @@
+{
+  "build_attempts": 1,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/sweep-error-observation/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction/source",
+      "log": "logs/check-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "check-source-patch",
+      "returncode": 0,
+      "seconds": 0.0017241250000026298,
+      "started_utc": "2026-10-26T08:44:25.479489+00:00"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/sweep-error-observation/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction/source",
+      "log": "logs/apply-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "apply-source-patch",
+      "returncode": 0,
+      "seconds": 0.0014052249999991773,
+      "started_utc": "2026-10-26T08:44:25.481826+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "toolchain",
+        "link",
+        "host194",
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/link-host.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "link-host",
+      "returncode": 0,
+      "seconds": 0.005765838000002077,
+      "started_utc": "2026-10-26T08:46:51.492641+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "default",
+        "host194"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/select-host.log",
+      "log_sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d",
+      "name": "select-host",
+      "returncode": 0,
+      "seconds": 0.00653352099999438,
+      "started_utc": "2026-10-26T08:46:51.499402+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/host-rustc-version.log",
+      "log_sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69",
+      "name": "host-rustc-version",
+      "returncode": 0,
+      "seconds": 0.00721577500002013,
+      "started_utc": "2026-10-26T08:46:51.527718+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-sweep-correction/platform-v144/rust/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/compiler-version.log",
+      "log_sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297",
+      "name": "compiler-version",
+      "returncode": 0,
+      "seconds": 0.009298706000009815,
+      "started_utc": "2026-10-26T08:46:51.535821+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-sweep-correction/agave/solana-release/bin/cargo-build-sbf",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/cli-version.log",
+      "log_sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73",
+      "name": "cli-version",
+      "returncode": 0,
+      "seconds": 0.0018712140000047839,
+      "started_utc": "2026-10-26T08:46:51.546000+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-sweep-correction/platform-v152/llvm/bin/llvm-objcopy",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction",
+      "log": "logs/strip-version.log",
+      "log_sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee",
+      "name": "strip-version",
+      "returncode": 0,
+      "seconds": 0.0017245409999873118,
+      "started_utc": "2026-10-26T08:46:51.548849+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "fetch",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-sweep-correction/source/programs/pump-amm/Cargo.toml",
+        "--locked"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction/source",
+      "log": "logs/locked-public-fetch.log",
+      "log_sha256": "b86129c314965d235d56c8c66e17b587e00d904489dd6b893636fabb919e3e77",
+      "name": "locked-public-fetch",
+      "returncode": 0,
+      "seconds": 1.9391435489999935,
+      "started_utc": "2026-10-26T08:46:51.551424+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "build-sbf",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-sweep-correction/source/programs/pump-amm/Cargo.toml",
+        "--tools-version",
+        "v1.44",
+        "--offline",
+        "--sbf-sdk",
+        "/home/runner/work/_temp/amm-sweep-correction/sdk",
+        "--sbf-out-dir",
+        "/home/runner/work/_temp/amm-sweep-correction/artifacts",
+        "--",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-sweep-correction/source",
+      "log": "logs/combined-build.log",
+      "log_sha256": "d598a13ad4afbe2427378691b5d9f053d3cea44115dd9fc6d0aef29fb1ebf96c",
+      "name": "combined-build",
+      "returncode": 0,
+      "seconds": 91.121129755,
+      "started_utc": "2026-10-26T08:47:05.820644+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/sweep-error-observation/runtime_probe.py",
+        "--repo",
+        "/home/runner/work/pumpfun-source/pumpfun-source",
+        "--candidate",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/candidate.so",
+        "--build-record",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/build-record.json",
+        "--output",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/sweep-runtime.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/focused-sweep.log",
+      "log_sha256": "154dbc48f8f78472a6bd49a1868f3a99e2d2be9b7018d9d4f90fc835c8f98179",
+      "name": "focused-sweep",
+      "returncode": 0,
+      "seconds": 0.537593754999989,
+      "started_utc": "2026-10-26T08:48:43.956703+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/runtime_probe.py",
+        "--repo",
+        "/home/runner/work/pumpfun-source/pumpfun-source",
+        "--candidate",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/candidate.so",
+        "--candidate-sha256",
+        "64d909213b9fe0fe9447e9204e470129c0eff8fcab1a50ae628fb6ec9256a069",
+        "--expect",
+        "corrected",
+        "--build-record",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/build-record.json",
+        "--output",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/liquidity-runtime.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/focused-liquidity.log",
+      "log_sha256": "712f32f1bd05990620d8cb09e1c3029efc17444ff69840f521155dc69c704a11",
+      "name": "focused-liquidity",
+      "returncode": 0,
+      "seconds": 0.3179493920000027,
+      "started_utc": "2026-10-26T08:48:44.495763+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/sweep-error-observation/verify_liquidity.py",
+        "--repo",
+        "/home/runner/work/pumpfun-source/pumpfun-source",
+        "--report",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/liquidity-runtime.json",
+        "--candidate",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/candidate.so",
+        "--build-record",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/build-record.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/verify-focused-liquidity.log",
+      "log_sha256": "b5d19adbcde2f2a8e39d1c5276beeb8387290b9611c00c431fddb7ebfe373fb0",
+      "name": "verify-focused-liquidity",
+      "returncode": 0,
+      "seconds": 0.0969324050000182,
+      "started_utc": "2026-10-26T08:48:44.815162+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/sweep-error-observation/test_runtime.py",
+        "--built",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/test-actual-focused-receipts.log",
+      "log_sha256": "09d0638a3e21984bd55457df162b0e6b2f6b9664d5d1cfe6500de9a51fd5ed1d",
+      "name": "test-actual-focused-receipts",
+      "returncode": 0,
+      "seconds": 0.31022089000003916,
+      "started_utc": "2026-10-26T08:48:44.913481+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/scripts/pump_amm_sweep_differential.py",
+        "--candidate",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/candidate.so",
+        "--output",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/sweep.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/inherited-sweep.log",
+      "log_sha256": "714d182d3c79f26d2c2c772a18fa9ad4ef43018adeb3bbf4c940d964a818a80c",
+      "name": "inherited-sweep",
+      "returncode": 0,
+      "seconds": 1.013375740000015,
+      "started_utc": "2026-10-26T08:48:45.225122+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/scripts/pump_amm_liquidity_differential.py",
+        "--candidate",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/candidate.so",
+        "--output",
+        "/home/runner/work/_temp/amm-sweep-correction/evidence/combined/liquidity.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/inherited-liquidity.log",
+      "log_sha256": "2076bf6c56e534903b54173536f3483a226537de7800fffdf9bb712f10a59c4e",
+      "name": "inherited-liquidity",
+      "returncode": 0,
+      "seconds": 2.1683410090000166,
+      "started_utc": "2026-10-26T08:48:46.254118+00:00"
+    }
+  ],
+  "downloads": [
+    {
+      "bytes": 490710349,
+      "expected_bytes": 490710349,
+      "expected_sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "file": "downloads/platform-v144.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/a3d0b527-d9f6-4305-9608-7be7edd56bbe",
+      "sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.44/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 519270959,
+      "expected_bytes": 519270959,
+      "expected_sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "file": "downloads/platform-v152.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/529c9606-2c25-4d54-8240-724d4315e9dc",
+      "sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.52/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 298782636,
+      "expected_bytes": 298782636,
+      "expected_sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "file": "downloads/agave-v2.1.21.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/750164628/1bf49da9-5e68-40cf-8fb4-d2eea3fd02ed",
+      "sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/agave/releases/download/v2.1.21/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+    },
+    {
+      "bytes": 677858,
+      "expected_bytes": 677858,
+      "expected_sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "file": "downloads/criterion-v2.3.3.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/30111969/98b27400-e1f1-11e8-8f10-e43f4ef84b92",
+      "sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "status": "verified",
+      "url": "https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2"
+    }
+  ],
+  "schema": 1,
+  "scope": "One pinned Linux sweep build on the accepted liquidity correction, then probes.",
+  "source_revision": "ae32224a28824fbe2380af47b589b25077c6fa60",
+  "started_utc": "2026-10-26T08:44:25.459686+00:00",
+  "status": "passed"
+}

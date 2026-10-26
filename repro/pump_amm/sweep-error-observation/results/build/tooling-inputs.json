@@ -1,0 +1,21 @@
+{
+  "repro/pump_amm/error-recovery-next/linux_build.py": "882a6cd3ae4e23836c5285a10d94ee1aa84a87be5855965c0ada7899809c18cc",
+  "repro/pump_amm/error-recovery-next/runtime_probe.py": "5a9057a4a485a83dfbc1c5339a307ec5d929da524d82a4d88f7ebbeff936faa6",
+  "repro/pump_amm/error-recovery-next/verify.py": "773600f9c126de5434e6860159a072b29fdff525f5394c48a6744633978c2c0c",
+  "repro/pump_amm/error-recovery-next/verify_runtime.py": "f75f50c9c7bca469ebe13cc4e72ed258f6cc89dc2f3bedcde32a3b4f3d420c36",
+  "repro/pump_amm/sweep-error-observation/linux_build.py": "5201055af47a2e93754ea707295d2972c253fa19d6d946092325c292f20d5cec",
+  "repro/pump_amm/sweep-error-observation/probe.py": "447326e1c7d5bcbc325ae4f94fab1cbece38b2c2f49d612b6fab360cdc4e7ce8",
+  "repro/pump_amm/sweep-error-observation/recovery.py": "6947dabc5f712cab083c33b524aa11b8e3b2a50426f597e1713318bfdfc1b058",
+  "repro/pump_amm/sweep-error-observation/runtime_probe.py": "422d82a420efc51a1f14fd6d9d17cbfc665404e9c9454386ba57af3aebbcf08c",
+  "repro/pump_amm/sweep-error-observation/source.patch": "05d3e5615ca90d713feb0d2ca913eb84b9d70e780d3c3b2c9145449b7bf1ed79",
+  "repro/pump_amm/sweep-error-observation/test_recovery.py": "e35124e400b298dee79099e91a4df189d3ee9afad9d944fad57842c774f3c7b8",
+  "repro/pump_amm/sweep-error-observation/test_runtime.py": "295d07ef29e3014ec7aa16781a94d3b30d6772b04dccb66b619085e9ccbecaa0",
+  "repro/pump_amm/sweep-error-observation/verify_evidence.py": "21eb61241a6fde7a3523ff11daeffa451bd3c75b9e336d268b5ecb03372fd601",
+  "repro/pump_amm/sweep-error-observation/verify_liquidity.py": "676e8f751ebb2f40ea9cc323665bdfb1699d802900d10fe2713a20bdd02fd455",
+  "repro/pump_amm/sweep-error-observation/verify_sweep.py": "73e0b1f0947dd9e97a2ed25892b0826d4c5a64567bede02c1f2efaa6ef730cc7",
+  "scripts/compare.py": "9e33a6c239927728b96bb1305bffad0e144a701e9ac7723928bb2f8d49f63e67",
+  "scripts/core_linux_v144_build.py": "0e73e769f7ee982f47c9b8a07875955b855f5710a69494d96df8409859c7cffe",
+  "scripts/core_linux_v144_inputs.json": "aa57eb088362e973bf9be2f725a21cd0e5bb60d567ee0b3f55e2cf4b827a704c",
+  "scripts/pump_amm_liquidity_differential.py": "08449c9da8c560330eeb5b560a26cdd553d260084e78bd54d4dc7edb914320b4",
+  "scripts/pump_amm_sweep_differential.py": "53ff7747ca26c2e4013c5a98e9127a5c5fb25c5ab61b4d7dc1bd1466ad07bc8c"
+}

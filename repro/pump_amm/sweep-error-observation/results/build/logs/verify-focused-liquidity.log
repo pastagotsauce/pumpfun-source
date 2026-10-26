@@ -1,0 +1,8 @@
+{
+  "cases": 18,
+  "rejections": 7,
+  "successful_controls": 11,
+  "verified_signatures": 36,
+  "unique_transaction_bytes": 12,
+  "combined_source_explicitly_verified": true
+}

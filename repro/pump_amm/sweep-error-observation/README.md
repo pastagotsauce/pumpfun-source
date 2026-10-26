@@ -4,9 +4,56 @@ The original AMM binary emits two diagnostics that the reconstructed sweep
 source does not reproduce: a plain `SelfTransferNotAllowed` error without key
 values, and `Nothing to sweep for fee bucket 0` on an empty protocol fee bucket.
 This package proposes exactly those two source corrections, layered onto the
-previously validated liquidity correction. Production source and selected
-artifacts remain unchanged. **The combined source build and runtime checks are
-pending; byte identity has not been achieved.**
+previously validated liquidity correction. **The combined source build and all
+bounded runtime gates passed in run 40294311933.** Production source and selected
+artifacts remain unchanged; byte identity has not been achieved.
+
+## Verified combined output
+
+[Run 40294311933](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40294311933)
+at `ae32224a28824fbe2380af47b589b25077c6fa60` completed one source build and every
+required check. Artifact `12637738214` (`amm-sweep-correction-40294311933-1`)
+is 2,219,013 bytes with provider and independently downloaded ZIP SHA-256
+`8bf5e369c06ba2c0438571a33a306a3e73fc2a815cdac38a7316cc7dca8c0428`.
+All 68 archive members are retained exactly under `results/build/`, with large
+JSON losslessly gzipped, plus three raw provider provenance records. The fixed
+publication manifest SHA-256 is
+`0ba49bbebbe894e3a0792234c4653d20ee8230f17f836d16e39f11b8095a0b8e`.
+
+The combined stripped output is 1,200,560 bytes, SHA-256
+`64d909213b9fe0fe9447e9204e470129c0eff8fcab1a50ae628fb6ec9256a069`.
+Unstripped output SHA-256 is
+`381ed5ee2a7ebcafdced903ed39f1d82439e830fa21321144e2849949f3e7f9a`.
+The new snapshot retains all 30 source inputs. Only `sweep.rs` changed from the
+prior liquidity-corrected source; Cargo.lock and the earlier `lib.rs` correction
+are unchanged.
+
+- Twelve focused sweep cases compare the original, prior liquidity output and
+  combined output: two rejections and ten successful controls per binary. The combined
+  output removes the extra key diagnostics and restores all four empty-bucket
+  logs, including creator bucket 1. Every other full log and committed effect
+  matches under the stated compute/source-coordinate exclusions.
+- The unchanged 18-case liquidity probe passes: seven rejections, eleven
+  successful controls, and the original full-log behavior preserved.
+- Independent raw verification accepts 36 sweep signature fields (three unique
+  signed messages) and 36 liquidity signature fields (twelve unique messages).
+  These include repeated messages over separately prepared fixture states.
+- All 254 inherited sweep cases and all 680 inherited liquidity cases pass their
+  account/error/CPI/event comparisons. Their full-log exclusion remains explicit.
+- All 11 actual-receipt mutation/positive tests passed on the runner and again
+  against the downloaded receipts. The 14 observation/source/evidence tests pass.
+
+The new output is 528 bytes larger than the prior liquidity output. Its original
+comparison has 672,361 differing shared positions and a 9,285,155-byte allocation
+gap; the sum of differing/missing positions is 427 larger than before. Thus this
+is a demonstrated diagnostic recovery, **not a claim of improved positional
+byte similarity**. Source/compiler reconstruction and allocation matching remain
+unfinished. `verify_results.py` recomputes the exact byte comparisons and all
+saved-receipt acceptance checks without compiling or executing SBF:
+
+```sh
+.venv/bin/python -B repro/pump_amm/sweep-error-observation/verify_results.py
+```
 
 ## Observed evidence
 
@@ -56,7 +103,7 @@ the selected Darwin output `09bee0df…`; none equals original `6a7ad345…`.
   `0x11bdd0`, and stores the bucket as a byte at `0x59e88`.
 - `0x59ee0` has an ELF relocation to `sol_log_`; the branch then returns success.
   This supports formatting a `u8` bucket in the existing zero-amount return.
-  Creator bucket 1 is additionally checked in the new execution plan.
+  Creator bucket 1 additionally matches in the new actual execution.
 - Rejected sweep logs identify `programs/pump-amm/src/utils/token.rs:21`, the
   shared original token-owner guard already retained in
   `../error-recovery-next/original-guard.asm`. The new source patch keeps the
@@ -95,7 +142,7 @@ unstripped outputs survive failed builds with `accepted_build: false`; generated
 keypair files are never read, hashed or copied. Original binaries are comparison
 inputs after compilation, never compiler inputs.
 
-Acceptance requires:
+The successful run enforces these acceptance gates:
 
 1. Twelve focused sweeps against original, prior liquidity output and combined
    output: the observed nine protocol cases plus ordinary creator amounts 0/1/1000.
@@ -108,8 +155,9 @@ Acceptance requires:
    inherited liquidity cases must pass. The inherited suites exclude full logs;
    that limitation remains explicit and is covered only by the focused cases.
 
-`test_recovery.py` currently passes 14 observation/source/evidence checks. The new
-runtime tests are intentionally pending actual Linux outputs. All failed or
-partial attempts must remain intact. These are bounded synthetic local checks,
+`test_recovery.py` passes 14 observation/source/evidence checks; `test_runtime.py`
+passes 11 checks against actual focused receipts. To rerun those mutation tests,
+pass `--built /absolute/extracted-artifact/combined` to `test_runtime.py`. All
+failed or partial attempts must remain intact. These are bounded synthetic local checks,
 not historical transaction replay, full path coverage, live deployment or proof
 of whole-binary identity.

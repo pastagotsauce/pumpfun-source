@@ -1,0 +1,16 @@
+test_actual_liquidity (__main__.main.<locals>.ActualReceiptTests.test_actual_liquidity) ... ok
+test_actual_sweep (__main__.main.<locals>.ActualReceiptTests.test_actual_sweep) ... ok
+test_build_record_cannot_be_spoofed (__main__.main.<locals>.ActualReceiptTests.test_build_record_cannot_be_spoofed) ... ok
+test_creator_bucket_one_required (__main__.main.<locals>.ActualReceiptTests.test_creator_bucket_one_required) ... ok
+test_extra_source_change_rejected (__main__.main.<locals>.ActualReceiptTests.test_extra_source_change_rejected) ... ok
+test_liquidity_logs_remain_checked (__main__.main.<locals>.ActualReceiptTests.test_liquidity_logs_remain_checked) ... ok
+test_liquidity_transaction_cannot_be_omitted (__main__.main.<locals>.ActualReceiptTests.test_liquidity_transaction_cannot_be_omitted) ... ok
+test_missing_new_case_rejected (__main__.main.<locals>.ActualReceiptTests.test_missing_new_case_rejected) ... ok
+test_restored_zero_log_required (__main__.main.<locals>.ActualReceiptTests.test_restored_zero_log_required) ... ok
+test_sweep_keys_cannot_return (__main__.main.<locals>.ActualReceiptTests.test_sweep_keys_cannot_return) ... ok
+test_zero_rounding_control_cannot_be_reclassified (__main__.main.<locals>.ActualReceiptTests.test_zero_rounding_control_cannot_be_reclassified) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.227s
+
+OK
