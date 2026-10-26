@@ -10,15 +10,16 @@ name: Bounded reconstruction experiments
         required: true
         default: both
         type: choice
-        options: [both, ata, amm]
+        options: [both, ata, amm, replay]
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: reconstruction-experiments-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   ata-source-order:
-    if: github.event_name == 'push' || inputs.experiment != 'amm'
+    if: github.event_name == 'push' || inputs.experiment == 'both' || inputs.experiment == 'ata'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
@@ -52,7 +53,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
   amm-self-transfer:
-    if: github.event_name == 'push' || inputs.experiment != 'ata'
+    if: github.event_name == 'push' || inputs.experiment == 'both' || inputs.experiment == 'amm'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
@@ -88,5 +89,63 @@ jobs:
           path: |
             ${{ runner.temp }}/amm-self-transfer/evidence
             !${{ runner.temp }}/amm-self-transfer/evidence/downloads/**
+          if-no-files-found: error
+          retention-days: 30
+          include-hidden-files: true
+  amm-replay:
+    if: github.event_name == 'workflow_dispatch' && inputs.experiment == 'replay'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            evidence
+            repro/pump_amm/error-recovery-next
+            repro/pump_amm/owner6048-v144/main/build-01
+            repro/pump_amm/owner6048-v144/runtime/runtime-01
+            research/imported-lab/analysis/pump_fun
+      - name: Install pinned offline replay dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+      - name: Download retained outputs from the successful source builds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/amm-replay"
+          gh api repos/pastagotsauce/pumpfun-source/actions/artifacts/12634605630 > "$RUNNER_TEMP/amm-replay/build-artifact.json"
+          gh run download 40286252822 --repo pastagotsauce/pumpfun-source --name amm-self-transfer-40286252822-1 --dir "$RUNNER_TEMP/amm-built"
+      - name: Verify exact existing compiler outputs and replay corrected expectations
+        run: |
+          .venv/bin/python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          base = Path(os.environ['RUNNER_TEMP']) / 'amm-built'
+          expected = {'baseline': 'cc2326ba730ccbbe85af8e9860833382e8d3e33b7e065c6ae80cfc838f80f4aa', 'corrected': 'ec8aa1dfe54221eb19f332cac459d16a65cab0aa3064bcabf7c452211702e149'}
+          records = {'baseline': '5d02cfce41c1a703a006ea6fbd3a8997c73bd6b0b793e5b8bbd4c0c9e38162e1', 'corrected': 'f197e7eab61b41ac4bbca609ec180ef0e7b7fd0aded0caef95247d8201f10791'}
+          for kind, sha in expected.items():
+              raw = (base / kind / 'build-record.json').read_bytes()
+              assert hashlib.sha256(raw).hexdigest() == records[kind]
+              record = json.loads(raw)
+              assert hashlib.sha256((base / kind / 'candidate.so').read_bytes()).hexdigest() == record['candidate_sha256'] == sha
+              assert record['accepted_build'] is True and record['source_unchanged'] is True and record['returncode'] == 0
+          PY
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/test_verify.py
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/runtime_probe.py --candidate "$RUNNER_TEMP/amm-built/baseline/candidate.so" --candidate-sha256 cc2326ba730ccbbe85af8e9860833382e8d3e33b7e065c6ae80cfc838f80f4aa --expect rebuilt-baseline --build-record "$RUNNER_TEMP/amm-built/baseline/build-record.json" --output "$RUNNER_TEMP/amm-replay/baseline-runtime.json"
+          .venv/bin/python -B repro/pump_amm/error-recovery-next/runtime_probe.py --candidate "$RUNNER_TEMP/amm-built/corrected/candidate.so" --candidate-sha256 ec8aa1dfe54221eb19f332cac459d16a65cab0aa3064bcabf7c452211702e149 --expect corrected --build-record "$RUNNER_TEMP/amm-built/corrected/build-record.json" --output "$RUNNER_TEMP/amm-replay/corrected-runtime.json"
+          .venv/bin/python scripts/pump_amm_liquidity_differential.py --candidate "$RUNNER_TEMP/amm-built/corrected/candidate.so" --output "$RUNNER_TEMP/amm-replay/corrected-liquidity.json"
+          for kind in baseline corrected; do
+            .venv/bin/python -B repro/pump_amm/error-recovery-next/verify_runtime.py --report "$RUNNER_TEMP/amm-replay/$kind-runtime.json" --candidate "$RUNNER_TEMP/amm-built/$kind/candidate.so" --build-record "$RUNNER_TEMP/amm-built/$kind/build-record.json"
+            .venv/bin/python -B repro/pump_amm/error-recovery-next/test_verify_runtime.py --report "$RUNNER_TEMP/amm-replay/$kind-runtime.json" --candidate "$RUNNER_TEMP/amm-built/$kind/candidate.so" --build-record "$RUNNER_TEMP/amm-built/$kind/build-record.json"
+          done
+      - name: Retain replay success or failure with the source-build artifact binding
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: amm-replay-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/amm-replay
           if-no-files-found: error
           retention-days: 30
