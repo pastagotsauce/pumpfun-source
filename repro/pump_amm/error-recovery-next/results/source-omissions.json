@@ -1,0 +1,20 @@
+[
+  {
+    "build": "baseline",
+    "retained_source_files": 29,
+    "recorded_source_files": 30,
+    "missing_path": "programs/pump-amm/vendor/solana-pubkey/.cargo_vcs_info.json",
+    "recorded_sha256": "f17fc5ffbac6f431c2aa85ca9085d0b13c9ec7d0a1b45c68eb78c594f9a4e35b",
+    "reason": "Initial actions/upload-artifact default excluded hidden files. The public Cargo VCS metadata file was not included; it is not recreated in this retained artifact.",
+    "existing_repository_path": "programs/pump-amm/vendor/solana-pubkey/.cargo_vcs_info.json"
+  },
+  {
+    "build": "corrected",
+    "retained_source_files": 29,
+    "recorded_source_files": 30,
+    "missing_path": "programs/pump-amm/vendor/solana-pubkey/.cargo_vcs_info.json",
+    "recorded_sha256": "f17fc5ffbac6f431c2aa85ca9085d0b13c9ec7d0a1b45c68eb78c594f9a4e35b",
+    "reason": "Initial actions/upload-artifact default excluded hidden files. The public Cargo VCS metadata file was not included; it is not recreated in this retained artifact.",
+    "existing_repository_path": "programs/pump-amm/vendor/solana-pubkey/.cargo_vcs_info.json"
+  }
+]

@@ -2,6 +2,7 @@
 """Accept complete saved focused receipts and independently verify raw signatures."""
 import argparse
 import base64
+import gzip
 import json
 from pathlib import Path
 import struct
@@ -24,6 +25,11 @@ INPUTS = {
     "research/imported-lab/analysis/pump_fun/config-snapshot.json", "evidence/upstream/pump_amm.json",
     "evidence/dependencies/spl_token/deployed.so", "evidence/dependencies/spl_token_2022/deployed.so",
 }
+
+
+def read_report(path):
+    raw = path.read_bytes()
+    return gzip.decompress(raw) if raw.startswith(b"\x1f\x8b") else raw
 
 
 def check_transaction(raw, row, fixture, config_key, discriminator):
@@ -150,7 +156,7 @@ def main():
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--build-record", type=Path)
     args = parser.parse_args()
-    report_bytes = args.report.read_bytes()
+    report_bytes = read_report(args.report)
     result = validate(json.loads(report_bytes), args.repo.resolve(), args.candidate.read_bytes(),
                       args.build_record.read_bytes() if args.build_record else None)
     print(json.dumps({"receipt_sha256": digest(report_bytes), **result}, indent=2))

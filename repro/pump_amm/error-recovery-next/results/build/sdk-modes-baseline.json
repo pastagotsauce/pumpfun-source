@@ -1,0 +1,25 @@
+{
+  "scope": "Explicit Linux experiment executable-mode preparation; historical Git modes are not claimed.",
+  "scripts": {
+    "dump": {
+      "after": "0o755",
+      "before": "0o644"
+    },
+    "install": {
+      "after": "0o755",
+      "before": "0o644"
+    },
+    "objcopy": {
+      "after": "0o755",
+      "before": "0o644"
+    },
+    "package": {
+      "after": "0o755",
+      "before": "0o644"
+    },
+    "strip": {
+      "after": "0o755",
+      "before": "0o644"
+    }
+  }
+}

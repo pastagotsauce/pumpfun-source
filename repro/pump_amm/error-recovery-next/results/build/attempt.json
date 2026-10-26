@@ -1,0 +1,289 @@
+{
+  "build_attempts": 2,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/sources/corrected",
+      "log": "logs/check-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "check-source-patch",
+      "returncode": 0,
+      "seconds": 0.001544793000000766,
+      "started_utc": "2026-10-26T07:31:19.289876+00:00"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/source.patch"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/sources/corrected",
+      "log": "logs/apply-source-patch.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "apply-source-patch",
+      "returncode": 0,
+      "seconds": 0.0012568850000036491,
+      "started_utc": "2026-10-26T07:31:19.292216+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "toolchain",
+        "link",
+        "host194",
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/baseline",
+      "log": "logs/baseline-link-host.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "baseline-link-host",
+      "returncode": 0,
+      "seconds": 0.004306459999980916,
+      "started_utc": "2026-10-26T07:33:15.462764+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "default",
+        "host194"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/baseline",
+      "log": "logs/baseline-select-host.log",
+      "log_sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d",
+      "name": "baseline-select-host",
+      "returncode": 0,
+      "seconds": 0.005372906999980387,
+      "started_utc": "2026-10-26T07:33:15.468046+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "toolchain",
+        "link",
+        "host194",
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/corrected",
+      "log": "logs/corrected-link-host.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "corrected-link-host",
+      "returncode": 0,
+      "seconds": 0.004400710999988178,
+      "started_utc": "2026-10-26T07:33:15.481437+00:00"
+    },
+    {
+      "command": [
+        "rustup",
+        "default",
+        "host194"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/corrected",
+      "log": "logs/corrected-select-host.log",
+      "log_sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d",
+      "name": "corrected-select-host",
+      "returncode": 0,
+      "seconds": 0.004912834000009525,
+      "started_utc": "2026-10-26T07:33:15.486634+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/.rustup/toolchains/1.94.0-x86_64-unknown-linux-gnu/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer",
+      "log": "logs/host-rustc-version.log",
+      "log_sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69",
+      "name": "host-rustc-version",
+      "returncode": 0,
+      "seconds": 0.006086890000005951,
+      "started_utc": "2026-10-26T07:33:15.499760+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-self-transfer/agave/solana-release/bin/cargo-build-sbf",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer",
+      "log": "logs/cli-version.log",
+      "log_sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73",
+      "name": "cli-version",
+      "returncode": 0,
+      "seconds": 0.0017070309999951405,
+      "started_utc": "2026-10-26T07:33:15.506783+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-self-transfer/platform-v144/rust/bin/rustc",
+        "--version",
+        "--verbose"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer",
+      "log": "logs/compiler-version.log",
+      "log_sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297",
+      "name": "compiler-version",
+      "returncode": 0,
+      "seconds": 0.008476357000006374,
+      "started_utc": "2026-10-26T07:33:15.509332+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/_temp/amm-self-transfer/platform-v152/llvm/bin/llvm-objcopy",
+        "--version"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer",
+      "log": "logs/strip-version.log",
+      "log_sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee",
+      "name": "strip-version",
+      "returncode": 0,
+      "seconds": 0.0016279429999883632,
+      "started_utc": "2026-10-26T07:33:15.518657+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "fetch",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-self-transfer/sources/baseline/programs/pump-amm/Cargo.toml",
+        "--locked"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/sources/baseline",
+      "log": "logs/locked-public-fetch.log",
+      "log_sha256": "b71b8214de73082f6f4fa76b607c862ab3b4c66ec2660852c26a2cfe37cec637",
+      "name": "locked-public-fetch",
+      "returncode": 0,
+      "seconds": 1.4638277829999993,
+      "started_utc": "2026-10-26T07:33:15.576530+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "build-sbf",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-self-transfer/sources/baseline/programs/pump-amm/Cargo.toml",
+        "--tools-version",
+        "v1.44",
+        "--offline",
+        "--sbf-sdk",
+        "/home/runner/work/_temp/amm-self-transfer/baseline/sdk",
+        "--sbf-out-dir",
+        "/home/runner/work/_temp/amm-self-transfer/baseline/artifacts",
+        "--",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/sources/baseline",
+      "log": "logs/baseline-build.log",
+      "log_sha256": "a1813352dff0234d56dcfadc25296a1a96713a7a602a2699d33c3e6622f11a8b",
+      "name": "baseline-build",
+      "returncode": 0,
+      "seconds": 58.842687624999996,
+      "started_utc": "2026-10-26T07:33:23.680113+00:00"
+    },
+    {
+      "command": [
+        "cargo",
+        "build-sbf",
+        "--manifest-path",
+        "/home/runner/work/_temp/amm-self-transfer/sources/corrected/programs/pump-amm/Cargo.toml",
+        "--tools-version",
+        "v1.44",
+        "--offline",
+        "--sbf-sdk",
+        "/home/runner/work/_temp/amm-self-transfer/corrected/sdk",
+        "--sbf-out-dir",
+        "/home/runner/work/_temp/amm-self-transfer/corrected/artifacts",
+        "--",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "/home/runner/work/_temp/amm-self-transfer/sources/corrected",
+      "log": "logs/corrected-build.log",
+      "log_sha256": "a9508c34a39abd47a91170141d0471513540e2995916ba64e38ed60daedd56ab",
+      "name": "corrected-build",
+      "returncode": 0,
+      "seconds": 57.64738075699998,
+      "started_utc": "2026-10-26T07:34:25.077798+00:00"
+    },
+    {
+      "command": [
+        "/home/runner/work/pumpfun-source/pumpfun-source/.venv/bin/python",
+        "-B",
+        "/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/runtime_probe.py",
+        "--repo",
+        "/home/runner/work/pumpfun-source/pumpfun-source",
+        "--candidate",
+        "/home/runner/work/_temp/amm-self-transfer/evidence/baseline/candidate.so",
+        "--candidate-sha256",
+        "cc2326ba730ccbbe85af8e9860833382e8d3e33b7e065c6ae80cfc838f80f4aa",
+        "--expect",
+        "rebuilt-baseline",
+        "--build-record",
+        "/home/runner/work/_temp/amm-self-transfer/evidence/baseline/build-record.json",
+        "--output",
+        "/home/runner/work/_temp/amm-self-transfer/evidence/baseline/runtime.json"
+      ],
+      "cwd": "/home/runner/work/pumpfun-source/pumpfun-source",
+      "log": "logs/baseline-runtime.log",
+      "log_sha256": "252d4c8e0c5a7e70bb563219d96aca7bd9715dde446b07cf81753b9275d58230",
+      "name": "baseline-runtime",
+      "returncode": 1,
+      "seconds": 0.2216171970000005,
+      "started_utc": "2026-10-26T07:35:25.318116+00:00"
+    }
+  ],
+  "downloads": [
+    {
+      "bytes": 490710349,
+      "expected_bytes": 490710349,
+      "expected_sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "file": "downloads/platform-v144.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/a3d0b527-d9f6-4305-9608-7be7edd56bbe",
+      "sha256": "6719b889d60677a8a2fcf4c82f68441a1afe0ab093edd2efe9f84a67a808b3e9",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.44/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 519270959,
+      "expected_bytes": 519270959,
+      "expected_sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "file": "downloads/platform-v152.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/339830190/529c9606-2c25-4d54-8240-724d4315e9dc",
+      "sha256": "8b3861e93daf085ec12b65c4fac374d9bec4587a3de16871da6b08ab0c1d907e",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/platform-tools/releases/download/v1.52/platform-tools-linux-x86_64.tar.bz2"
+    },
+    {
+      "bytes": 298782636,
+      "expected_bytes": 298782636,
+      "expected_sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "file": "downloads/agave-v2.1.21.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/750164628/1bf49da9-5e68-40cf-8fb4-d2eea3fd02ed",
+      "sha256": "5da3359e296f1e6c13522b874317cb4cfe33e73301a9dc60b1e1435cc133b397",
+      "status": "verified",
+      "url": "https://github.com/anza-xyz/agave/releases/download/v2.1.21/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+    },
+    {
+      "bytes": 677858,
+      "expected_bytes": 677858,
+      "expected_sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "file": "downloads/criterion-v2.3.3.tar.bz2",
+      "resolved_url": "https://release-assets.githubusercontent.com/github-production-release-asset/30111969/98b27400-e1f1-11e8-8f10-e43f4ef84b92",
+      "sha256": "ee7f92d7268563848aa3ae90bbf5df86604b8d0fb0e4942b0ecfbf6201596550",
+      "status": "verified",
+      "url": "https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2"
+    }
+  ],
+  "error": "baseline-runtime failed with 1; retain /home/runner/work/_temp/amm-self-transfer/evidence/logs/baseline-runtime.log",
+  "schema": 1,
+  "scope": "One isolated Linux baseline/corrected AMM build pair and signed local probes.",
+  "source_revision": "f4dbffe806b8d2379a41f8a7012b13f2f9a3bad9",
+  "started_utc": "2026-10-26T07:31:19.277091+00:00",
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/linux_build.py\", line 257, in main\n    run(args, attempt)\n  File \"/home/runner/work/pumpfun-source/pumpfun-source/repro/pump_amm/error-recovery-next/linux_build.py\", line 226, in run\n    attempt.run(kind + \"-runtime\", command, repo, minimal_env)\n  File \"/home/runner/work/pumpfun-source/pumpfun-source/scripts/core_linux_v144_build.py\", line 210, in run\n    raise RuntimeError(f\"{name} failed with {result.returncode}; retain {logfile}\")\nRuntimeError: baseline-runtime failed with 1; retain /home/runner/work/_temp/amm-self-transfer/evidence/logs/baseline-runtime.log\n"
+}

@@ -73,6 +73,6 @@ if __name__ == "__main__":
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--build-record", type=Path)
     args = parser.parse_args()
-    REPO, REPORT, CANDIDATE = args.repo.resolve(), json.loads(args.report.read_text()), args.candidate.read_bytes()
+    REPO, REPORT, CANDIDATE = args.repo.resolve(), json.loads(verify_runtime.read_report(args.report)), args.candidate.read_bytes()
     BUILD = args.build_record.read_bytes() if args.build_record else None
     unittest.main(argv=[sys.argv[0]])

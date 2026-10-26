@@ -1,0 +1,1254 @@
+{
+  "archives": {
+    "build": {
+      "artifact_id": 12634605630,
+      "bytes": 2688094,
+      "conclusion": "failure",
+      "head_sha": "f4dbffe806b8d2379a41f8a7012b13f2f9a3bad9",
+      "members": {
+        "attempt.json": {
+          "bytes": 12082,
+          "sha256": "9591be6be803a219d9893fe534424a480a82d84c8927d4b8e5593768c3d65a40"
+        },
+        "baseline/build-record.json": {
+          "bytes": 7976,
+          "sha256": "5d02cfce41c1a703a006ea6fbd3a8997c73bd6b0b793e5b8bbd4c0c9e38162e1"
+        },
+        "baseline/candidate.so": {
+          "bytes": 1200368,
+          "sha256": "cc2326ba730ccbbe85af8e9860833382e8d3e33b7e065c6ae80cfc838f80f4aa"
+        },
+        "baseline/excluded-keypair-paths.json": {
+          "bytes": 50,
+          "sha256": "1943402970649d81e776a93e4eb9481f8678229ed749341708974ef80b8c6b11"
+        },
+        "baseline/runtime.json": {
+          "bytes": 544300,
+          "sha256": "f6f4a2d0a90b9d95ce67032b4a04888d64f81d5337608bf0e0376f5e998ddd49"
+        },
+        "baseline/unstripped.so": {
+          "bytes": 1686784,
+          "sha256": "f586e0c3255393425b42be276d5df07270a5685bfa7be116921858a7e8ec8ccc"
+        },
+        "baseline/whole-original-comparison.json": {
+          "bytes": 382,
+          "sha256": "ad3c8a05738508e530d77f73aeab9ee2ff4e18072f091ac4d97c59e4e0e93be7"
+        },
+        "cargo-metadata-index.crates.io-1949cf8c6b5b557f.json": {
+          "bytes": 40292,
+          "sha256": "2520965c6b16d72ca2eeb2c3d3044c8772b40430342105c2e83367cb0fde6bd2"
+        },
+        "cargo-metadata-index.crates.io-6f17d22bba15001f.json": {
+          "bytes": 40292,
+          "sha256": "2520965c6b16d72ca2eeb2c3d3044c8772b40430342105c2e83367cb0fde6bd2"
+        },
+        "corrected/build-record.json": {
+          "bytes": 7976,
+          "sha256": "f197e7eab61b41ac4bbca609ec180ef0e7b7fd0aded0caef95247d8201f10791"
+        },
+        "corrected/candidate.so": {
+          "bytes": 1200032,
+          "sha256": "ec8aa1dfe54221eb19f332cac459d16a65cab0aa3064bcabf7c452211702e149"
+        },
+        "corrected/excluded-keypair-paths.json": {
+          "bytes": 50,
+          "sha256": "1943402970649d81e776a93e4eb9481f8678229ed749341708974ef80b8c6b11"
+        },
+        "corrected/unstripped.so": {
+          "bytes": 1686376,
+          "sha256": "6f6e556c0da56067e5f1ccf514dc9949e13dab1e17ea1f2aeb41cbc1aeffa4b6"
+        },
+        "logs/apply-source-patch.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "logs/baseline-build.log": {
+          "bytes": 9418,
+          "sha256": "a1813352dff0234d56dcfadc25296a1a96713a7a602a2699d33c3e6622f11a8b"
+        },
+        "logs/baseline-link-host.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "logs/baseline-runtime.log": {
+          "bytes": 234,
+          "sha256": "252d4c8e0c5a7e70bb563219d96aca7bd9715dde446b07cf81753b9275d58230"
+        },
+        "logs/baseline-select-host.log": {
+          "bytes": 39,
+          "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+        },
+        "logs/check-source-patch.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "logs/cli-version.log": {
+          "bytes": 52,
+          "sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73"
+        },
+        "logs/compiler-version.log": {
+          "bytes": 145,
+          "sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297"
+        },
+        "logs/corrected-build.log": {
+          "bytes": 9420,
+          "sha256": "a9508c34a39abd47a91170141d0471513540e2995916ba64e38ed60daedd56ab"
+        },
+        "logs/corrected-link-host.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "logs/corrected-select-host.log": {
+          "bytes": 39,
+          "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+        },
+        "logs/host-rustc-version.log": {
+          "bytes": 196,
+          "sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69"
+        },
+        "logs/locked-public-fetch.log": {
+          "bytes": 8970,
+          "sha256": "b71b8214de73082f6f4fa76b607c862ab3b4c66ec2660852c26a2cfe37cec637"
+        },
+        "logs/strip-version.log": {
+          "bytes": 117,
+          "sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee"
+        },
+        "pipeline-caches.json": {
+          "bytes": 401,
+          "sha256": "d07fd380e22a4a6de8acae0483e29492e34be20b7c5ac4626d34d954e802c5c3"
+        },
+        "registry-preparation.json": {
+          "bytes": 4888591,
+          "sha256": "d7458036c3fc49a4097ea9b6b132df40e7022671cf819c6166ae7d7347599ea1"
+        },
+        "sdk-modes-baseline.json": {
+          "bytes": 484,
+          "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+        },
+        "sdk-modes-corrected.json": {
+          "bytes": 484,
+          "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+        },
+        "source-before.json": {
+          "bytes": 7076,
+          "sha256": "c032c14f61646aa6e86a9b2a24d5d39bcb724628fcc43da324c6da119a13a71a"
+        },
+        "source.patch": {
+          "bytes": 972,
+          "sha256": "aba21dd602bf3df92a96d7e5ab4154892296fdadb1d0320bcf51f5cd2de98070"
+        },
+        "source/baseline/programs/pump-amm/Cargo.lock": {
+          "bytes": 70597,
+          "sha256": "0face002fa196e0aaf862bfd20f107c01aecfb4eb941bbb82ba410104e994da5"
+        },
+        "source/baseline/programs/pump-amm/Cargo.toml": {
+          "bytes": 733,
+          "sha256": "56a98d22417fa7edd8f592f5e9554ef0017f75b589fc4ff7f587c97339d492b0"
+        },
+        "source/baseline/programs/pump-amm/src/boost.rs": {
+          "bytes": 3924,
+          "sha256": "ad62e869f505bd0891434c689e3cd291942420d857a9f8ec5d041a927ad8f5a1"
+        },
+        "source/baseline/programs/pump-amm/src/boost_burn.rs": {
+          "bytes": 8634,
+          "sha256": "92310c452df7fa7352dde64f64aaf616a6857af61732aee017c5149affbe40d4"
+        },
+        "source/baseline/programs/pump-amm/src/cashback.rs": {
+          "bytes": 2526,
+          "sha256": "3786fe2d7a240ecd40ec3780a56bb337024e29753b5443eeac1dd130e3c42747"
+        },
+        "source/baseline/programs/pump-amm/src/collect.rs": {
+          "bytes": 2309,
+          "sha256": "5cd1757f40a92f989f794fadf1811688918fc01a2fac5abaff24ab81846132fd"
+        },
+        "source/baseline/programs/pump-amm/src/create.rs": {
+          "bytes": 10742,
+          "sha256": "5a2e10f5c6a2b3321961b104f3e300ead0e4cc53faaeb0ba1b3e87f1ca804fbc"
+        },
+        "source/baseline/programs/pump-amm/src/creator_reassignment.rs": {
+          "bytes": 8567,
+          "sha256": "59449c2174c08bc4d093488788c8921c0594303e9a79d74d2da91d99325e5965"
+        },
+        "source/baseline/programs/pump-amm/src/extend.rs": {
+          "bytes": 1983,
+          "sha256": "0fec49461a688112702141e3f751ec45713f787c8a25993a2e4ebe3df2d3a104"
+        },
+        "source/baseline/programs/pump-amm/src/incentives.rs": {
+          "bytes": 9857,
+          "sha256": "3334514a770ccd8541ffeb9f6c4bdce7ec39711fcbd1ed19c0235cadf694c542"
+        },
+        "source/baseline/programs/pump-amm/src/instructions/admin/create_config.rs": {
+          "bytes": 884,
+          "sha256": "8a14d1ddcb386f90a8b72a5c179cc664e8ec64548098a6b46d7ddc094f63f6a2"
+        },
+        "source/baseline/programs/pump-amm/src/instructions/admin/mod.rs": {
+          "bytes": 23,
+          "sha256": "f9e49bc374f1618f7d5095a83401e422b8af845a9aa342e9afe5955b1645b3bf"
+        },
+        "source/baseline/programs/pump-amm/src/instructions/mod.rs": {
+          "bytes": 41,
+          "sha256": "99f598614a8ad37b56e970c7536d93748fed0d95cc51c22b82a3d4da91f3960d"
+        },
+        "source/baseline/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs": {
+          "bytes": 504,
+          "sha256": "07ebdcc513e442488bd92b91e3cae6492264b4336597a1a03e3e5bfac09d078f"
+        },
+        "source/baseline/programs/pump-amm/src/instructions/token_incentives/mod.rs": {
+          "bytes": 86,
+          "sha256": "07dbfaed66034a952f62c4f2b78a1c2f56501b654be5e24d040cfa6829d50fd7"
+        },
+        "source/baseline/programs/pump-amm/src/legacy_buy.rs": {
+          "bytes": 20039,
+          "sha256": "e1674c5310657fe6d37dddc9edee00cb64307004c3babb9eb0d73c8f78baf6c2"
+        },
+        "source/baseline/programs/pump-amm/src/legacy_sell.rs": {
+          "bytes": 19531,
+          "sha256": "265b8afcbebfb3f9c226733d6d2d75eec3f332c097af027c598713b9f0327fb7"
+        },
+        "source/baseline/programs/pump-amm/src/lib.rs": {
+          "bytes": 32558,
+          "sha256": "ba0be4636bd22d63b9d3e18907d00e15316386f8f1507ad01ebe31d8134349b1"
+        },
+        "source/baseline/programs/pump-amm/src/multi_hop.rs": {
+          "bytes": 33349,
+          "sha256": "86a3ac01399008f9f28021215017d18f3cdd01ddf0070b34a126ea01e9543c37"
+        },
+        "source/baseline/programs/pump-amm/src/state.rs": {
+          "bytes": 7367,
+          "sha256": "32b73eee0e2bcb25aff69391e9e3283e3b785dd18e591132d940aa462793a75e"
+        },
+        "source/baseline/programs/pump-amm/src/state/global_config.rs": {
+          "bytes": 1245,
+          "sha256": "144af31a57ce513e20b37b1db75ad23cb5120186597bf15f3a2fc15a35bf6186"
+        },
+        "source/baseline/programs/pump-amm/src/sweep.rs": {
+          "bytes": 5927,
+          "sha256": "b6c15a189fa0e133f317f4501020fba176812762d7ecc1b2f5d44b30c992bb76"
+        },
+        "source/baseline/programs/pump-amm/src/trade.rs": {
+          "bytes": 23315,
+          "sha256": "c2b2548d6e54ccb18169365866bdec46f48a25fac8767293e0ab1e72479b3a92"
+        },
+        "source/baseline/programs/pump-amm/src/transfer_creator.rs": {
+          "bytes": 5824,
+          "sha256": "20082ba3faf069756d3e26011ff06dcb03679416e6decdad3cca824b09728697"
+        },
+        "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.lock": {
+          "bytes": 28343,
+          "sha256": "88a2140668cbfafa5c788d3fa08e37943a62e24c2ec5e3860978236bef9dd66f"
+        },
+        "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml": {
+          "bytes": 3981,
+          "sha256": "52b641f13e7f50f5a06910886cbaa9c1f7bb1c939d21dee5bfdd3dadf0f56226"
+        },
+        "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig": {
+          "bytes": 2799,
+          "sha256": "f3404fd496623fd5cb5a2c2af09880bff01b4b458f638cd220ec7c6c3da9fa40"
+        },
+        "source/baseline/programs/pump-amm/vendor/solana-pubkey/src/lib.rs": {
+          "bytes": 57163,
+          "sha256": "6060ba2f7ea5bfd9c1e89a29e44450008cd047e4b18ca4b6e72688f389c1e87f"
+        },
+        "source/baseline/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs": {
+          "bytes": 176,
+          "sha256": "0e663a1df9a8cf9da46bc03c231e65594ee891c2ebd7468272a1c78c8ff46524"
+        },
+        "source/corrected/programs/pump-amm/Cargo.lock": {
+          "bytes": 70597,
+          "sha256": "0face002fa196e0aaf862bfd20f107c01aecfb4eb941bbb82ba410104e994da5"
+        },
+        "source/corrected/programs/pump-amm/Cargo.toml": {
+          "bytes": 733,
+          "sha256": "56a98d22417fa7edd8f592f5e9554ef0017f75b589fc4ff7f587c97339d492b0"
+        },
+        "source/corrected/programs/pump-amm/src/boost.rs": {
+          "bytes": 3924,
+          "sha256": "ad62e869f505bd0891434c689e3cd291942420d857a9f8ec5d041a927ad8f5a1"
+        },
+        "source/corrected/programs/pump-amm/src/boost_burn.rs": {
+          "bytes": 8634,
+          "sha256": "92310c452df7fa7352dde64f64aaf616a6857af61732aee017c5149affbe40d4"
+        },
+        "source/corrected/programs/pump-amm/src/cashback.rs": {
+          "bytes": 2526,
+          "sha256": "3786fe2d7a240ecd40ec3780a56bb337024e29753b5443eeac1dd130e3c42747"
+        },
+        "source/corrected/programs/pump-amm/src/collect.rs": {
+          "bytes": 2309,
+          "sha256": "5cd1757f40a92f989f794fadf1811688918fc01a2fac5abaff24ab81846132fd"
+        },
+        "source/corrected/programs/pump-amm/src/create.rs": {
+          "bytes": 10742,
+          "sha256": "5a2e10f5c6a2b3321961b104f3e300ead0e4cc53faaeb0ba1b3e87f1ca804fbc"
+        },
+        "source/corrected/programs/pump-amm/src/creator_reassignment.rs": {
+          "bytes": 8567,
+          "sha256": "59449c2174c08bc4d093488788c8921c0594303e9a79d74d2da91d99325e5965"
+        },
+        "source/corrected/programs/pump-amm/src/extend.rs": {
+          "bytes": 1983,
+          "sha256": "0fec49461a688112702141e3f751ec45713f787c8a25993a2e4ebe3df2d3a104"
+        },
+        "source/corrected/programs/pump-amm/src/incentives.rs": {
+          "bytes": 9857,
+          "sha256": "3334514a770ccd8541ffeb9f6c4bdce7ec39711fcbd1ed19c0235cadf694c542"
+        },
+        "source/corrected/programs/pump-amm/src/instructions/admin/create_config.rs": {
+          "bytes": 884,
+          "sha256": "8a14d1ddcb386f90a8b72a5c179cc664e8ec64548098a6b46d7ddc094f63f6a2"
+        },
+        "source/corrected/programs/pump-amm/src/instructions/admin/mod.rs": {
+          "bytes": 23,
+          "sha256": "f9e49bc374f1618f7d5095a83401e422b8af845a9aa342e9afe5955b1645b3bf"
+        },
+        "source/corrected/programs/pump-amm/src/instructions/mod.rs": {
+          "bytes": 41,
+          "sha256": "99f598614a8ad37b56e970c7536d93748fed0d95cc51c22b82a3d4da91f3960d"
+        },
+        "source/corrected/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs": {
+          "bytes": 504,
+          "sha256": "07ebdcc513e442488bd92b91e3cae6492264b4336597a1a03e3e5bfac09d078f"
+        },
+        "source/corrected/programs/pump-amm/src/instructions/token_incentives/mod.rs": {
+          "bytes": 86,
+          "sha256": "07dbfaed66034a952f62c4f2b78a1c2f56501b654be5e24d040cfa6829d50fd7"
+        },
+        "source/corrected/programs/pump-amm/src/legacy_buy.rs": {
+          "bytes": 20039,
+          "sha256": "e1674c5310657fe6d37dddc9edee00cb64307004c3babb9eb0d73c8f78baf6c2"
+        },
+        "source/corrected/programs/pump-amm/src/legacy_sell.rs": {
+          "bytes": 19531,
+          "sha256": "265b8afcbebfb3f9c226733d6d2d75eec3f332c097af027c598713b9f0327fb7"
+        },
+        "source/corrected/programs/pump-amm/src/lib.rs": {
+          "bytes": 32552,
+          "sha256": "85e95b9e9e677368236eef2292b82e82352108c63c5acf15ab488e1ebb673f90"
+        },
+        "source/corrected/programs/pump-amm/src/multi_hop.rs": {
+          "bytes": 33349,
+          "sha256": "86a3ac01399008f9f28021215017d18f3cdd01ddf0070b34a126ea01e9543c37"
+        },
+        "source/corrected/programs/pump-amm/src/state.rs": {
+          "bytes": 7367,
+          "sha256": "32b73eee0e2bcb25aff69391e9e3283e3b785dd18e591132d940aa462793a75e"
+        },
+        "source/corrected/programs/pump-amm/src/state/global_config.rs": {
+          "bytes": 1245,
+          "sha256": "144af31a57ce513e20b37b1db75ad23cb5120186597bf15f3a2fc15a35bf6186"
+        },
+        "source/corrected/programs/pump-amm/src/sweep.rs": {
+          "bytes": 5927,
+          "sha256": "b6c15a189fa0e133f317f4501020fba176812762d7ecc1b2f5d44b30c992bb76"
+        },
+        "source/corrected/programs/pump-amm/src/trade.rs": {
+          "bytes": 23315,
+          "sha256": "c2b2548d6e54ccb18169365866bdec46f48a25fac8767293e0ab1e72479b3a92"
+        },
+        "source/corrected/programs/pump-amm/src/transfer_creator.rs": {
+          "bytes": 5824,
+          "sha256": "20082ba3faf069756d3e26011ff06dcb03679416e6decdad3cca824b09728697"
+        },
+        "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.lock": {
+          "bytes": 28343,
+          "sha256": "88a2140668cbfafa5c788d3fa08e37943a62e24c2ec5e3860978236bef9dd66f"
+        },
+        "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml": {
+          "bytes": 3981,
+          "sha256": "52b641f13e7f50f5a06910886cbaa9c1f7bb1c939d21dee5bfdd3dadf0f56226"
+        },
+        "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig": {
+          "bytes": 2799,
+          "sha256": "f3404fd496623fd5cb5a2c2af09880bff01b4b458f638cd220ec7c6c3da9fa40"
+        },
+        "source/corrected/programs/pump-amm/vendor/solana-pubkey/src/lib.rs": {
+          "bytes": 57163,
+          "sha256": "6060ba2f7ea5bfd9c1e89a29e44450008cd047e4b18ca4b6e72688f389c1e87f"
+        },
+        "source/corrected/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs": {
+          "bytes": 176,
+          "sha256": "0e663a1df9a8cf9da46bc03c231e65594ee891c2ebd7468272a1c78c8ff46524"
+        },
+        "tool-bindings.json": {
+          "bytes": 10096,
+          "sha256": "a76eec3974171a8c02c8936bd73173ad4b88eba8df2ab1152dee24f67fadb72b"
+        },
+        "tooling-inputs.json": {
+          "bytes": 913,
+          "sha256": "8448f9e5ef7090c953552cb4cac750b57f2be608c622ce702be044685df51115"
+        }
+      },
+      "run_id": 40286252822,
+      "sha256": "ec969c92268d3ad0b6122ad370b27cadcd64642822bf867f1f2e7e1b0bb8a8b7"
+    },
+    "replay": {
+      "artifact_id": 12634894210,
+      "bytes": 268058,
+      "conclusion": "success",
+      "head_sha": "60b1252e0f762ccd2d5dd54688ed1070d09c1f2c",
+      "members": {
+        "baseline-runtime.json": {
+          "bytes": 545182,
+          "sha256": "e9b757eac254d2447d111b222f97139208831e9aa416e6a88dcea337ebb5d525"
+        },
+        "build-artifact.json": {
+          "bytes": 750,
+          "sha256": "78872429f565b00e03c147bba757c5d1801ca107314b32a5dc5dcb133783fbe7"
+        },
+        "corrected-liquidity.json": {
+          "bytes": 12616259,
+          "sha256": "ba2cd86193bbc15cce1c3f0cee13d3e0c910b02e03bfbbd69e0c89bc623c3250"
+        },
+        "corrected-runtime.json": {
+          "bytes": 543719,
+          "sha256": "ee9cda6010db55f1306be08f3ed05c2ae715ee1870112dbebf27b16ee9629ea1"
+        }
+      },
+      "run_id": 40288855065,
+      "sha256": "c870e5b600c7527bf3bc48831047cb9b729074324edee4c007937db98d18adf1"
+    }
+  },
+  "collected_utc": "2026-10-26T08:06:39.828882+00:00",
+  "files": {
+    "build/attempt.json": {
+      "bytes": 12082,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "attempt.json"
+      },
+      "sha256": "9591be6be803a219d9893fe534424a480a82d84c8927d4b8e5593768c3d65a40"
+    },
+    "build/baseline/build-record.json": {
+      "bytes": 7976,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/build-record.json"
+      },
+      "sha256": "5d02cfce41c1a703a006ea6fbd3a8997c73bd6b0b793e5b8bbd4c0c9e38162e1"
+    },
+    "build/baseline/candidate.so": {
+      "bytes": 1200368,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/candidate.so"
+      },
+      "sha256": "cc2326ba730ccbbe85af8e9860833382e8d3e33b7e065c6ae80cfc838f80f4aa"
+    },
+    "build/baseline/excluded-keypair-paths.json": {
+      "bytes": 50,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/excluded-keypair-paths.json"
+      },
+      "sha256": "1943402970649d81e776a93e4eb9481f8678229ed749341708974ef80b8c6b11"
+    },
+    "build/baseline/unstripped.so": {
+      "bytes": 1686784,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/unstripped.so"
+      },
+      "sha256": "f586e0c3255393425b42be276d5df07270a5685bfa7be116921858a7e8ec8ccc"
+    },
+    "build/baseline/whole-original-comparison.json": {
+      "bytes": 382,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/whole-original-comparison.json"
+      },
+      "sha256": "ad3c8a05738508e530d77f73aeab9ee2ff4e18072f091ac4d97c59e4e0e93be7"
+    },
+    "build/cargo-metadata-index.crates.io-1949cf8c6b5b557f.json": {
+      "bytes": 40292,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "cargo-metadata-index.crates.io-1949cf8c6b5b557f.json"
+      },
+      "sha256": "2520965c6b16d72ca2eeb2c3d3044c8772b40430342105c2e83367cb0fde6bd2"
+    },
+    "build/cargo-metadata-index.crates.io-6f17d22bba15001f.json": {
+      "bytes": 40292,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "cargo-metadata-index.crates.io-6f17d22bba15001f.json"
+      },
+      "sha256": "2520965c6b16d72ca2eeb2c3d3044c8772b40430342105c2e83367cb0fde6bd2"
+    },
+    "build/corrected/build-record.json": {
+      "bytes": 7976,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "corrected/build-record.json"
+      },
+      "sha256": "f197e7eab61b41ac4bbca609ec180ef0e7b7fd0aded0caef95247d8201f10791"
+    },
+    "build/corrected/candidate.so": {
+      "bytes": 1200032,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "corrected/candidate.so"
+      },
+      "sha256": "ec8aa1dfe54221eb19f332cac459d16a65cab0aa3064bcabf7c452211702e149"
+    },
+    "build/corrected/excluded-keypair-paths.json": {
+      "bytes": 50,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "corrected/excluded-keypair-paths.json"
+      },
+      "sha256": "1943402970649d81e776a93e4eb9481f8678229ed749341708974ef80b8c6b11"
+    },
+    "build/corrected/unstripped.so": {
+      "bytes": 1686376,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "corrected/unstripped.so"
+      },
+      "sha256": "6f6e556c0da56067e5f1ccf514dc9949e13dab1e17ea1f2aeb41cbc1aeffa4b6"
+    },
+    "build/logs/apply-source-patch.log": {
+      "bytes": 0,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/apply-source-patch.log"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build/logs/baseline-build.log": {
+      "bytes": 9418,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/baseline-build.log"
+      },
+      "sha256": "a1813352dff0234d56dcfadc25296a1a96713a7a602a2699d33c3e6622f11a8b"
+    },
+    "build/logs/baseline-link-host.log": {
+      "bytes": 0,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/baseline-link-host.log"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build/logs/baseline-runtime.log": {
+      "bytes": 234,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/baseline-runtime.log"
+      },
+      "sha256": "252d4c8e0c5a7e70bb563219d96aca7bd9715dde446b07cf81753b9275d58230"
+    },
+    "build/logs/baseline-select-host.log": {
+      "bytes": 39,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/baseline-select-host.log"
+      },
+      "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+    },
+    "build/logs/check-source-patch.log": {
+      "bytes": 0,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/check-source-patch.log"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build/logs/cli-version.log": {
+      "bytes": 52,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/cli-version.log"
+      },
+      "sha256": "5590c218f5b276074d249177c545dcaa9d3a454da634706e77f3edaae4913f73"
+    },
+    "build/logs/compiler-version.log": {
+      "bytes": 145,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/compiler-version.log"
+      },
+      "sha256": "5f13cb178823ac0532399c66253ba6d87fa34d69e7a8d6f04d56bce62e3ed297"
+    },
+    "build/logs/corrected-build.log": {
+      "bytes": 9420,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/corrected-build.log"
+      },
+      "sha256": "a9508c34a39abd47a91170141d0471513540e2995916ba64e38ed60daedd56ab"
+    },
+    "build/logs/corrected-link-host.log": {
+      "bytes": 0,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/corrected-link-host.log"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build/logs/corrected-select-host.log": {
+      "bytes": 39,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/corrected-select-host.log"
+      },
+      "sha256": "58f7411afcd8dd2b905bf976c4ff4033a23f7b1f7dc3344b3fdc24555ba3e16d"
+    },
+    "build/logs/host-rustc-version.log": {
+      "bytes": 196,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/host-rustc-version.log"
+      },
+      "sha256": "b75985398e5509a90a7d5d68f8ec6690675f703c5cfa11893b04fc9c3fceca69"
+    },
+    "build/logs/locked-public-fetch.log": {
+      "bytes": 8970,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/locked-public-fetch.log"
+      },
+      "sha256": "b71b8214de73082f6f4fa76b607c862ab3b4c66ec2660852c26a2cfe37cec637"
+    },
+    "build/logs/strip-version.log": {
+      "bytes": 117,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "logs/strip-version.log"
+      },
+      "sha256": "04214b0a6f1a0cd056b44862aa0368d3c6563581545a1bc10699c36b89dc84ee"
+    },
+    "build/pipeline-caches.json": {
+      "bytes": 401,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "pipeline-caches.json"
+      },
+      "sha256": "d07fd380e22a4a6de8acae0483e29492e34be20b7c5ac4626d34d954e802c5c3"
+    },
+    "build/registry-preparation.json.gz": {
+      "bytes": 1157351,
+      "compression": "gzip",
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "registry-preparation.json"
+      },
+      "raw_bytes": 4888591,
+      "raw_sha256": "d7458036c3fc49a4097ea9b6b132df40e7022671cf819c6166ae7d7347599ea1",
+      "sha256": "1afc82f0286da5691422d3553f766eeb8fa137ed5c7512679b2dc25b4bcc7820"
+    },
+    "build/sdk-modes-baseline.json": {
+      "bytes": 484,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "sdk-modes-baseline.json"
+      },
+      "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+    },
+    "build/sdk-modes-corrected.json": {
+      "bytes": 484,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "sdk-modes-corrected.json"
+      },
+      "sha256": "1a2291c753c3e2b7f330c635c04ec9cabb9cd79b45fd5c7be11d1e42d5dd57dc"
+    },
+    "build/source-before.json": {
+      "bytes": 7076,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source-before.json"
+      },
+      "sha256": "c032c14f61646aa6e86a9b2a24d5d39bcb724628fcc43da324c6da119a13a71a"
+    },
+    "build/source.patch": {
+      "bytes": 972,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source.patch"
+      },
+      "sha256": "aba21dd602bf3df92a96d7e5ab4154892296fdadb1d0320bcf51f5cd2de98070"
+    },
+    "build/source/baseline/programs/pump-amm/Cargo.lock": {
+      "bytes": 70597,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/Cargo.lock"
+      },
+      "sha256": "0face002fa196e0aaf862bfd20f107c01aecfb4eb941bbb82ba410104e994da5"
+    },
+    "build/source/baseline/programs/pump-amm/Cargo.toml": {
+      "bytes": 733,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/Cargo.toml"
+      },
+      "sha256": "56a98d22417fa7edd8f592f5e9554ef0017f75b589fc4ff7f587c97339d492b0"
+    },
+    "build/source/baseline/programs/pump-amm/src/boost.rs": {
+      "bytes": 3924,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/boost.rs"
+      },
+      "sha256": "ad62e869f505bd0891434c689e3cd291942420d857a9f8ec5d041a927ad8f5a1"
+    },
+    "build/source/baseline/programs/pump-amm/src/boost_burn.rs": {
+      "bytes": 8634,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/boost_burn.rs"
+      },
+      "sha256": "92310c452df7fa7352dde64f64aaf616a6857af61732aee017c5149affbe40d4"
+    },
+    "build/source/baseline/programs/pump-amm/src/cashback.rs": {
+      "bytes": 2526,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/cashback.rs"
+      },
+      "sha256": "3786fe2d7a240ecd40ec3780a56bb337024e29753b5443eeac1dd130e3c42747"
+    },
+    "build/source/baseline/programs/pump-amm/src/collect.rs": {
+      "bytes": 2309,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/collect.rs"
+      },
+      "sha256": "5cd1757f40a92f989f794fadf1811688918fc01a2fac5abaff24ab81846132fd"
+    },
+    "build/source/baseline/programs/pump-amm/src/create.rs": {
+      "bytes": 10742,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/create.rs"
+      },
+      "sha256": "5a2e10f5c6a2b3321961b104f3e300ead0e4cc53faaeb0ba1b3e87f1ca804fbc"
+    },
+    "build/source/baseline/programs/pump-amm/src/creator_reassignment.rs": {
+      "bytes": 8567,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/creator_reassignment.rs"
+      },
+      "sha256": "59449c2174c08bc4d093488788c8921c0594303e9a79d74d2da91d99325e5965"
+    },
+    "build/source/baseline/programs/pump-amm/src/extend.rs": {
+      "bytes": 1983,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/extend.rs"
+      },
+      "sha256": "0fec49461a688112702141e3f751ec45713f787c8a25993a2e4ebe3df2d3a104"
+    },
+    "build/source/baseline/programs/pump-amm/src/incentives.rs": {
+      "bytes": 9857,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/incentives.rs"
+      },
+      "sha256": "3334514a770ccd8541ffeb9f6c4bdce7ec39711fcbd1ed19c0235cadf694c542"
+    },
+    "build/source/baseline/programs/pump-amm/src/instructions/admin/create_config.rs": {
+      "bytes": 884,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/instructions/admin/create_config.rs"
+      },
+      "sha256": "8a14d1ddcb386f90a8b72a5c179cc664e8ec64548098a6b46d7ddc094f63f6a2"
+    },
+    "build/source/baseline/programs/pump-amm/src/instructions/admin/mod.rs": {
+      "bytes": 23,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/instructions/admin/mod.rs"
+      },
+      "sha256": "f9e49bc374f1618f7d5095a83401e422b8af845a9aa342e9afe5955b1645b3bf"
+    },
+    "build/source/baseline/programs/pump-amm/src/instructions/mod.rs": {
+      "bytes": 41,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/instructions/mod.rs"
+      },
+      "sha256": "99f598614a8ad37b56e970c7536d93748fed0d95cc51c22b82a3d4da91f3960d"
+    },
+    "build/source/baseline/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs": {
+      "bytes": 504,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs"
+      },
+      "sha256": "07ebdcc513e442488bd92b91e3cae6492264b4336597a1a03e3e5bfac09d078f"
+    },
+    "build/source/baseline/programs/pump-amm/src/instructions/token_incentives/mod.rs": {
+      "bytes": 86,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/instructions/token_incentives/mod.rs"
+      },
+      "sha256": "07dbfaed66034a952f62c4f2b78a1c2f56501b654be5e24d040cfa6829d50fd7"
+    },
+    "build/source/baseline/programs/pump-amm/src/legacy_buy.rs": {
+      "bytes": 20039,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/legacy_buy.rs"
+      },
+      "sha256": "e1674c5310657fe6d37dddc9edee00cb64307004c3babb9eb0d73c8f78baf6c2"
+    },
+    "build/source/baseline/programs/pump-amm/src/legacy_sell.rs": {
+      "bytes": 19531,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/legacy_sell.rs"
+      },
+      "sha256": "265b8afcbebfb3f9c226733d6d2d75eec3f332c097af027c598713b9f0327fb7"
+    },
+    "build/source/baseline/programs/pump-amm/src/lib.rs": {
+      "bytes": 32558,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/lib.rs"
+      },
+      "sha256": "ba0be4636bd22d63b9d3e18907d00e15316386f8f1507ad01ebe31d8134349b1"
+    },
+    "build/source/baseline/programs/pump-amm/src/multi_hop.rs": {
+      "bytes": 33349,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/multi_hop.rs"
+      },
+      "sha256": "86a3ac01399008f9f28021215017d18f3cdd01ddf0070b34a126ea01e9543c37"
+    },
+    "build/source/baseline/programs/pump-amm/src/state.rs": {
+      "bytes": 7367,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/state.rs"
+      },
+      "sha256": "32b73eee0e2bcb25aff69391e9e3283e3b785dd18e591132d940aa462793a75e"
+    },
+    "build/source/baseline/programs/pump-amm/src/state/global_config.rs": {
+      "bytes": 1245,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/state/global_config.rs"
+      },
+      "sha256": "144af31a57ce513e20b37b1db75ad23cb5120186597bf15f3a2fc15a35bf6186"
+    },
+    "build/source/baseline/programs/pump-amm/src/sweep.rs": {
+      "bytes": 5927,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/sweep.rs"
+      },
+      "sha256": "b6c15a189fa0e133f317f4501020fba176812762d7ecc1b2f5d44b30c992bb76"
+    },
+    "build/source/baseline/programs/pump-amm/src/trade.rs": {
+      "bytes": 23315,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/trade.rs"
+      },
+      "sha256": "c2b2548d6e54ccb18169365866bdec46f48a25fac8767293e0ab1e72479b3a92"
+    },
+    "build/source/baseline/programs/pump-amm/src/transfer_creator.rs": {
+      "bytes": 5824,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/src/transfer_creator.rs"
+      },
+      "sha256": "20082ba3faf069756d3e26011ff06dcb03679416e6decdad3cca824b09728697"
+    },
+    "build/source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.lock": {
+      "bytes": 28343,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.lock"
+      },
+      "sha256": "88a2140668cbfafa5c788d3fa08e37943a62e24c2ec5e3860978236bef9dd66f"
+    },
+    "build/source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml": {
+      "bytes": 3981,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml"
+      },
+      "sha256": "52b641f13e7f50f5a06910886cbaa9c1f7bb1c939d21dee5bfdd3dadf0f56226"
+    },
+    "build/source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig": {
+      "bytes": 2799,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig"
+      },
+      "sha256": "f3404fd496623fd5cb5a2c2af09880bff01b4b458f638cd220ec7c6c3da9fa40"
+    },
+    "build/source/baseline/programs/pump-amm/vendor/solana-pubkey/src/lib.rs": {
+      "bytes": 57163,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/vendor/solana-pubkey/src/lib.rs"
+      },
+      "sha256": "6060ba2f7ea5bfd9c1e89a29e44450008cd047e4b18ca4b6e72688f389c1e87f"
+    },
+    "build/source/baseline/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs": {
+      "bytes": 176,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/baseline/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs"
+      },
+      "sha256": "0e663a1df9a8cf9da46bc03c231e65594ee891c2ebd7468272a1c78c8ff46524"
+    },
+    "build/source/corrected/programs/pump-amm/Cargo.lock": {
+      "bytes": 70597,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/Cargo.lock"
+      },
+      "sha256": "0face002fa196e0aaf862bfd20f107c01aecfb4eb941bbb82ba410104e994da5"
+    },
+    "build/source/corrected/programs/pump-amm/Cargo.toml": {
+      "bytes": 733,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/Cargo.toml"
+      },
+      "sha256": "56a98d22417fa7edd8f592f5e9554ef0017f75b589fc4ff7f587c97339d492b0"
+    },
+    "build/source/corrected/programs/pump-amm/src/boost.rs": {
+      "bytes": 3924,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/boost.rs"
+      },
+      "sha256": "ad62e869f505bd0891434c689e3cd291942420d857a9f8ec5d041a927ad8f5a1"
+    },
+    "build/source/corrected/programs/pump-amm/src/boost_burn.rs": {
+      "bytes": 8634,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/boost_burn.rs"
+      },
+      "sha256": "92310c452df7fa7352dde64f64aaf616a6857af61732aee017c5149affbe40d4"
+    },
+    "build/source/corrected/programs/pump-amm/src/cashback.rs": {
+      "bytes": 2526,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/cashback.rs"
+      },
+      "sha256": "3786fe2d7a240ecd40ec3780a56bb337024e29753b5443eeac1dd130e3c42747"
+    },
+    "build/source/corrected/programs/pump-amm/src/collect.rs": {
+      "bytes": 2309,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/collect.rs"
+      },
+      "sha256": "5cd1757f40a92f989f794fadf1811688918fc01a2fac5abaff24ab81846132fd"
+    },
+    "build/source/corrected/programs/pump-amm/src/create.rs": {
+      "bytes": 10742,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/create.rs"
+      },
+      "sha256": "5a2e10f5c6a2b3321961b104f3e300ead0e4cc53faaeb0ba1b3e87f1ca804fbc"
+    },
+    "build/source/corrected/programs/pump-amm/src/creator_reassignment.rs": {
+      "bytes": 8567,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/creator_reassignment.rs"
+      },
+      "sha256": "59449c2174c08bc4d093488788c8921c0594303e9a79d74d2da91d99325e5965"
+    },
+    "build/source/corrected/programs/pump-amm/src/extend.rs": {
+      "bytes": 1983,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/extend.rs"
+      },
+      "sha256": "0fec49461a688112702141e3f751ec45713f787c8a25993a2e4ebe3df2d3a104"
+    },
+    "build/source/corrected/programs/pump-amm/src/incentives.rs": {
+      "bytes": 9857,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/incentives.rs"
+      },
+      "sha256": "3334514a770ccd8541ffeb9f6c4bdce7ec39711fcbd1ed19c0235cadf694c542"
+    },
+    "build/source/corrected/programs/pump-amm/src/instructions/admin/create_config.rs": {
+      "bytes": 884,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/instructions/admin/create_config.rs"
+      },
+      "sha256": "8a14d1ddcb386f90a8b72a5c179cc664e8ec64548098a6b46d7ddc094f63f6a2"
+    },
+    "build/source/corrected/programs/pump-amm/src/instructions/admin/mod.rs": {
+      "bytes": 23,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/instructions/admin/mod.rs"
+      },
+      "sha256": "f9e49bc374f1618f7d5095a83401e422b8af845a9aa342e9afe5955b1645b3bf"
+    },
+    "build/source/corrected/programs/pump-amm/src/instructions/mod.rs": {
+      "bytes": 41,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/instructions/mod.rs"
+      },
+      "sha256": "99f598614a8ad37b56e970c7536d93748fed0d95cc51c22b82a3d4da91f3960d"
+    },
+    "build/source/corrected/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs": {
+      "bytes": 504,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/instructions/token_incentives/init_user_volume_accumulator.rs"
+      },
+      "sha256": "07ebdcc513e442488bd92b91e3cae6492264b4336597a1a03e3e5bfac09d078f"
+    },
+    "build/source/corrected/programs/pump-amm/src/instructions/token_incentives/mod.rs": {
+      "bytes": 86,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/instructions/token_incentives/mod.rs"
+      },
+      "sha256": "07dbfaed66034a952f62c4f2b78a1c2f56501b654be5e24d040cfa6829d50fd7"
+    },
+    "build/source/corrected/programs/pump-amm/src/legacy_buy.rs": {
+      "bytes": 20039,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/legacy_buy.rs"
+      },
+      "sha256": "e1674c5310657fe6d37dddc9edee00cb64307004c3babb9eb0d73c8f78baf6c2"
+    },
+    "build/source/corrected/programs/pump-amm/src/legacy_sell.rs": {
+      "bytes": 19531,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/legacy_sell.rs"
+      },
+      "sha256": "265b8afcbebfb3f9c226733d6d2d75eec3f332c097af027c598713b9f0327fb7"
+    },
+    "build/source/corrected/programs/pump-amm/src/lib.rs": {
+      "bytes": 32552,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/lib.rs"
+      },
+      "sha256": "85e95b9e9e677368236eef2292b82e82352108c63c5acf15ab488e1ebb673f90"
+    },
+    "build/source/corrected/programs/pump-amm/src/multi_hop.rs": {
+      "bytes": 33349,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/multi_hop.rs"
+      },
+      "sha256": "86a3ac01399008f9f28021215017d18f3cdd01ddf0070b34a126ea01e9543c37"
+    },
+    "build/source/corrected/programs/pump-amm/src/state.rs": {
+      "bytes": 7367,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/state.rs"
+      },
+      "sha256": "32b73eee0e2bcb25aff69391e9e3283e3b785dd18e591132d940aa462793a75e"
+    },
+    "build/source/corrected/programs/pump-amm/src/state/global_config.rs": {
+      "bytes": 1245,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/state/global_config.rs"
+      },
+      "sha256": "144af31a57ce513e20b37b1db75ad23cb5120186597bf15f3a2fc15a35bf6186"
+    },
+    "build/source/corrected/programs/pump-amm/src/sweep.rs": {
+      "bytes": 5927,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/sweep.rs"
+      },
+      "sha256": "b6c15a189fa0e133f317f4501020fba176812762d7ecc1b2f5d44b30c992bb76"
+    },
+    "build/source/corrected/programs/pump-amm/src/trade.rs": {
+      "bytes": 23315,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/trade.rs"
+      },
+      "sha256": "c2b2548d6e54ccb18169365866bdec46f48a25fac8767293e0ab1e72479b3a92"
+    },
+    "build/source/corrected/programs/pump-amm/src/transfer_creator.rs": {
+      "bytes": 5824,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/src/transfer_creator.rs"
+      },
+      "sha256": "20082ba3faf069756d3e26011ff06dcb03679416e6decdad3cca824b09728697"
+    },
+    "build/source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.lock": {
+      "bytes": 28343,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.lock"
+      },
+      "sha256": "88a2140668cbfafa5c788d3fa08e37943a62e24c2ec5e3860978236bef9dd66f"
+    },
+    "build/source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml": {
+      "bytes": 3981,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml"
+      },
+      "sha256": "52b641f13e7f50f5a06910886cbaa9c1f7bb1c939d21dee5bfdd3dadf0f56226"
+    },
+    "build/source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig": {
+      "bytes": 2799,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/vendor/solana-pubkey/Cargo.toml.orig"
+      },
+      "sha256": "f3404fd496623fd5cb5a2c2af09880bff01b4b458f638cd220ec7c6c3da9fa40"
+    },
+    "build/source/corrected/programs/pump-amm/vendor/solana-pubkey/src/lib.rs": {
+      "bytes": 57163,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/vendor/solana-pubkey/src/lib.rs"
+      },
+      "sha256": "6060ba2f7ea5bfd9c1e89a29e44450008cd047e4b18ca4b6e72688f389c1e87f"
+    },
+    "build/source/corrected/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs": {
+      "bytes": 176,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "source/corrected/programs/pump-amm/vendor/solana-pubkey/src/syscalls.rs"
+      },
+      "sha256": "0e663a1df9a8cf9da46bc03c231e65594ee891c2ebd7468272a1c78c8ff46524"
+    },
+    "build/tool-bindings.json": {
+      "bytes": 10096,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "tool-bindings.json"
+      },
+      "sha256": "a76eec3974171a8c02c8936bd73173ad4b88eba8df2ab1152dee24f67fadb72b"
+    },
+    "build/tooling-inputs.json": {
+      "bytes": 913,
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "tooling-inputs.json"
+      },
+      "sha256": "8448f9e5ef7090c953552cb4cac750b57f2be608c622ce702be044685df51115"
+    },
+    "failed/initial-baseline-runtime.json.gz": {
+      "bytes": 20511,
+      "compression": "gzip",
+      "origin": {
+        "artifact_id": 12634605630,
+        "member": "baseline/runtime.json"
+      },
+      "raw_bytes": 544300,
+      "raw_sha256": "f6f4a2d0a90b9d95ce67032b4a04888d64f81d5337608bf0e0376f5e998ddd49",
+      "sha256": "1b00489517f20c3a0e88c9e6eae1f4ca445ed06c896328a666d7cb94c0da277a"
+    },
+    "provenance/build-artifact.json": {
+      "bytes": 750,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/artifacts/12634605630"
+      },
+      "sha256": "78872429f565b00e03c147bba757c5d1801ca107314b32a5dc5dcb133783fbe7"
+    },
+    "provenance/build-jobs.json": {
+      "bytes": 5174,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/runs/40286252822/jobs"
+      },
+      "sha256": "b5342e02ed48d0fd7e8ad78c9b7297aa3816605e48e264c92240774fab81a6ae"
+    },
+    "provenance/build-run.json": {
+      "bytes": 13285,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/runs/40286252822"
+      },
+      "sha256": "58d01ed6874ad0ca400250bdbdea5e1be7b62c02ba69be88582fe1b903364a50"
+    },
+    "provenance/replay-artifact.json": {
+      "bytes": 742,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/artifacts/12634894210"
+      },
+      "sha256": "0ebd33fbf6a0cc0a320f0674162fa675462d588e6f203420751bf813ea20dcde"
+    },
+    "provenance/replay-jobs.json": {
+      "bytes": 4425,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/runs/40288855065/jobs"
+      },
+      "sha256": "ac55e8713e15401d816d796e155edd0225d0ba6db8352ae1fbd86d6da380977c"
+    },
+    "provenance/replay-run.json": {
+      "bytes": 13276,
+      "origin": {
+        "api": "https://api.github.com/repos/pastagotsauce/pumpfun-source/actions/runs/40288855065"
+      },
+      "sha256": "c6d02c5926f94f8b9b57564703e76516017d226e15f9e8436fe94b227a61561d"
+    },
+    "replay/baseline-runtime.json.gz": {
+      "bytes": 20842,
+      "compression": "gzip",
+      "origin": {
+        "artifact_id": 12634894210,
+        "member": "baseline-runtime.json"
+      },
+      "raw_bytes": 545182,
+      "raw_sha256": "e9b757eac254d2447d111b222f97139208831e9aa416e6a88dcea337ebb5d525",
+      "sha256": "f64f9e920aef2b891a744ac40ff34d71a3ab2f200997fe9d0a4a30df33899fae"
+    },
+    "replay/build-artifact.json": {
+      "bytes": 750,
+      "origin": {
+        "artifact_id": 12634894210,
+        "member": "build-artifact.json"
+      },
+      "sha256": "78872429f565b00e03c147bba757c5d1801ca107314b32a5dc5dcb133783fbe7"
+    },
+    "replay/corrected-liquidity.json.gz": {
+      "bytes": 195571,
+      "compression": "gzip",
+      "origin": {
+        "artifact_id": 12634894210,
+        "member": "corrected-liquidity.json"
+      },
+      "raw_bytes": 12616259,
+      "raw_sha256": "ba2cd86193bbc15cce1c3f0cee13d3e0c910b02e03bfbbd69e0c89bc623c3250",
+      "sha256": "7376fa921114e234835998820f6602f54b83ad554603f0233b272a4ad378aab6"
+    },
+    "replay/corrected-runtime.json.gz": {
+      "bytes": 20549,
+      "compression": "gzip",
+      "origin": {
+        "artifact_id": 12634894210,
+        "member": "corrected-runtime.json"
+      },
+      "raw_bytes": 543719,
+      "raw_sha256": "ee9cda6010db55f1306be08f3ed05c2ae715ee1870112dbebf27b16ee9629ea1",
+      "sha256": "4caa761c4c8f5a30289dbd2a12a8aba70f83f47bc489b96d85a9040482f0cf27"
+    },
+    "source-omissions.json": {
+      "bytes": 1100,
+      "sha256": "3de60257bba055b5dfbf2bf79ac53e4ef17941bc75b91fff474ffd30616f5317"
+    }
+  },
+  "schema": 1,
+  "scope": "Exact retained artifacts from a failed build/probe run and a successful replay; no selected-artifact promotion."
+}

@@ -1,0 +1,10 @@
+{
+  "repro/pump_amm/error-recovery-next/linux_build.py": "882a6cd3ae4e23836c5285a10d94ee1aa84a87be5855965c0ada7899809c18cc",
+  "repro/pump_amm/error-recovery-next/runtime_probe.py": "99f7bd069d9b3c40c4b7ef22312bb9d3f7d0ca9e521b47fa94aa4afd4ce8e2c8",
+  "repro/pump_amm/error-recovery-next/source.patch": "aba21dd602bf3df92a96d7e5ab4154892296fdadb1d0320bcf51f5cd2de98070",
+  "repro/pump_amm/error-recovery-next/verify.py": "e21bf57ff0eb211f8c7eb7e11871da63d6d084f704a4184dae63776f58e84137",
+  "scripts/compare.py": "9e33a6c239927728b96bb1305bffad0e144a701e9ac7723928bb2f8d49f63e67",
+  "scripts/core_linux_v144_build.py": "0e73e769f7ee982f47c9b8a07875955b855f5710a69494d96df8409859c7cffe",
+  "scripts/core_linux_v144_inputs.json": "aa57eb088362e973bf9be2f725a21cd0e5bb60d567ee0b3f55e2cf4b827a704c",
+  "scripts/pump_amm_liquidity_differential.py": "08449c9da8c560330eeb5b560a26cdd553d260084e78bd54d4dc7edb914320b4"
+}
