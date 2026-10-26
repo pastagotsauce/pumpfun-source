@@ -1,0 +1,122 @@
+{
+  "files": {
+    "evidence/upstream/pump.json": {
+      "bytes": 328788,
+      "git_blob_sha1": "bb79d04e5a4ef8b286d67511757c23a15672ef51",
+      "sha256": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207"
+    },
+    "repro/pump/extend-diagnostics/inputs/original-window.json": {
+      "bytes": 16122,
+      "git_blob_sha1": "035853ec498b5c5ee404bc141c87c468f6284b4c",
+      "sha256": "0917c3526c20af24a138a0710e886362a25629d4216328533ebb6038314a2db8"
+    },
+    "repro/pump/extend-diagnostics/inputs/receipt-provenance.json": {
+      "bytes": 4050,
+      "git_blob_sha1": "2f70482a0a9dbb1a0a326ee5c2c7a27efe900306",
+      "sha256": "e3a5a090edc188b44071068368678c7b8b752492ad2d82b8f2baf7db62482c14"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-archive-members.json.gz": {
+      "bytes": 98905,
+      "git_blob_sha1": "c07a352e3a9768b3ae6aaf73be155e79b34cb5f3",
+      "sha256": "c6596a138d7b2128fa0482cfd7d19dd2fbf80265446c0c3cc010592d74ad807e"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-build-attempt.json": {
+      "bytes": 9024,
+      "git_blob_sha1": "e4de79143984dfbedd146ca12377bf4bf1f42366",
+      "sha256": "93743a7575ba6635cbc6cd26f31d213725dc1bc6f118fa80dcefeaa8fab056f7"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-extension.json.gz": {
+      "bytes": 59422,
+      "git_blob_sha1": "2832abf4381cd01bbb6c28cd74728cede9f06209",
+      "sha256": "93bc8f449743ad130a54dee3619b63b4b558514ea1e2e6b27686451f48ffa117"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-fixtures.json.gz": {
+      "bytes": 2324,
+      "git_blob_sha1": "74086f44e1f6d954a457f6574e20215f9d2ea4df",
+      "sha256": "ba1d012cd0638399e1ca3e3451aa1799e65f0d3ccaf0a33dfab2ffd7714e15ae"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-gate-before.json.gz": {
+      "bytes": 6228,
+      "git_blob_sha1": "060050ca87938af342770a0970fe6ab360cf7578",
+      "sha256": "e6f01d3d30558da977cdea540fa1cc258f437c363a7aaf477f8de019bbb774ca"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-layout.json.gz": {
+      "bytes": 11388,
+      "git_blob_sha1": "fa75f3d77a3cb974e944de48d3db25934eaca9b4",
+      "sha256": "47a9f15ba7be66818e7d11852199e3f9e1e59bceee25fbe2352deb33e5195275"
+    },
+    "repro/pump/extend-diagnostics/inputs/selected-signed.json.gz": {
+      "bytes": 13554,
+      "git_blob_sha1": "42590f63bb47bdbb8e108662edcf2fe9d8d8855e",
+      "sha256": "f09ac11d790d5a0cfd725e9ae5f3fe81e16a899a923403a4a561a8280c98d786"
+    },
+    "repro/pump/extend-diagnostics/pins.json": {
+      "bytes": 1966,
+      "git_blob_sha1": "8e8f711bcfa73442e0ab966a90d604217bbc542a",
+      "sha256": "413e0c33491d7228fb54151c9fa151ccef9baa96798d6156f06bb21546a304e2"
+    },
+    "repro/pump/extend-diagnostics/recovery.py": {
+      "bytes": 3360,
+      "git_blob_sha1": "6922570da7363408f8a74aaf4624167d76464b00",
+      "sha256": "c9f2de8b5394a2f2ce58922bc058038b5d37512bc9999eb7afe0acd82ee560d6"
+    },
+    "repro/pump/extend-diagnostics/replay.py": {
+      "bytes": 12266,
+      "git_blob_sha1": "48acada6846bbcc164b754efd181f62e28be97ca",
+      "sha256": "d1c53a3c612f5fb618f7128355fdc162b565bad54603e210ac84958702f44986"
+    },
+    "repro/pump/extend-diagnostics/runtime_probe.py": {
+      "bytes": 4155,
+      "git_blob_sha1": "cf9ea66d321fd293fa84d86df65654d4bc81d621",
+      "sha256": "174405b85736af14173bb75efca6494f504fdd2683261bb414977957e59ff202"
+    },
+    "repro/pump/extend-diagnostics/source.patch": {
+      "bytes": 473,
+      "git_blob_sha1": "1b743b30253ed7a1eedbddfbff80afbd35f44774",
+      "sha256": "51fd2a71d8370e1a327f35fd3d9a4077f8b956fcff2c63967cb3d045c54e3ce1"
+    },
+    "repro/pump/extend-diagnostics/test_runtime.py": {
+      "bytes": 4189,
+      "git_blob_sha1": "fc1c0d8754da793d39357c72f5eceb7894b12901",
+      "sha256": "f9cd1795e17c4b3fe91644bc32a8e65e6e5c139c36f46232ca47c1695bff7cb2"
+    },
+    "repro/pump/extend-diagnostics/verify_evidence.py": {
+      "bytes": 10413,
+      "git_blob_sha1": "491d3adcaadc0de612a61a64d50de460dbb18bff",
+      "sha256": "e65ab4fbf538141dc2fe288d0d2b915cc61a511284941fedde830bce83e4de06"
+    },
+    "repro/pump/extend-diagnostics/verify_runtime.py": {
+      "bytes": 8597,
+      "git_blob_sha1": "d268cadf71a829d18b7ff80bbd823b27fefb306f",
+      "sha256": "253497935fdfaff02265f7fece8c303c277b636c71f6a6ad09f83d41c9739a6f"
+    },
+    "scripts/analyze.py": {
+      "bytes": 2739,
+      "git_blob_sha1": "e2529e63fd9620131ef1014131a7c7cef9ef313e",
+      "sha256": "dd7fb38d795d4dd72a25aab0d65c2223d9f6f75d8b3ecb0de1d87d6e102910ac"
+    },
+    "scripts/compare.py": {
+      "bytes": 2426,
+      "git_blob_sha1": "07a43ddde4f231322612715932b0346d3e1038cc",
+      "sha256": "9e33a6c239927728b96bb1305bffad0e144a701e9ac7723928bb2f8d49f63e67"
+    },
+    "scripts/core_linux_v144_build.py": {
+      "bytes": 48897,
+      "git_blob_sha1": "5afe35efd1d277d3e99961f06cb83045edfa8afc",
+      "sha256": "0e73e769f7ee982f47c9b8a07875955b855f5710a69494d96df8409859c7cffe"
+    },
+    "scripts/core_linux_v144_inputs.json": {
+      "bytes": 16041,
+      "git_blob_sha1": "50c86c235327c75ce5f12666b793a8e33ebbb0e9",
+      "sha256": "aa57eb088362e973bf9be2f725a21cd0e5bb60d567ee0b3f55e2cf4b827a704c"
+    },
+    "scripts/pump_extend_differential.py": {
+      "bytes": 5712,
+      "git_blob_sha1": "d2c1897dfd56a1bb5166e32d19bbbe05d6c47110",
+      "sha256": "3d89fd803fbdb23edba104420f4e9a0c6d02f0acd9e73f118439f6f6c531e5f0"
+    }
+  },
+  "head_sha": "4678ffb0fe56c63d46d1851e6fc648fc77695b30",
+  "repository": "pastagotsauce/pumpfun-source",
+  "scope": "Read-only comparison of every replay executed-input copy to Git blobs at the provider-authenticated checkout head."
+}

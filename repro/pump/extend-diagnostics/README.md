@@ -1,6 +1,7 @@
-# Pump extension diagnostics: source proposal and controlled experiment
+# Pump extension diagnostics: source-built recovery and measured replay
 
-**Both Linux source builds succeeded; runtime acceptance is pending.** Selected Pump `71ec4d8a…` silently returns
+**Two missing diagnostics are recovered in a source-built proposal. Whole-byte
+identity remains false.** Selected Pump `71ec4d8a…` silently returns
 when an account already meets its target size. The captured original logs
 `Account already has the correct size` on equality and
 `Account already has more than {target} bytes: {current}` on excess.
@@ -77,8 +78,35 @@ the failed receipt do not relabel that historical run as successful.
 outputs without invoking a compiler. It writes to a fresh evidence directory,
 retains attempted raw inputs before authentication, and records new whole-file
 comparisons separately from historical build records. In particular, the initial
-corrected build record's unmeasured comparison is not rewritten. Replay has not
-yet executed. Twelve focused cases cover
+corrected build record's unmeasured comparison is not rewritten.
+
+[Replay run 40304336017](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40304336017)
+passed using those exact existing binaries, with zero new builds. Both 12-case
+focused suites passed, each with 48 valid signature slots and one unique signed
+transaction. Corrected output emits the original's exact eight no-growth
+diagnostics; the unchanged Linux baseline omits them. Genuine growth remains
+equal. The corrected 308-case inherited suite passed with 1,208 valid signature
+slots and 22 unique raw transactions, and all ten actual receipt mutation tests
+passed. `results/replay-2` retains the exact 45-member artifact ZIP and provider
+receipts. Neither attempt's raw records are rewritten.
+
+This is diagnostic recovery, not a reduction in a global byte-difference count.
+The corrected file is 528 bytes larger. Against the full 10,485,715-byte capture,
+the unchanged output differs at 882,094 shared positions and the corrected
+output at 883,780; their length differences are -8,901,723 and -8,901,195 bytes.
+Thus differing-plus-missing positions increase by 1,158. These are direct raw
+comparisons, with no padding or normalization; they do not isolate instruction
+equivalence after compiler layout shifts.
+
+One raw metadata field is inaccurate: the replay `attempt.json.source_revision`
+inherited the shared helper's fixed `4ffe8bd…` default. It is retained verbatim
+and is not used as the checkout identity. GitHub's run/artifact/job receipts bind
+the actual head `4678ffb0fe56c63d46d1851e6fc648fc77695b30`; all 23 executed
+helper/input copies match their Git blobs at that head and their before/after
+hash records. The fixed raw-member and provider seals prevent rewriting that
+history together with a mutable package manifest.
+
+Twelve focused cases cover
 growth, equality and excess for each of four account types. The full-log check
 excludes only compute-use lines; the original's eight no-growth messages must
 be absent in Linux baseline and present in corrected output. Complete raw
@@ -88,8 +116,9 @@ transaction count is reported separately from repeated fixture executions.
 Signed bytes, case and side are checkpointed before the target send, including
 when that send raises. The unchanged 308-case inherited extension suite then runs
 on corrected output. Partial probe results survive failure. Ten mutation tests
-run against the actual successful receipts; pre-build discovery explicitly
-skips that class. These are finite diagnostic
+run against the actual successful receipts. Offline discovery now repeats those
+tests from the sealed saved artifact; the standalone pre-build class still needs
+an explicit `--built` directory. These are finite diagnostic
 checks, not whole-byte identity, exhaustive equivalence or historical uploader
 recipe recovery.
 
@@ -103,6 +132,7 @@ Offline prerequisite checks (Python 3.12, `solders==0.27.1`, `pyelftools==0.32`)
 
 ```sh
 python3 -B repro/pump/extend-diagnostics/verify_evidence.py
+python3 -B repro/pump/extend-diagnostics/verify_saved.py
 python3 -B -m unittest discover -s repro/pump/extend-diagnostics -p 'test_*.py'
 ```
 
@@ -127,5 +157,9 @@ Retain `/tmp/pump-extend/evidence` even on failure. The driver records actual
 commands, tools, source snapshots and executed helper/input copies. Tooling
 inputs are rehashed at final acceptance. Existing
 selected evidence is checked read-only; the verifier performs no VM or build.
-The two source builds are observed; corrected runtime acceptance and whole-byte
-identity are not established.
+`verify_saved.py` authenticates both ZIPs and provider receipts, checks exact
+source/output/helper bindings, verifies raw signatures and complete focused
+effects/logs, and independently recalculates both original comparisons. It only
+reads saved evidence and uses a disposable extraction directory; it performs no
+build or VM execution. No selection promotion, whole-byte identity, exhaustive
+runtime equivalence or historical uploader recipe is established.
