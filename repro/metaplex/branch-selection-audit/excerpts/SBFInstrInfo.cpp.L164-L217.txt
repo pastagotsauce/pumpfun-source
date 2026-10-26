@@ -1,0 +1,54 @@
+bool SBFInstrInfo::analyzeBranch(MachineBasicBlock &MBB,
+                                 MachineBasicBlock *&TBB,
+                                 MachineBasicBlock *&FBB,
+                                 SmallVectorImpl<MachineOperand> &Cond,
+                                 bool AllowModify) const {
+  // Start from the bottom of the block and work up, examining the
+  // terminator instructions.
+  MachineBasicBlock::iterator I = MBB.end();
+  while (I != MBB.begin()) {
+    --I;
+    if (I->isDebugInstr())
+      continue;
+
+    // Working from the bottom, when we see a non-terminator
+    // instruction, we're done.
+    if (!isUnpredicatedTerminator(*I))
+      break;
+
+    // A terminator that isn't a branch can't easily be handled
+    // by this analysis.
+    if (!I->isBranch())
+      return true;
+
+    // Handle unconditional branches.
+    if (I->getOpcode() == SBF::JMP) {
+      if (!AllowModify) {
+        TBB = I->getOperand(0).getMBB();
+        continue;
+      }
+
+      // If the block has any instructions after a J, delete them.
+      MBB.erase(std::next(I), MBB.end());
+      Cond.clear();
+      FBB = nullptr;
+
+      // Delete the J if it's equivalent to a fall-through.
+      if (MBB.isLayoutSuccessor(I->getOperand(0).getMBB())) {
+        TBB = nullptr;
+        I->eraseFromParent();
+        I = MBB.end();
+        continue;
+      }
+
+      // TBB is used to indicate the unconditinal destination.
+      TBB = I->getOperand(0).getMBB();
+      continue;
+    }
+    // Cannot handle conditional branches
+    return true;
+  }
+
+  return false;
+}
+

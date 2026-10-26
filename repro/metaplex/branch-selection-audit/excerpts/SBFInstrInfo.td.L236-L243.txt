@@ -1,0 +1,8 @@
+defm JEQ  : J<SBF_JEQ, "jeq", "==",  SBF_CC_EQ, SBF_CC_EQ_32>;
+defm JUGT : J<SBF_JGT, "jgt", ">", SBF_CC_GTU, SBF_CC_GTU_32>;
+defm JUGE : J<SBF_JGE, "jge", ">=", SBF_CC_GEU, SBF_CC_GEU_32>;
+defm JNE  : J<SBF_JNE, "jne", "!=",  SBF_CC_NE, SBF_CC_NE_32>;
+defm JSGT : J<SBF_JSGT, "jsgt",  "s>", SBF_CC_GT, SBF_CC_GT_32>;
+defm JSGE : J<SBF_JSGE, "jsge",  "s>=", SBF_CC_GE, SBF_CC_GE_32>;
+defm JULT : J<SBF_JLT, "jlt", "<", SBF_CC_LTU, SBF_CC_LTU_32>;
+defm JULE : J<SBF_JLE, "jle", "<=", SBF_CC_LEU, SBF_CC_LEU_32>;

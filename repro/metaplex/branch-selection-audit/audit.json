@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "actual_compiler_source_bound": false,
+  "platform_revision": "390112a3f6d25e17662e83bf73d73f3d483b556e",
+  "rust_revision": "764ce69bd00903f5c59f44b6aa72649b173f568c",
+  "llvm_revision": "7b8db05b564faffb522434b73b7082662171f94a",
+  "recorded_rustc_sha256": "7194df9c12e893cfa88fff5dd821d02d45910b4d375e13677b4723f45769a384",
+  "compiler_sources": [
+    {
+      "path": "platform-build.sh",
+      "url": "https://raw.githubusercontent.com/solana-labs/platform-tools/390112a3f6d25e17662e83bf73d73f3d483b556e/build.sh",
+      "bytes": 5614,
+      "sha256": "902c5cbe52d70cbc9627bd6b180ae0f59a9e19b88cbd8f3eff66d402cec16b24"
+    },
+    {
+      "path": "SBFInstrInfo.cpp",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/Target/SBF/SBFInstrInfo.cpp",
+      "bytes": 8389,
+      "sha256": "587afcccd9f0d6779a06af2eecae741bc69793f4e1d7fbdea5b43e356037e46b"
+    },
+    {
+      "path": "SBFInstrInfo.td",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/Target/SBF/SBFInstrInfo.td",
+      "bytes": 40396,
+      "sha256": "9f535c3bed8eb4ac2cb3a5c0f3be4af803bcb9ef95e41ffb2a5682e3077eb1de"
+    },
+    {
+      "path": "SBFTargetMachine.cpp",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/Target/SBF/SBFTargetMachine.cpp",
+      "bytes": 6610,
+      "sha256": "ab817d775cbdbb7747e74be52997d6e13056167772c6f06bf082f95dd8bbc592"
+    },
+    {
+      "path": "MachineBlockPlacement.cpp",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/CodeGen/MachineBlockPlacement.cpp",
+      "bytes": 149820,
+      "sha256": "22b413ba0b64e4963a365d7b9e65f54bc9096c13e9bf08249daaa4fe39896ae0"
+    },
+    {
+      "path": "SelectionDAGBuilder.cpp",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp",
+      "bytes": 454444,
+      "sha256": "c376014fc6af5c2ccdf16e1b3e91fb26075e8bfff9d6f09ed5410bbc2b5f7b78"
+    },
+    {
+      "path": "SBFISelLowering.cpp",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/Target/SBF/SBFISelLowering.cpp",
+      "bytes": 41941,
+      "sha256": "4a5be489a3e1abeee8b62732f7561391863b7b28958542354a706b8520e49987"
+    },
+    {
+      "path": "SBFInstrInfo.h",
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/7b8db05b564faffb522434b73b7082662171f94a/llvm/lib/Target/SBF/SBFInstrInfo.h",
+      "bytes": 2490,
+      "sha256": "0366d294189437f55b6d5e4f5accc6d22139dd8b346c48616c5549f8d32f2f51"
+    }
+  ],
+  "ref_observations": [
+    {
+      "path": "refs/rust-revision.json",
+      "endpoint": "repos/solana-labs/rust/commits/solana-tools-v1.37",
+      "bytes": 37017,
+      "sha256": "7d5b5f25243dd93dd8db88ea18193c3f18794a9cc8f728566eac906c2ced3158"
+    },
+    {
+      "path": "refs/llvm-gitlink.json",
+      "endpoint": "repos/solana-labs/rust/contents/src/llvm-project?ref=764ce69bd00903f5c59f44b6aa72649b173f568c",
+      "bytes": 904,
+      "sha256": "7cd98d4cc9a66271b699f95ac38aaa43f344e7a649bd5de39d699227c609de16"
+    },
+    {
+      "path": "refs/platform-revision.json",
+      "endpoint": "repos/solana-labs/platform-tools/commits/v1.37",
+      "bytes": 5036,
+      "sha256": "7d15313fc3d2189ec6e4410dc8fa156fa02ab0044eac628f4cc88131c573c860"
+    }
+  ],
+  "source_ranges": [
+    {
+      "path": "platform-build.sh",
+      "first": 34,
+      "last": 35,
+      "bytes": 41,
+      "sha256": "3057ff1610d3caa332f22e7efc91afe7a1dbc47daf399175695ffb8e2dc16025",
+      "excerpt_path": "excerpts/platform-build.sh.L34-L35.txt",
+      "claim": "Mutable Rust ref and version receipt"
+    },
+    {
+      "path": "platform-build.sh",
+      "first": 67,
+      "last": 70,
+      "bytes": 241,
+      "sha256": "5277d5c0b6880cf66daf83da3762f5d3fe5fe3a09c30509cd7e3d5b8417fd828",
+      "excerpt_path": "excerpts/platform-build.sh.L67-L70.txt",
+      "claim": "Archive includes version.md"
+    },
+    {
+      "path": "SBFInstrInfo.cpp",
+      "first": 164,
+      "last": 217,
+      "bytes": 1560,
+      "sha256": "57c6abd2ba4a2a2b5203a63811b0ed5a8d5e6795c87bc137629056913f606d2b",
+      "excerpt_path": "excerpts/SBFInstrInfo.cpp.L164-L217.txt",
+      "claim": "Conditional branch analysis unsupported"
+    },
+    {
+      "path": "SBFInstrInfo.h",
+      "first": 23,
+      "last": 65,
+      "bytes": 1721,
+      "sha256": "e73f14268c083a318b60996f378bf70b6615ffb690aee58e5af8a7a25ec35dba",
+      "excerpt_path": "excerpts/SBFInstrInfo.h.L23-L65.txt",
+      "claim": "No target conditional reversal override"
+    },
+    {
+      "path": "MachineBlockPlacement.cpp",
+      "first": 2684,
+      "last": 2715,
+      "bytes": 1409,
+      "sha256": "7d983663e19c90537f87d301ef80acfdbf182542890a5af98a2c4e1be0a17fa2",
+      "excerpt_path": "excerpts/MachineBlockPlacement.cpp.L2684-L2715.txt",
+      "claim": "Opaque fallthrough chains preserved"
+    },
+    {
+      "path": "MachineBlockPlacement.cpp",
+      "first": 2832,
+      "last": 2842,
+      "bytes": 440,
+      "sha256": "1bff57491999c373dfaa87019b12a91c8e55025df43c01ad6ee92c223cd94a7b",
+      "excerpt_path": "excerpts/MachineBlockPlacement.cpp.L2832-L2842.txt",
+      "claim": "Terminator updates require successful branch analysis"
+    },
+    {
+      "path": "MachineBlockPlacement.cpp",
+      "first": 2862,
+      "last": 2877,
+      "bytes": 909,
+      "sha256": "2145bc04a7db7ab6e0cd2ef06f146f2e951dde7a28e68e3931052ed03669f874",
+      "excerpt_path": "excerpts/MachineBlockPlacement.cpp.L2862-L2877.txt",
+      "claim": "Generic reversal requires successful branch analysis"
+    },
+    {
+      "path": "SelectionDAGBuilder.cpp",
+      "first": 2359,
+      "last": 2454,
+      "bytes": 3799,
+      "sha256": "cfd15fa9d4d794f24ba12cc8dcf40ffe28c78028730e815cc4ea015714444707",
+      "excerpt_path": "excerpts/SelectionDAGBuilder.cpp.L2359-L2454.txt",
+      "claim": "Ordinary branches use visitSwitchCase"
+    },
+    {
+      "path": "SelectionDAGBuilder.cpp",
+      "first": 2527,
+      "last": 2543,
+      "bytes": 816,
+      "sha256": "9309964a4ecbf133e3d1d03b60ff0d1ad2f09374176a86fc61d93d85de4f7484",
+      "excerpt_path": "excerpts/SelectionDAGBuilder.cpp.L2527-L2543.txt",
+      "claim": "Selection-time complement follows layout successor"
+    },
+    {
+      "path": "SBFISelLowering.cpp",
+      "first": 776,
+      "last": 803,
+      "bytes": 776,
+      "sha256": "fac18b4e7afae69b5aafd0b575a0bdb41e5e32d42e6e276016bc34733046d4c4",
+      "excerpt_path": "excerpts/SBFISelLowering.cpp.L776-L803.txt",
+      "claim": "Conditional operand swap without jump extensions"
+    },
+    {
+      "path": "SBFInstrInfo.td",
+      "first": 236,
+      "last": 243,
+      "bytes": 511,
+      "sha256": "586fe0538b835f5a785a437ebd3df3ee2cc36bd033f15788647faa90d183bde4",
+      "excerpt_path": "excerpts/SBFInstrInfo.td.L236-L243.txt",
+      "claim": "Unsigned comparison instruction mappings"
+    },
+    {
+      "path": "SBFTargetMachine.cpp",
+      "first": 178,
+      "last": 183,
+      "bytes": 204,
+      "sha256": "e8cebf22395b13c96a96b194a6b09eb99ad80bc387dbc1e8e90caa1d31a81fb8",
+      "excerpt_path": "excerpts/SBFTargetMachine.cpp.L178-L183.txt",
+      "claim": "Target pre-emit peephole still exists"
+    }
+  ],
+  "repo_inputs": [
+    {
+      "id": "original",
+      "path": "evidence/dependencies/token_metadata/deployed.so",
+      "git_blob": "fdebe231b08c4fdb131cb6fd04099f6b8787e747",
+      "bytes": 793991,
+      "sha256": "31f0a627dba051a938de650464e55cc5397a4be0fd496929c1f9cf02fe5e9011"
+    },
+    {
+      "id": "candidate11",
+      "path": "repro/pump/metaplex-candidate-build-11/token_metadata.so",
+      "git_blob": "37897c129d194312e279d874156a8b199aa94960",
+      "bytes": 707448,
+      "sha256": "3bbaf27ff0c10ff68d8a195a82f39eadee266f324067bd0a66081710be30b4ec"
+    },
+    {
+      "id": "candidate12",
+      "path": "repro/pump/metaplex-candidate-build-12-review/candidate12.so",
+      "git_blob": "b4d39cb240c87490e8499c08584e5266f64b1c7d",
+      "bytes": 707448,
+      "sha256": "4f039033a3cde9d47aa8ee0f68c13c2c4d55a9d6ee0ab50df9d4ef93a4a02edf"
+    },
+    {
+      "id": "candidate13",
+      "path": "repro/pump/metaplex-candidate-build-13-review/build13/token_metadata.so",
+      "git_blob": "b4d39cb240c87490e8499c08584e5266f64b1c7d",
+      "bytes": 707448,
+      "sha256": "4f039033a3cde9d47aa8ee0f68c13c2c4d55a9d6ee0ab50df9d4ef93a4a02edf"
+    },
+    {
+      "id": "candidate14",
+      "path": "repro/pump/metaplex-candidate-build-14-review/build14/token_metadata.so",
+      "git_blob": "37897c129d194312e279d874156a8b199aa94960",
+      "bytes": 707448,
+      "sha256": "3bbaf27ff0c10ff68d8a195a82f39eadee266f324067bd0a66081710be30b4ec"
+    },
+    {
+      "id": "compiler_receipt",
+      "path": "repro/pump/metaplex-candidate-build-11/tool-versions.json",
+      "git_blob": "3edee0780f87d7c84953e4c3373194a099feb5a8",
+      "bytes": 555,
+      "sha256": "2cc4c0b8aa6b9641d860d575aa8652521ab47493daf1b5c9457e005f8c6d6ece"
+    },
+    {
+      "id": "source11",
+      "path": "repro/pump/metaplex-candidate-build-14-review/source-proof/utilize11.rs",
+      "git_blob": "0a4ec3553d19de051049a381762677fa2316ce81",
+      "bytes": 5548,
+      "sha256": "9ce4753676e73e6565b957d86eecf113ce16cade3f782d849e2f7a97b640bed7"
+    },
+    {
+      "id": "source14",
+      "path": "repro/pump/metaplex-candidate-build-14-review/source-proof/utilize-proposed.rs",
+      "git_blob": "127adba27feb5c09440f9601049f5e64e2b103cf",
+      "bytes": 5473,
+      "sha256": "2f403b698750ab295ffd88d71eb75cb594dd27eff67edcc7a260688e33f67ca3"
+    },
+    {
+      "id": "positive_guard13",
+      "path": "repro/pump/metaplex-candidate-build-13-review/positive-guard.fragment.rs",
+      "git_blob": "81723db6f4248e46eee4a9ab07afa7fe8a479785",
+      "bytes": 198,
+      "sha256": "8411c34d710478391b3a3171cbc0f6cc1d6f2bc6a824945f592dc9d0e2fc9980"
+    }
+  ],
+  "guard_file_offset": 238832,
+  "guards": {
+    "original": {
+      "opcode": 61,
+      "dst": 7,
+      "src": 9,
+      "target": 238896,
+      "immediate": 0
+    },
+    "candidate11": {
+      "opcode": 45,
+      "dst": 9,
+      "src": 7,
+      "target": 238984,
+      "immediate": 0
+    }
+  },
+  "candidate14_removed": "    let remaining_uses = metadata_uses\n        .remaining\n        .checked_sub(number_of_uses)\n        .ok_or(MetadataError::NotEnoughUses)?;",
+  "candidate14_added": "    let remaining_uses = metadata_uses.remaining - number_of_uses;"
+}

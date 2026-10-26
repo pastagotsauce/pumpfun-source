@@ -1,0 +1,96 @@
+void SelectionDAGBuilder::visitBr(const BranchInst &I) {
+  MachineBasicBlock *BrMBB = FuncInfo.MBB;
+
+  // Update machine-CFG edges.
+  MachineBasicBlock *Succ0MBB = FuncInfo.MBBMap[I.getSuccessor(0)];
+
+  if (I.isUnconditional()) {
+    // Update machine-CFG edges.
+    BrMBB->addSuccessor(Succ0MBB);
+
+    // If this is not a fall-through branch or optimizations are switched off,
+    // emit the branch.
+    if (Succ0MBB != NextBlock(BrMBB) || TM.getOptLevel() == CodeGenOpt::None)
+      DAG.setRoot(DAG.getNode(ISD::BR, getCurSDLoc(),
+                              MVT::Other, getControlRoot(),
+                              DAG.getBasicBlock(Succ0MBB)));
+
+    return;
+  }
+
+  // If this condition is one of the special cases we handle, do special stuff
+  // now.
+  const Value *CondVal = I.getCondition();
+  MachineBasicBlock *Succ1MBB = FuncInfo.MBBMap[I.getSuccessor(1)];
+
+  // If this is a series of conditions that are or'd or and'd together, emit
+  // this as a sequence of branches instead of setcc's with and/or operations.
+  // As long as jumps are not expensive (exceptions for multi-use logic ops,
+  // unpredictable branches, and vector extracts because those jumps are likely
+  // expensive for any target), this should improve performance.
+  // For example, instead of something like:
+  //     cmp A, B
+  //     C = seteq
+  //     cmp D, E
+  //     F = setle
+  //     or C, F
+  //     jnz foo
+  // Emit:
+  //     cmp A, B
+  //     je foo
+  //     cmp D, E
+  //     jle foo
+  const Instruction *BOp = dyn_cast<Instruction>(CondVal);
+  if (!DAG.getTargetLoweringInfo().isJumpExpensive() && BOp &&
+      BOp->hasOneUse() && !I.hasMetadata(LLVMContext::MD_unpredictable)) {
+    Value *Vec;
+    const Value *BOp0, *BOp1;
+    Instruction::BinaryOps Opcode = (Instruction::BinaryOps)0;
+    if (match(BOp, m_LogicalAnd(m_Value(BOp0), m_Value(BOp1))))
+      Opcode = Instruction::And;
+    else if (match(BOp, m_LogicalOr(m_Value(BOp0), m_Value(BOp1))))
+      Opcode = Instruction::Or;
+
+    if (Opcode && !(match(BOp0, m_ExtractElt(m_Value(Vec), m_Value())) &&
+                    match(BOp1, m_ExtractElt(m_Specific(Vec), m_Value())))) {
+      FindMergedConditions(BOp, Succ0MBB, Succ1MBB, BrMBB, BrMBB, Opcode,
+                           getEdgeProbability(BrMBB, Succ0MBB),
+                           getEdgeProbability(BrMBB, Succ1MBB),
+                           /*InvertCond=*/false);
+      // If the compares in later blocks need to use values not currently
+      // exported from this block, export them now.  This block should always
+      // be the first entry.
+      assert(SL->SwitchCases[0].ThisBB == BrMBB && "Unexpected lowering!");
+
+      // Allow some cases to be rejected.
+      if (ShouldEmitAsBranches(SL->SwitchCases)) {
+        for (unsigned i = 1, e = SL->SwitchCases.size(); i != e; ++i) {
+          ExportFromCurrentBlock(SL->SwitchCases[i].CmpLHS);
+          ExportFromCurrentBlock(SL->SwitchCases[i].CmpRHS);
+        }
+
+        // Emit the branch for this block.
+        visitSwitchCase(SL->SwitchCases[0], BrMBB);
+        SL->SwitchCases.erase(SL->SwitchCases.begin());
+        return;
+      }
+
+      // Okay, we decided not to do this, remove any inserted MBB's and clear
+      // SwitchCases.
+      for (unsigned i = 1, e = SL->SwitchCases.size(); i != e; ++i)
+        FuncInfo.MF->erase(SL->SwitchCases[i].ThisBB);
+
+      SL->SwitchCases.clear();
+    }
+  }
+
+  // Create a CaseBlock record representing this branch.
+  CaseBlock CB(ISD::SETEQ, CondVal, ConstantInt::getTrue(*DAG.getContext()),
+               nullptr, Succ0MBB, Succ1MBB, BrMBB, getCurSDLoc());
+
+  // Use visitSwitchCase to actually insert the fast branch sequence for this
+  // cond branch.
+  visitSwitchCase(CB, BrMBB);
+}
+
+/// visitSwitchCase - Emits the necessary code to represent a single node in

@@ -1,0 +1,16 @@
+    if (!TII->analyzeBranch(*ChainBB, TBB, FBB, Cond, /*AllowModify*/ true)) {
+      // If PrevBB has a two-way branch, try to re-order the branches
+      // such that we branch to the successor with higher probability first.
+      if (TBB && !Cond.empty() && FBB &&
+          MBPI->getEdgeProbability(ChainBB, FBB) >
+              MBPI->getEdgeProbability(ChainBB, TBB) &&
+          !TII->reverseBranchCondition(Cond)) {
+        LLVM_DEBUG(dbgs() << "Reverse order of the two branches: "
+                          << getBlockName(ChainBB) << "\n");
+        LLVM_DEBUG(dbgs() << "    Edge probability: "
+                          << MBPI->getEdgeProbability(ChainBB, FBB) << " vs "
+                          << MBPI->getEdgeProbability(ChainBB, TBB) << "\n");
+        DebugLoc dl; // FIXME: this is nowhere
+        TII->removeBranch(*ChainBB);
+        TII->insertBranch(*ChainBB, FBB, TBB, Cond, dl);
+      }

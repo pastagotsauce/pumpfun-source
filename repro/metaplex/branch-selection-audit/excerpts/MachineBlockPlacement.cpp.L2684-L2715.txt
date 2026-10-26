@@ -1,0 +1,32 @@
+void MachineBlockPlacement::buildCFGChains() {
+  // Ensure that every BB in the function has an associated chain to simplify
+  // the assumptions of the remaining algorithm.
+  SmallVector<MachineOperand, 4> Cond; // For analyzeBranch.
+  for (MachineFunction::iterator FI = F->begin(), FE = F->end(); FI != FE;
+       ++FI) {
+    MachineBasicBlock *BB = &*FI;
+    BlockChain *Chain =
+        new (ChainAllocator.Allocate()) BlockChain(BlockToChain, BB);
+    // Also, merge any blocks which we cannot reason about and must preserve
+    // the exact fallthrough behavior for.
+    while (true) {
+      Cond.clear();
+      MachineBasicBlock *TBB = nullptr, *FBB = nullptr; // For analyzeBranch.
+      if (!TII->analyzeBranch(*BB, TBB, FBB, Cond) || !FI->canFallThrough())
+        break;
+
+      MachineFunction::iterator NextFI = std::next(FI);
+      MachineBasicBlock *NextBB = &*NextFI;
+      // Ensure that the layout successor is a viable block, as we know that
+      // fallthrough is a possibility.
+      assert(NextFI != FE && "Can't fallthrough past the last block.");
+      LLVM_DEBUG(dbgs() << "Pre-merging due to unanalyzable fallthrough: "
+                        << getBlockName(BB) << " -> " << getBlockName(NextBB)
+                        << "\n");
+      Chain->merge(NextBB, nullptr);
+#ifndef NDEBUG
+      BlocksWithUnanalyzableExits.insert(&*BB);
+#endif
+      FI = NextFI;
+      BB = NextBB;
+    }

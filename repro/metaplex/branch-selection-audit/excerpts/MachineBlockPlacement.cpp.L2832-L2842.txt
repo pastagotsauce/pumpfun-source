@@ -1,0 +1,11 @@
+    if (!TII->analyzeBranch(*PrevBB, TBB, FBB, Cond)) {
+      PrevBB->updateTerminator(OriginalLayoutSuccessors[PrevBB->getNumber()]);
+    }
+  }
+
+  // Fixup the last block.
+  Cond.clear();
+  MachineBasicBlock *TBB = nullptr, *FBB = nullptr; // For analyzeBranch.
+  if (!TII->analyzeBranch(F->back(), TBB, FBB, Cond)) {
+    MachineBasicBlock *PrevBB = &F->back();
+    PrevBB->updateTerminator(OriginalLayoutSuccessors[PrevBB->getNumber()]);

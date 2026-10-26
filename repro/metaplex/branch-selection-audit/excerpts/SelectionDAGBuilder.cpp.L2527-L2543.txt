@@ -1,0 +1,17 @@
+  // If the lhs block is the next block, invert the condition so that we can
+  // fall through to the lhs instead of the rhs block.
+  if (CB.TrueBB == NextBlock(SwitchBB)) {
+    std::swap(CB.TrueBB, CB.FalseBB);
+    SDValue True = DAG.getConstant(1, dl, Cond.getValueType());
+    Cond = DAG.getNode(ISD::XOR, dl, Cond.getValueType(), Cond, True);
+  }
+
+  SDValue BrCond = DAG.getNode(ISD::BRCOND, dl,
+                               MVT::Other, getControlRoot(), Cond,
+                               DAG.getBasicBlock(CB.TrueBB));
+
+  // Insert the false branch. Do this even if it's a fall through branch,
+  // this makes it easier to do DAG optimizations which require inverting
+  // the branch condition.
+  BrCond = DAG.getNode(ISD::BR, dl, MVT::Other, BrCond,
+                       DAG.getBasicBlock(CB.FalseBB));
