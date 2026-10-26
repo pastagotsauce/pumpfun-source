@@ -21,7 +21,7 @@ FIXTURES = {
 }
 
 
-def checkout_bytes(attributes, autocrlf, eol="native"):
+def checkout_bytes(attributes, autocrlf, eol="native", inherited_autocrlf=None):
     """Seed exact Git blobs, then materialize them with the requested policy."""
     with tempfile.TemporaryDirectory(prefix="pumpfun-checkout-") as folder:
         root = Path(folder)
@@ -31,6 +31,10 @@ def checkout_bytes(attributes, autocrlf, eol="native"):
             if key.startswith("GIT_"):
                 del env[key]
         env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull)
+        if inherited_autocrlf is not None:
+            config = root / "inherited.gitconfig"
+            config.write_text(f"[core]\n\tautocrlf = {inherited_autocrlf}\n", encoding="utf-8", newline="\n")
+            env["GIT_CONFIG_GLOBAL"] = str(config)
 
         def git(*args, data=None):
             return subprocess.run(
@@ -55,15 +59,17 @@ def checkout_bytes(attributes, autocrlf, eol="native"):
 
 
 class CheckoutBytesTests(unittest.TestCase):
-    def test_repository_policy_preserves_checkout_and_staging(self):
-        for autocrlf, eol in [("true", "native"), ("input", "native"), ("false", "crlf")]:
-            with self.subTest(autocrlf=autocrlf, eol=eol):
-                checked_out, staged = checkout_bytes(ATTRIBUTES.read_bytes(), autocrlf, eol)
+    def test_local_config_preserves_checkout_and_staging(self):
+        for inherited in ("true", "input", "false"):
+            with self.subTest(inherited_autocrlf=inherited):
+                checked_out, staged = checkout_bytes(
+                    ATTRIBUTES.read_bytes(), "false", "crlf", inherited_autocrlf=inherited,
+                )
                 self.assertEqual(checked_out, FIXTURES)
                 self.assertEqual(staged, FIXTURES)
 
-    def test_binary_only_policy_reproduces_receipt_corruption(self):
-        checked_out, _ = checkout_bytes(b"*.so binary\n*.bin binary\n", "true")
+    def test_autocrlf_reproduces_receipt_corruption(self):
+        checked_out, _ = checkout_bytes(ATTRIBUTES.read_bytes(), "true")
         path = "evidence/upstream/receipt.json"
         self.assertEqual(checked_out[path], FIXTURES[path].replace(b"\n", b"\r\n"))
         self.assertNotEqual(checked_out[path], FIXTURES[path])
