@@ -48,7 +48,11 @@ The output directory must not already exist. The driver:
 The Docker container mounts only the official source checkout. The order file
 is copied into the container separately; no captured executable is mounted.
 Before mounting, every tracked regular file must equal its Git blob; missing
-files, symlinks, submodules and untracked or ignored inputs are rejected.
+files, submodules and untracked or ignored inputs are rejected. The exact twelve
+tracked symlinks in the pinned source tree are accepted only with their original
+Git blob and relative target, resolving directly to their pinned, regular,
+tracked in-tree destinations. Unknown, replaced, escaping, missing or chained
+links are rejected. `source-symlinks.json` records that complete tree shape.
 After compilation, new files are allowed only beneath the generated `target/`
 directory. The optional reference must resolve outside the mounted source tree.
 `result.json`, commands, logs, input hashes, actual tool hashes/help and both
@@ -77,5 +81,13 @@ a wrong baseline, altered text, ambiguous functions, changed sizes, duplicate
 names, overlaps, truncated input, wrong architecture, injected order lines,
 ignored ordering and unrelated placement changes. These are tooling checks,
 not runtime comparisons or evidence of a successful rebuild.
-Ten additional local filesystem tests verify source-input rejection, reference
-separation and retention of a deliberately unequal control artifact.
+Fourteen additional filesystem/topology tests verify source-input rejection,
+reference separation, retention of an unequal control artifact, and the actual
+twelve-link source-tree shape. The real filesystem symlink case skips where the
+host lacks symlink privileges; it must pass on the Linux build runner.
+
+The first hosted attempt, [40286252822](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40286252822),
+stopped before Docker because its initial gate rejected all symlinks. No build
+or equality result came from that attempt. The exception above admits only the
+twelve legitimate links observed in the immutable source tree; the original
+failure remains separate evidence.

@@ -2,10 +2,13 @@
 """Local filesystem gates; no Docker, compiler, program or network execution."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import run
 
@@ -64,8 +67,66 @@ class DriverTests(unittest.TestCase):
     def test_symlink_index_mode_rejected(self):
         blob = self.git("hash-object", "Cargo.toml").decode().strip()
         self.git("update-index", "--cacheinfo", "120000," + blob + ",Cargo.toml")
-        with self.assertRaisesRegex(ValueError, "symlink, submodule"):
+        with self.assertRaisesRegex(ValueError, "symlink"):
             run.source_manifest(self.source)
+
+    def test_pinned_twelve_symlink_tree_shape(self):
+        indexed = {name: (row["mode"], row["blob"])
+                   for name, row in run.PINNED_SYMLINKS["destinations"].items()}
+        self.assertEqual(len(run.PINNED_SYMLINKS["links"]), 12)
+        destinations = set()
+        for name, row in run.PINNED_SYMLINKS["links"].items():
+            encoded = row["target"].encode()
+            self.assertEqual(hashlib.sha1(b"blob " + str(len(encoded)).encode() + b"\0" + encoded).hexdigest(), row["blob"])
+            destinations.add(run.symlink_destination(name, row["blob"], row["target"], indexed))
+        self.assertEqual(destinations, set(run.PINNED_SYMLINKS["destinations"]))
+
+    def test_unknown_or_escaping_link_rejected(self):
+        indexed = {name: (row["mode"], row["blob"])
+                   for name, row in run.PINNED_SYMLINKS["destinations"].items()}
+        with self.assertRaisesRegex(ValueError, "Unknown or modified"):
+            run.symlink_destination("injected-link", "0" * 40, "../outside", indexed)
+        row = run.PINNED_SYMLINKS["links"]["farms/README.md"]
+        with self.assertRaisesRegex(ValueError, "Unknown or modified"):
+            run.symlink_destination("farms/README.md", row["blob"], "../../outside", indexed)
+
+    def test_missing_or_chained_link_destination_rejected(self):
+        row = run.PINNED_SYMLINKS["links"]["farms/README.md"]
+        for indexed in ({}, {"farms/docs/intro.md": ("120000", row["blob"])}):
+            with self.subTest(indexed=indexed):
+                with self.assertRaisesRegex(ValueError, "missing, changed or chained"):
+                    run.symlink_destination("farms/README.md", row["blob"], row["target"], indexed)
+
+    def test_pinned_tree_topology_with_real_filesystem_symlinks(self):
+        probe = self.source / "symlink-probe"
+        try:
+            os.symlink("Cargo.toml", probe)
+        except OSError as error:
+            if sys.platform != "win32":
+                raise
+            self.skipTest("Filesystem symlink privilege unavailable: " + str(error))
+        probe.unlink()
+        expected_destinations = {}
+        for name, row in run.PINNED_SYMLINKS["destinations"].items():
+            path = self.source / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(("synthetic contents for " + name).encode())
+            blob = self.git("hash-object", str(path)).decode().strip()
+            expected_destinations[name] = {"mode": row["mode"], "blob": blob}
+        for name, row in run.PINNED_SYMLINKS["links"].items():
+            path = self.source / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            os.symlink(row["target"], path)
+        self.git("config", "core.symlinks", "true")
+        self.git("add", "farms")
+        self.git("update-index", "--chmod=+x", "farms/docs/intro.md")
+        # Use exact published link names/targets, with small synthetic destination contents.
+        with patch.dict(run.PINNED_SYMLINKS, {"destinations": expected_destinations}):
+            manifest = run.source_manifest(self.source)
+            self.assertTrue(set(run.PINNED_SYMLINKS["links"]) <= set(manifest))
+            (self.source / "farms/docs/intro.md").unlink()
+            with self.assertRaises((ValueError, FileNotFoundError)):
+                run.source_manifest(self.source)
 
     def test_reference_inside_source_rejected(self):
         with self.assertRaisesRegex(ValueError, "outside the source mount"):

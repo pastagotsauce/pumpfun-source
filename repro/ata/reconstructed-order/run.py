@@ -7,7 +7,9 @@ The optional reference is opened only after both compiler/linker outputs exist.
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
+import posixpath
 import shutil
 import subprocess
 import sys
@@ -21,6 +23,7 @@ REFERENCE_SHA256 = "6804554e69fd3a58caa191dc4a58f4c67223d30ca28ab8987f39fc18d2f7
 LOCK_SHA256 = "3c8f402f40488908503e9cc088388c1f95848d79da5141b5cb1a14006d74428b"
 MANIFEST = "associated-token-account/program/Cargo.toml"
 LIBRARY = "spl_associated_token_account.so"
+PINNED_SYMLINKS = json.loads((Path(__file__).parent / "source-symlinks.json").read_text())
 
 
 def sha(data):
@@ -31,28 +34,58 @@ def write_json(path, data):
     path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
+def symlink_destination(name, blob, target, indexed):
+    """Accept only the twelve exact, direct in-tree links in the pinned source tree."""
+    expected = PINNED_SYMLINKS["links"].get(name)
+    require(expected is not None and blob == expected["blob"] and target == expected["target"],
+            "Unknown or modified source symlink: " + name)
+    destination = posixpath.normpath(posixpath.join(posixpath.dirname(name), target))
+    require(not posixpath.isabs(target) and destination != ".." and not destination.startswith("../"),
+            "Source symlink escapes checkout")
+    expected_destination = PINNED_SYMLINKS["destinations"].get(destination)
+    actual_destination = indexed.get(destination)
+    require(expected_destination is not None and actual_destination ==
+            (expected_destination["mode"], expected_destination["blob"]),
+            "Source symlink target is missing, changed or chained: " + name)
+    return destination
+
+
 def source_manifest(source, allow_target=False):
-    """Bind every tracked regular file and reject extra build inputs, including ignored ones."""
+    """Bind tracked bytes/link text and reject extra build inputs, including ignored ones."""
     entries = subprocess.check_output(["git", "-C", str(source), "ls-files", "--stage", "-z"])
-    manifest = {}
+    indexed = {}
     for entry in entries.split(b"\0"):
-        if not entry:
-            continue
-        metadata, name = entry.split(b"\t", 1)
-        mode, blob, stage = metadata.decode().split()
-        require(mode in ("100644", "100755") and stage == "0",
-                "Source index contains a symlink, submodule or unresolved entry")
-        relative = Path(name.decode())
+        if entry:
+            metadata, name = entry.split(b"\t", 1)
+            mode, blob, stage = metadata.decode().split()
+            require(mode in ("100644", "100755", "120000") and stage == "0",
+                    "Source index contains a submodule or unresolved entry")
+            require(name.decode() not in indexed, "Duplicate source index entry")
+            indexed[name.decode()] = (mode, blob)
+    manifest = {}
+    for name, (mode, blob) in indexed.items():
+        relative = Path(name)
         require(not relative.is_absolute() and ".." not in relative.parts, "Invalid source path")
         path = source / relative
-        require(not path.is_symlink() and all(not p.is_symlink() for p in
+        require(all(not p.is_symlink() for p in
                 path.parents if p != source and source in p.parents),
-                "Source path is symlinked")
-        require(path.is_file(), "Tracked source file is missing: " + str(relative))
-        data = path.read_bytes()
+                "Source parent directory is symlinked")
+        if mode == "120000":
+            require(path.is_symlink(), "Tracked source symlink is missing or replaced: " + name)
+            target = os.readlink(path)
+            destination = symlink_destination(name, blob, target, indexed)
+            resolved = path.resolve(strict=True)
+            require(source in resolved.parents and resolved == source / destination,
+                    "Source symlink resolves outside its pinned target: " + name)
+            require(resolved.is_file() and not resolved.is_symlink(), "Source symlink has no regular target")
+            data = os.fsencode(target)
+        else:
+            require(not path.is_symlink(), "Tracked regular source file is symlinked")
+            require(path.is_file(), "Tracked source file is missing: " + str(relative))
+            data = path.read_bytes()
         actual_blob = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
         require(actual_blob == blob, "Tracked source bytes differ from Git: " + str(relative))
-        manifest[name.decode()] = sha(data)
+        manifest[name] = sha(data)
     for switches in (["--others", "--exclude-standard"],
                      ["--others", "--ignored", "--exclude-standard"]):
         extras = subprocess.check_output(["git", "-C", str(source), "ls-files", *switches, "-z"])
