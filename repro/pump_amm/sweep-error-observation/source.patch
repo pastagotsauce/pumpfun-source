@@ -1,0 +1,22 @@
+--- a/programs/pump-amm/src/sweep.rs
++++ b/programs/pump-amm/src/sweep.rs
+@@ -88,6 +88,7 @@
+         .checked_sub(fees)
+         .ok_or(PumpAmmError::Overflow)?;
+     if amount == 0 {
++        msg!("Nothing to sweep for fee bucket {}", u8::from(creator));
+         return Ok(());
+     }
+     let updated_virtual = a
+@@ -120,9 +121,8 @@
+         &bump,
+     ];
+     if a.pool_quote_token_account.key() == a.recipient_token_account.key() {
+-        require_keys_eq!(
+-            a.pool_quote_token_account.owner,
+-            a.pool.key(),
++        require!(
++            a.pool_quote_token_account.owner == a.pool.key(),
+             PumpAmmError::SelfTransferNotAllowed
+         );
+     }

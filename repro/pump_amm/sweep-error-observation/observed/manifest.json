@@ -1,0 +1,27 @@
+{
+  "archive_bytes": 10736,
+  "archive_sha256": "81aa55b595b44b4bda2ba237a2cb4c3ba8004cd643e4033cd41f1188c4da9460",
+  "artifact_id": 12636451641,
+  "head_sha": "fb92040071948ef610e60542d784e5c2d7a15e64",
+  "members": {
+    "build-artifact.json": {
+      "raw_bytes": 750,
+      "raw_sha256": "78872429f565b00e03c147bba757c5d1801ca107314b32a5dc5dcb133783fbe7",
+      "stored": "build-artifact.json",
+      "stored_sha256": "78872429f565b00e03c147bba757c5d1801ca107314b32a5dc5dcb133783fbe7"
+    },
+    "runtime.json": {
+      "raw_bytes": 262569,
+      "raw_sha256": "546bf6998ff0c001c993fc9122feab5f1af63a48bad2532bfd23a5bb3ceb5182",
+      "stored": "runtime.json.gz",
+      "stored_sha256": "b43fed073fd8c97c64dae37698a7ae703a30833878852330bcc79425bcfb6e6a"
+    }
+  },
+  "provenance_sha256": {
+    "artifact.json": "80523e58ed36786a076a457c9bc1bcc3ae2fa505b539e8f60fef5baf52e76777",
+    "jobs.json": "5af7026a4ffd6309f97a0121b30706d6501150f327464d472f37df38ba23bb5b",
+    "run.json": "0278a41f3fcbc6a4ac3b61e498462e17f955d265b59b8c46cc0f58c61111235a"
+  },
+  "run_id": 40291256769,
+  "run_url": "https://github.com/pastagotsauce/pumpfun-source/actions/runs/40291256769"
+}
