@@ -1,0 +1,44 @@
+{
+  "scope": "Immutable upstream source reads supporting one proposed linker experiment; actual tool support is separately checked by run.py",
+  "rust_revision": "e2df8fa5aff81929ef8e5f5cf8b177e5cec0fe87",
+  "llvm_submodule": "9509bb55a565c64e45ea0b20dfba7fe16fc01fc1",
+  "llvm_submodule_record": "https://api.github.com/repos/anza-xyz/rust/contents/src/llvm-project?ref=e2df8fa5aff81929ef8e5f5cf8b177e5cec0fe87",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/anza-xyz/rust/e2df8fa5aff81929ef8e5f5cf8b177e5cec0fe87/compiler/rustc_target/src/spec/bpfel_unknown_unknown.rs",
+      "bytes": 308,
+      "sha256": "95bf04cda8ab65f25cb03d019e5e38731ddbaf5fab6024edc032e3a8690cc576",
+      "role": "BPF target selects sbf_base options"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/anza-xyz/rust/e2df8fa5aff81929ef8e5f5cf8b177e5cec0fe87/compiler/rustc_target/src/spec/sbf_base.rs",
+      "bytes": 1871,
+      "sha256": "b57665e80601422052de3d288a10e6d54c5208fd82b3c2af3d89fde0b9ba2c17",
+      "role": "Pinned rust-lld, single .text wildcard and one linker thread"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/9509bb55a565c64e45ea0b20dfba7fe16fc01fc1/lld/ELF/Options.td",
+      "bytes": 31563,
+      "sha256": "9396001be683e6915a57b72220eb23ae2171bfcda264aeb951d8d13153f4f70c",
+      "role": "Supported symbol-ordering-file option"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/solana-labs/llvm-project/9509bb55a565c64e45ea0b20dfba7fe16fc01fc1/lld/ELF/Writer.cpp",
+      "bytes": 115841,
+      "sha256": "7275136a12ac8e469bd44feae8d384b5b832a4c8eb4df94232b22afd3eeabe8f",
+      "role": "Symbol-to-input-section ordering, including local symbols"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/solana-labs/solana/fcb85858485170219eb80887837afd08940f816d/sdk/cargo-build-bpf/src/main.rs",
+      "bytes": 29630,
+      "sha256": "b060f867ee3d54246cb2cf23f3730390f07193a4954b7b5bdbc422c4830a3f95",
+      "role": "Pinned +bpf compilation, environment and stripping pipeline"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/solana-labs/solana/fcb85858485170219eb80887837afd08940f816d/sdk/bpf/scripts/strip.sh",
+      "bytes": 490,
+      "sha256": "b7297a16f070c299c55416b083ff812ffb0f44c4a6cfb951b87b0602ddff7926",
+      "role": "SDK llvm-objcopy --strip-all operation"
+    }
+  ]
+}
