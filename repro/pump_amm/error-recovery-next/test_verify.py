@@ -84,6 +84,24 @@ class EvidenceTests(unittest.TestCase):
         result = verify.normalized_logs(logs)
         self.assertEqual(result, logs[:4] + logs[5:])
 
+    def test_withdrawal_quote_rounds_to_zero_before_guard(self):
+        economics = verify.fixture_economics((verify.ROOT / verify.FIXTURE_PATH).read_bytes())
+        quote = {"instruction": "withdraw", "user_account_index": 7, "amount": 1, "wrong_withdraw_owner": True}
+        self.assertEqual(verify.expected_transfer(quote, economics), (0, None))
+        self.assertEqual(verify.expected_transfer(quote | {"instruction": "deposit"}, economics), (1, verify.ERROR))
+        self.assertEqual(verify.expected_transfer(quote | {"user_account_index": 6}, economics), (160, verify.ERROR))
+        self.assertEqual(verify.expected_transfer(quote | {"amount": 1000000}, economics), (29312, verify.ERROR))
+
+    def test_quantity_rounding_does_not_waive_other_wrong_owners(self):
+        economics = verify.fixture_economics((verify.ROOT / verify.FIXTURE_PATH).read_bytes())
+        outcomes = []
+        for instruction, wrong in (("deposit", False), ("withdraw", False), ("withdraw", True)):
+            for account in (6, 7):
+                for amount in (0, 1, 1000000):
+                    row = {"instruction": instruction, "user_account_index": account, "amount": amount, "wrong_withdraw_owner": wrong}
+                    outcomes.append(verify.expected_transfer(row, economics)[1])
+        self.assertEqual([i for i, error in enumerate(outcomes) if error], [1, 2, 4, 5, 13, 14, 17])
+
 
 if __name__ == "__main__":
     unittest.main()

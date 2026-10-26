@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify saved AMM liquidity error evidence; never compile or execute a program."""
 import argparse
+import base64
 import gzip
 import hashlib
 import json
@@ -16,6 +17,8 @@ RAW_SHA = "3a0735d3ca936528aadd95136441e92815b1fc8b2efc83f05d6b3aeb56c96906"
 ORIGINAL_SHA = "6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7"
 BASELINE_SHA = "09bee0dfd751dc6ae0240bbac262933c6bda6e0c94aa643f82c57f2956c3a117"
 SOURCE_SHA = "ba0be4636bd22d63b9d3e18907d00e15316386f8f1507ad01ebe31d8134349b1"
+FIXTURE_PATH = "research/imported-lab/analysis/pump_fun/amm-v2-trade-fixture.json"
+FIXTURE_SHA = "2e775505852caf55203c826ee08b9341aa275f52f59a933c4fb0740535ee316f"
 ERROR = "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6087))))"
 ORIGIN = "programs/pump-amm/src/utils/token.rs:21"
 BAD_CASES = {
@@ -36,6 +39,37 @@ def digest(data):
 def require(condition, message):
     if not condition:
         raise ValueError(message)
+
+
+def fixture_economics(raw):
+    """Pin the existing zero-fee classic-token probe fixture before classification."""
+    require(digest(raw) == FIXTURE_SHA, "liquidity fixture changed")
+    fixture = json.loads(raw)
+    pool = base64.b64decode(fixture["accounts"]["pool"]["data_base64"], validate=True)
+    supply = struct.unpack_from("<Q", pool, 203)[0]
+    reserves = {index: struct.unpack_from("<Q", base64.b64decode(
+        fixture["accounts"][name]["data_base64"], validate=True), 64)[0]
+        for index, name in ((6, "pool_base_token_account"), (7, "pool_quote_token_account"))}
+    require(supply > 0, "zero fixture LP supply")
+    # The existing run() fixture explicitly clears both fee buckets before each
+    # case; both mint accounts are classic SPL, so no quote transfer fee applies.
+    require(all(fixture["accounts"][name]["owner"] == "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+                for name in ("base_mint", "quote_mint")), "unexpected mint program")
+    return {"lp_supply": supply, "base_reserve": reserves[6], "quote_reserve": reserves[7]}
+
+
+def expected_transfer(row, economics):
+    require(row["instruction"] in ("deposit", "withdraw") and row["user_account_index"] in (6, 7),
+            "unexpected focused case identity")
+    amount = row["amount"]
+    require(type(amount) is int and amount in (0, 1, 1000000), "unexpected focused amount")
+    reserve = economics["base_reserve" if row["user_account_index"] == 6 else "quote_reserve"]
+    numerator = reserve * amount
+    if row["instruction"] == "deposit":
+        numerator += economics["lp_supply"] - 1
+    quantity = numerator // economics["lp_supply"]
+    reject = quantity != 0 and (row["instruction"] == "deposit" or row["wrong_withdraw_owner"])
+    return quantity, ERROR if reject else None
 
 
 def normalized_logs(logs):

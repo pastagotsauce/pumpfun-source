@@ -57,6 +57,29 @@ The probe needs a Linux `solders` wheel with LiteSVM. The Windows 0.27.1 wheel
 installed during investigation lacks the required `FeatureSet` binding, so the
 Windows attempt executed no program.
 
+The first Linux pair built successfully, then its baseline probe failed its own
+expectation for the one-LP quote withdrawal with a wrong token authority. The
+original and baseline both succeeded: the pinned fixture has quote reserve
+122,946,690,720 and LP supply 4,194,352,106,721, so that withdrawal rounds the quote
+transfer down to zero. The guard is skipped for zero transfer quantity. Its
+original receipt contains a 160-unit base transfer, a one-LP burn and no quote
+transfer. The failed attempt remains failed; it is not rewritten as a pass.
+
+The corrected probe derives each aliased transfer quantity from the pinned
+fixture, using deposit ceiling and withdrawal floor before checking the guard.
+It requires seven rejections and eleven successful controls, including the zero
+quote transfer. Regression tests distinguish that case from base withdrawal,
+larger quote withdrawal and the corresponding deposit.
+
+After an actual successful replay, `verify_runtime.py` and
+`test_verify_runtime.py` accept `--report`, `--candidate`, `--build-record` and
+optional `--repo`. The standalone checker recomputes all 18 case dispositions,
+effect and log comparisons, artifact/source bindings and Ed25519 verification
+from raw signed transaction bytes. It checks the complete signed instruction
+payload and account routing, distinguishes repeated messages, and rejects any
+receipt whose producer recorded a failure. It does not execute the VM or turn
+saved signatures into proof of exhaustive state coverage.
+
 ## Isolated Linux experiment
 
 `linux_build.py --repo . --output <new-directory>` requires Linux x86_64,

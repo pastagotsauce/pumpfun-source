@@ -12,7 +12,8 @@ from pathlib import Path
 import platform
 import sys
 
-from verify import BASELINE_SHA, ORIGINAL_SHA, SOURCE_SHA, digest, normalized_logs, require, compared_keys, ERROR
+from verify import (BASELINE_SHA, ORIGINAL_SHA, SOURCE_SHA, digest, normalized_logs,
+                    require, compared_keys, fixture_economics, expected_transfer, FIXTURE_PATH)
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -59,6 +60,7 @@ def main():
         "evidence/dependencies/spl_token_2022/deployed.so",
     ]
     input_hashes = {path: digest((root / path).read_bytes()) for path in inputs}
+    economics = fixture_economics((root / FIXTURE_PATH).read_bytes())
     os.chdir(root)  # The existing fixture loader uses repo-relative paths.
     sys.path.insert(0, str(root / "scripts"))
     import pump_amm_liquidity_differential as harness
@@ -106,8 +108,9 @@ def main():
     require(input_hashes == {path: digest((root / path).read_bytes()) for path in inputs}, "harness inputs changed")
     problems = []
     for index, row in enumerate(rows):
-        reject = row["amount"] != 0 and (row["instruction"] == "deposit" or row["wrong_withdraw_owner"])
-        expected_error = ERROR if reject else None
+        quantity, expected_error = expected_transfer(row, economics)
+        reject = expected_error is not None
+        row["expected_aliased_transfer_quantity"] = quantity
         for side in ("original", "candidate"):
             result = row[side]
             if result["error"] != expected_error:
@@ -136,6 +139,7 @@ def main():
         "mode": args.expect, "original_sha256": ORIGINAL_SHA,
         "candidate_sha256": args.candidate_sha256, "input_sha256": input_hashes,
         "build_binding": build_binding,
+        "fixture_economics": economics,
         "probe_sha256": digest(Path(__file__).read_bytes()),
         "comparison_helper_sha256": digest(Path(__file__).with_name("verify.py").read_bytes()),
         "runtime": {"python": sys.version, "platform": platform.platform(),
