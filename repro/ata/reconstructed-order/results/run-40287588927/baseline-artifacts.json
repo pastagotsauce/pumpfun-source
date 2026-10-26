@@ -1,0 +1,10 @@
+{
+  "baseline.so": {
+    "bytes": 105032,
+    "sha256": "ba8dd8a42ca7bff4b668c72e1b5614e9363b271924d520253f5724760ba2d65b"
+  },
+  "baseline.symbols.so": {
+    "bytes": 169040,
+    "sha256": "fc325accb5887b80f777d7656a6f41b4823e594b2b05b9f746a1227a6bfe22e9"
+  }
+}

@@ -1,8 +1,16 @@
 # ATA reconstruction through a supported linker order
 
-This is a **proposed reconstructed build recipe**, not recovery of the release
-uploader's historical invocation. No byte-identity result is claimed before an
-actual run of `run.py` succeeds and its retained output is reviewed.
+**The reconstructed source build is byte-identical to the captured ATA program.**
+[Hosted run 40287588927](https://github.com/pastagotsauce/pumpfun-source/actions/runs/40287588927)
+compiled the unchanged official source, applied the supported linker ordering,
+and produced the exact 105,032-byte raw ELF with SHA256
+`6804554e69fd3a58caa191dc4a58f4c67223d30ca28ab8987f39fc18d2f7374d`.
+The 307 differing positions in the unchanged baseline became zero. There was
+no ELF patching, padding or compiler-source modification.
+
+This is a reconstructed recipe, not recovery of the uploader's historical
+invocation. It changes no global selected-artifact record or core-program
+identity claim. The four core programs remain outside this ATA result.
 
 The existing [ATA monomorph proof](../monomorph-order-proof/REPORT.md) and
 [complete correspondence proof](../../parallel-work/2026-10-24/results/ata_recipe/evidence/REPORT.md)
@@ -11,8 +19,8 @@ adjacent `RawVec::reserve_for_push` specializations and affected calls/relocatio
 Candidate2 places the 352-byte `u8` function before the 440-byte `AccountMeta`
 function; the capture has the reverse order. Their combined extent is unchanged.
 
-This experiment asks whether ordinary source compilation plus the pinned
-linker's supported symbol-order option can reproduce that placement. It does
+This experiment used ordinary source compilation plus the pinned
+linker's supported symbol-order option to reproduce that placement. It does
 not patch an ELF, replace compiler-generated code, supply original bytes to a
 build, change the compiler, or search flags/metadata values.
 
@@ -75,6 +83,46 @@ contents; the linker still resolves calls and relocations. [Pinned target](https
 These source observations select one testable recipe; they do not substitute
 for the driver's checks against the actual linker and emitted symbols.
 `source-receipts.json` records the immutable files inspected for this proposal.
+
+## Retained result and offline verification
+
+`results/run-40287588927/` preserves both complete raw/unstripped outputs,
+build/strip logs, commands, all 1,229 source-input hashes, order data and measured
+tool identities. The actual linker reports LLD 13 at the pinned LLVM revision
+and advertises the ordering option. The post-link check accounts for all 177
+function symbols: only the two specified functions moved, without size changes.
+`results/build-inputs.json` binds the executed package files to commit `031b5b2`;
+`results/hosted-runs.json` records public run/artifact IDs and archive digests.
+The source-input hash manifest is stored as lossless `source-manifest.json.gz`,
+following the repository's compressed-evidence convention. This avoids secret
+scanner false positives on public hashes beside paths containing `token` without
+changing scanner rules. Verification decompresses it and seals the original
+`source-manifest.json` filename, length and raw bytes; the other sixteen hosted
+artifact members are retained directly.
+
+```sh
+python -B repro/ata/reconstructed-order/verify_saved.py
+python -B repro/ata/reconstructed-order/test_verify_saved.py
+```
+
+The saved verifier checks the manifest, compares raw bytes directly with the
+repository capture, binds allocated sections to the unstripped outputs,
+recreates the order file from the baseline's symbols, and rechecks all final
+symbol placements. It executes no compiler, linker or program and is not a new
+source rebuild or runtime replay. A relocated copy accepts `--reference PATH`.
+In addition to the general manifest, the verifier pins a fixed digest over the
+seventeen actual hosted artifact members, separately pins the executed-input
+record, and checks the exact run/artifact ID
+and published archive digest. Rewriting the general manifest cannot substitute
+different build commands or source hashes. These records are anchored by Git
+and observed GitHub metadata, not publisher attestation.
+
+Fourteen corruption/portability tests include modified or truncated ELF output
+even with rewritten file-hash records, altered order or lock/provenance claims,
+rewritten helper/source/command receipts or hosted artifact identity, omitted
+initial-failure evidence and an escaping manifest path. They also check that
+recompressing unchanged manifest bytes preserves the original artifact seal,
+while invalid gzip data or changed uncompressed source hashes are rejected.
 
 Fifteen local tests exercise synthetic ELF parsing and failure cases, including
 a wrong baseline, altered text, ambiguous functions, changed sizes, duplicate

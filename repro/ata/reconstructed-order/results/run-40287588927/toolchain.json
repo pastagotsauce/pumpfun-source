@@ -1,0 +1,17 @@
+{
+  "active_host_toolchain": "1.59.0-x86_64-unknown-linux-gnu",
+  "rustc_version": "rustc 1.59.0-dev\nbinary: rustc\ncommit-hash: unknown\ncommit-date: unknown\nhost: x86_64-unknown-linux-gnu\nrelease: 1.59.0-dev\nLLVM version: 13.0.0",
+  "linker_version": "LLD 13.0.0 (https://github.com/solana-labs/llvm-project.git 9509bb55a565c64e45ea0b20dfba7fe16fc01fc1) (compatible with GNU linkers)",
+  "paths": {
+    "rustc": "/usr/local/rustup/toolchains/bpf/bin/rustc",
+    "cargo": "/root/.cache/solana/v1.27/bpf-tools/rust/bin/cargo",
+    "rust-lld": "/root/.cache/solana/v1.27/bpf-tools/rust/lib/rustlib/x86_64-unknown-linux-gnu/bin/rust-lld",
+    "llvm-objcopy": "/root/.cache/solana/v1.27/bpf-tools/llvm/bin/llvm-objcopy"
+  },
+  "sha256": {
+    "rustc": "1f070433db37406c128936f1b5baa734a7d4f4c94c6db31d07b890a649ed7a39",
+    "cargo": "2870e4a389825e08569302289c7849f08c2650c574330aaa4db9cd76b62970b3",
+    "rust-lld": "e99417697acf90ac6c5ffc586dfaed2458108285ad12c987e0a82f5350a5e9fb",
+    "llvm-objcopy": "bcfa013b12712fe74fd47f4435d8d078cdf4c5e3b366535721198f18b876dea1"
+  }
+}

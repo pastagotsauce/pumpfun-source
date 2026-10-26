@@ -1,0 +1,1088 @@
+{
+  "scope": "Reconstructed linker order; historical uploader recipe is unknown",
+  "baseline_sha256": "ba8dd8a42ca7bff4b668c72e1b5614e9363b271924d520253f5724760ba2d65b",
+  "unstripped_sha256": "fc325accb5887b80f777d7656a6f41b4823e594b2b05b9f746a1227a6bfe22e9",
+  "order_sha256": "108fe02f95497a7df16e40a2d931a931edf461edd9c15dc1ba5e4679d08645f5",
+  "function_symbols": 177,
+  "pair": {
+    "u8": {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17h71926d0f82292f46E",
+      "address": 28592,
+      "bytes": 352
+    },
+    "account_meta": {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17hdd26a0daa1db3a93E",
+      "address": 28944,
+      "bytes": 440
+    },
+    "index": 38
+  },
+  "baseline_order": [
+    {
+      "name": "_ZN4core3ptr179drop_in_place$LT$core..result..Result$LT$spl_token_2022..extension..StateWithExtensions$LT$spl_token_2022..state..Account$GT$$C$solana_program..program_error..ProgramError$GT$$GT$17hf77e15da4f1a77efE",
+      "address": 288,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN4core3ptr226drop_in_place$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$GT$17ha76ed1f78cfc23deE",
+      "address": 384,
+      "bytes": 56
+    },
+    {
+      "name": "_ZN4core3ptr44drop_in_place$LT$core..cell..BorrowError$GT$17h6be51cdf31a30c05E",
+      "address": 440,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN4core3ptr61drop_in_place$LT$solana_program..instruction..Instruction$GT$17hb5f258de967ba480E",
+      "address": 448,
+      "bytes": 128
+    },
+    {
+      "name": "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17h45115161e71f7c36E",
+      "address": 576,
+      "bytes": 400
+    },
+    {
+      "name": "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17hfcc8ef274f316369E",
+      "address": 976,
+      "bytes": 592
+    },
+    {
+      "name": "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$4$u5d$$GT$17h8c445ff9692739feE",
+      "address": 1568,
+      "bytes": 784
+    },
+    {
+      "name": "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$5$u5d$$GT$17h6bb003218e0addc5E",
+      "address": 2352,
+      "bytes": 976
+    },
+    {
+      "name": "_ZN28spl_associated_token_account9processor19process_instruction17h081b777807729d1bE",
+      "address": 3328,
+      "bytes": 1096
+    },
+    {
+      "name": "_ZN28spl_associated_token_account9processor39process_create_associated_token_account17h8a057ca14d65954eE",
+      "address": 4424,
+      "bytes": 3824
+    },
+    {
+      "name": "_ZN28spl_associated_token_account9processor22process_recover_nested17ha144e13473d2d562E",
+      "address": 8248,
+      "bytes": 5152
+    },
+    {
+      "name": "_ZN28spl_associated_token_account5tools7account18create_pda_account17h224fddc134f02b94E",
+      "address": 13400,
+      "bytes": 5768
+    },
+    {
+      "name": "_ZN28spl_associated_token_account5tools7account15get_account_len17hd9ac06f50fe4f4c4E",
+      "address": 19168,
+      "bytes": 2056
+    },
+    {
+      "name": "_ZN28spl_associated_token_account51get_associated_token_address_and_bump_seed_internal17hdc0ef3703b036bdbE",
+      "address": 21224,
+      "bytes": 480
+    },
+    {
+      "name": "entrypoint",
+      "address": 21704,
+      "bytes": 608
+    },
+    {
+      "name": "__rg_alloc",
+      "address": 22312,
+      "bytes": 208
+    },
+    {
+      "name": "__rg_dealloc",
+      "address": 22520,
+      "bytes": 8
+    },
+    {
+      "name": "__rg_realloc",
+      "address": 22528,
+      "bytes": 264
+    },
+    {
+      "name": "__rg_alloc_zeroed",
+      "address": 22792,
+      "bytes": 240
+    },
+    {
+      "name": "custom_panic",
+      "address": 23032,
+      "bytes": 280
+    },
+    {
+      "name": "_ZN103_$LT$spl_associated_token_account..error..AssociatedTokenAccountError$u20$as$u20$core..fmt..Display$GT$3fmt17hfedca2560991bd7aE",
+      "address": 23312,
+      "bytes": 128
+    },
+    {
+      "name": "_ZN113_$LT$spl_associated_token_account..instruction..AssociatedTokenAccountInstruction$u20$as$u20$core..fmt..Debug$GT$3fmt17h2eac142a1f1e7a64E",
+      "address": 23440,
+      "bytes": 152
+    },
+    {
+      "name": "_ZN124_$LT$spl_associated_token_account..instruction..AssociatedTokenAccountInstruction$u20$as$u20$borsh..de..BorshDeserialize$GT$11deserialize17h7aeb1600d1214541E",
+      "address": 23592,
+      "bytes": 872
+    },
+    {
+      "name": "_ZN14spl_token_20229extension28StateWithExtensions$LT$S$GT$6unpack17hec222c7bc5908bd5E",
+      "address": 24464,
+      "bytes": 1384
+    },
+    {
+      "name": "_ZN14spl_token_20229extension28StateWithExtensions$LT$S$GT$6unpack17hfba8e6f90624ca44E",
+      "address": 25848,
+      "bytes": 1584
+    },
+    {
+      "name": "_ZN3std5error5Error7type_id17h1ecaee266971b1b9E",
+      "address": 27432,
+      "bytes": 24
+    },
+    {
+      "name": "_ZN3std5error5Error9backtrace17ha3217e3b0d69a750E",
+      "address": 27456,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN3std5error5Error5cause17h148ca943443c1a96E",
+      "address": 27472,
+      "bytes": 24
+    },
+    {
+      "name": "_ZN80_$LT$solana_program..account_info..AccountInfo$u20$as$u20$core..clone..Clone$GT$5clone17h0c0ea1c352d56847E",
+      "address": 27496,
+      "bytes": 312
+    },
+    {
+      "name": "_ZN4core4cell16RefCell$LT$T$GT$6borrow17h2184066ecfb041adE",
+      "address": 27808,
+      "bytes": 160
+    },
+    {
+      "name": "_ZN4core3fmt3num49_$LT$impl$u20$core..fmt..Debug$u20$for$u20$u8$GT$3fmt17hc6b06f52a5b8c794E",
+      "address": 27968,
+      "bytes": 168
+    },
+    {
+      "name": "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h44fa8575df09e329E",
+      "address": 28136,
+      "bytes": 24
+    },
+    {
+      "name": "__rust_alloc",
+      "address": 28160,
+      "bytes": 16
+    },
+    {
+      "name": "__rust_dealloc",
+      "address": 28176,
+      "bytes": 16
+    },
+    {
+      "name": "__rust_realloc",
+      "address": 28192,
+      "bytes": 16
+    },
+    {
+      "name": "__rust_alloc_zeroed",
+      "address": 28208,
+      "bytes": 16
+    },
+    {
+      "name": "__rust_alloc_error_handler",
+      "address": 28224,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17hf1af88e8f339ce83E",
+      "address": 28240,
+      "bytes": 352
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17h71926d0f82292f46E",
+      "address": 28592,
+      "bytes": 352
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17hdd26a0daa1db3a93E",
+      "address": 28944,
+      "bytes": 440
+    },
+    {
+      "name": "_ZN5alloc7raw_vec11finish_grow17h948c140070144695E",
+      "address": 29384,
+      "bytes": 320
+    },
+    {
+      "name": "_ZN14spl_token_20229extension12transfer_fee11instruction22TransferFeeInstruction4pack17h3b5acdf8e83ac706E",
+      "address": 29704,
+      "bytes": 1456
+    },
+    {
+      "name": "_ZN14spl_token_20229extension30check_min_len_and_not_multisig17hc07f9f1df05a986aE",
+      "address": 31160,
+      "bytes": 64
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction16TokenInstruction4pack17h75e22205eeaa3bb8E",
+      "address": 31224,
+      "bytes": 3072
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction16TokenInstruction18pack_pubkey_option17h12be989b166985a9E",
+      "address": 34296,
+      "bytes": 544
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction19initialize_account317h86b4b758631f7007E",
+      "address": 34840,
+      "bytes": 1096
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction13close_account17h2db72de871d6e158E",
+      "address": 35936,
+      "bytes": 2032
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction16transfer_checked17h4e9356b722ccdf75E",
+      "address": 37968,
+      "bytes": 2544
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction21get_account_data_size17h3e269d7e0f9ce52bE",
+      "address": 40512,
+      "bytes": 1048
+    },
+    {
+      "name": "_ZN14spl_token_202211instruction26initialize_immutable_owner17haa539ba8f146a27eE",
+      "address": 41560,
+      "bytes": 592
+    },
+    {
+      "name": "_ZN91_$LT$spl_token_2022..state..Mint$u20$as$u20$solana_program..program_pack..IsInitialized$GT$14is_initialized17h0a7eca75f28e6efdE",
+      "address": 42152,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN82_$LT$spl_token_2022..state..Mint$u20$as$u20$solana_program..program_pack..Pack$GT$17unpack_from_slice17h92bc8192de610042E",
+      "address": 42168,
+      "bytes": 1272
+    },
+    {
+      "name": "_ZN94_$LT$spl_token_2022..state..Account$u20$as$u20$solana_program..program_pack..IsInitialized$GT$14is_initialized17h70aaadda2319b76eE",
+      "address": 43440,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN85_$LT$spl_token_2022..state..Account$u20$as$u20$solana_program..program_pack..Pack$GT$17unpack_from_slice17h95a48c44d0862c36E",
+      "address": 43480,
+      "bytes": 1848
+    },
+    {
+      "name": "_ZN82_$LT$spl_token_2022..state..AccountState$u20$as$u20$num_enum..TryFromPrimitive$GT$18try_from_primitive17h9858b6fe39f39560E",
+      "address": 45328,
+      "bytes": 80
+    },
+    {
+      "name": "_ZN85_$LT$spl_token_2022..extension..AccountType$u20$as$u20$num_enum..TryFromPrimitive$GT$18try_from_primitive17h93c1370083105964E",
+      "address": 45328,
+      "bytes": 80
+    },
+    {
+      "name": "_ZN9spl_token2id17h600cb0a46765c55eE",
+      "address": 45408,
+      "bytes": 104
+    },
+    {
+      "name": "_ZN4core3ptr110drop_in_place$LT$$RF$alloc..vec..Vec$LT$$LP$u64$C$solana_program..stake_history..StakeHistoryEntry$RP$$GT$$GT$17h7cd37f6ec5c105edE",
+      "address": 45512,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN4core3ptr74drop_in_place$LT$solana_program..system_instruction..SystemInstruction$GT$17h870a69e496c383e1E",
+      "address": 45520,
+      "bytes": 240
+    },
+    {
+      "name": "_ZN14solana_program12account_info11AccountInfo8lamports17h4960f463b8179a70E",
+      "address": 45760,
+      "bytes": 184
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17h8c25df6e0ee5c27aE",
+      "address": 45944,
+      "bytes": 352
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17h5bb61d393ae69dffE",
+      "address": 46296,
+      "bytes": 464
+    },
+    {
+      "name": "_ZN5alloc7raw_vec11finish_grow17hf8b0ac51173b1884E",
+      "address": 46760,
+      "bytes": 320
+    },
+    {
+      "name": "_ZN14solana_program10entrypoint11deserialize17he06dac9907558756E",
+      "address": 47080,
+      "bytes": 2080
+    },
+    {
+      "name": "_ZN87_$LT$solana_program..hash..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hd0e2714762f394f2E",
+      "address": 49160,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN89_$LT$solana_program..blake3..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hecdc8519440a28ddE",
+      "address": 49160,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN89_$LT$solana_program..keccak..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hdfa3eee5653753e0E",
+      "address": 49160,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN91_$LT$solana_program..pubkey..Pubkey$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17ha50bf11081ce6ec0E",
+      "address": 49160,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN14solana_program4hash4Hash14new_from_array17h9e08e189c69d5acaE",
+      "address": 49192,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6blake34Hash14new_from_array17h3e1b80b4b14f25cdE",
+      "address": 49192,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6keccak4Hash14new_from_array17h46e411f2d133297fE",
+      "address": 49192,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6pubkey6Pubkey14new_from_array17h8b275f5ae7bd776aE",
+      "address": 49192,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program4hash4Hash8to_bytes17hdac0f2ed93049484E",
+      "address": 49264,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6blake34Hash8to_bytes17h7b5904fcddc05917E",
+      "address": 49264,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6keccak4Hash8to_bytes17h2042abfed7568ff2E",
+      "address": 49264,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program6pubkey6Pubkey8to_bytes17hde348ddfdeba2cd7E",
+      "address": 49264,
+      "bytes": 72
+    },
+    {
+      "name": "_ZN14solana_program11instruction11Instruction16new_with_bincode17h49d25a39c368110dE",
+      "address": 49336,
+      "bytes": 6416
+    },
+    {
+      "name": "_ZN14solana_program11instruction11AccountMeta3new17h359a95ef97c6e9cfE",
+      "address": 55752,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN14solana_program11instruction11AccountMeta12new_readonly17h31fd0b2fd8fb15c8E",
+      "address": 55848,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN14solana_program7program6invoke17h4bd636ee4594b604E",
+      "address": 55944,
+      "bytes": 64
+    },
+    {
+      "name": "_ZN14solana_program7program13invoke_signed17hd97ff2df73cb0030E",
+      "address": 56008,
+      "bytes": 1064
+    },
+    {
+      "name": "_ZN14solana_program7program15get_return_data17h2682b8583f01f7f1E",
+      "address": 57072,
+      "bytes": 464
+    },
+    {
+      "name": "_ZN14solana_program13program_error104_$LT$impl$u20$core..convert..From$LT$solana_program..program_error..ProgramError$GT$$u20$for$u20$u64$GT$4from17h39aa46444e42819aE",
+      "address": 57536,
+      "bytes": 728
+    },
+    {
+      "name": "_ZN94_$LT$solana_program..program_error..ProgramError$u20$as$u20$core..convert..From$LT$u64$GT$$GT$4from17hafc9e6004ddb7619E",
+      "address": 58264,
+      "bytes": 824
+    },
+    {
+      "name": "_ZN14solana_program6pubkey6Pubkey20find_program_address17h11a5079a6b1f199aE",
+      "address": 59088,
+      "bytes": 440
+    },
+    {
+      "name": "_ZN14solana_program4rent4Rent15minimum_balance17h9e833cc74a81c973E",
+      "address": 59528,
+      "bytes": 248
+    },
+    {
+      "name": "_ZN14solana_program18system_instruction14create_account17h993752147a26e092E",
+      "address": 59776,
+      "bytes": 528
+    },
+    {
+      "name": "_ZN14solana_program18system_instruction6assign17hf44ab388415e665bE",
+      "address": 60304,
+      "bytes": 408
+    },
+    {
+      "name": "_ZN14solana_program18system_instruction8transfer17ha1a945e19956cb0aE",
+      "address": 60712,
+      "bytes": 440
+    },
+    {
+      "name": "_ZN14solana_program18system_instruction8allocate17h37b6716e207fa5ebE",
+      "address": 61152,
+      "bytes": 360
+    },
+    {
+      "name": "_ZN14solana_program14system_program2id17hebebfee606cbb282E",
+      "address": 61512,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN14solana_program6sysvar4rent87_$LT$impl$u20$solana_program..sysvar..Sysvar$u20$for$u20$solana_program..rent..Rent$GT$3get17h77de8b081722581eE",
+      "address": 61560,
+      "bytes": 216
+    },
+    {
+      "name": "_ZN74_$LT$bincode..config..DefaultOptions$u20$as$u20$core..default..Default$GT$7default17h78d285b70b601bdcE",
+      "address": 61776,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN7bincode6config14DefaultOptions3new17h0c9787bffabecb55E",
+      "address": 61776,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN243_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$std..error..Error$GT$11description17hc2d159c00742df80E",
+      "address": 61784,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN74_$LT$std..sys_common..wtf8..Wtf8Buf$u20$as$u20$core..ops..deref..Deref$GT$5deref17hb19d4fd1343214feE",
+      "address": 61784,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN77_$LT$std..sys_common..wtf8..Wtf8Buf$u20$as$u20$core..ops..deref..DerefMut$GT$9deref_mut17h46345b260022cab3E",
+      "address": 61784,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN244_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Display$GT$3fmt17h0412b39cd2c3074fE",
+      "address": 61824,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN242_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Debug$GT$3fmt17h4c53ffad96a2466cE",
+      "address": 61864,
+      "bytes": 40
+    },
+    {
+      "name": "_ZN3std2io5error5Error4_new17hced81ae5af4b9eb5E",
+      "address": 61904,
+      "bytes": 152
+    },
+    {
+      "name": "_ZN3std7process5abort17hbabee91bc571063bE",
+      "address": 62056,
+      "bytes": 16
+    },
+    {
+      "name": "rust_oom",
+      "address": 62072,
+      "bytes": 48
+    },
+    {
+      "name": "rust_begin_unwind",
+      "address": 62120,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN3std3sys3sbf7sol_log17ha6d0fead92c6f25aE",
+      "address": 62136,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN3std3sys3sbf5panic17h2e0a4e1b31fbbc8eE",
+      "address": 62152,
+      "bytes": 24
+    },
+    {
+      "name": "_ZN3std3sys3sbf14abort_internal17h068c354c48aba757E",
+      "address": 62176,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN4core3ops8function6FnOnce9call_once17hadbac063d7ae0b73E",
+      "address": 62192,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN4core3ptr27drop_in_place$LT$$RF$u8$GT$17h85b9f0f2306b33adE",
+      "address": 62208,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17hb541cc3844fb6223E",
+      "address": 62216,
+      "bytes": 352
+    },
+    {
+      "name": "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17hf712275cdfd5f1c5E",
+      "address": 62568,
+      "bytes": 352
+    },
+    {
+      "name": "_ZN5alloc7raw_vec11finish_grow17h2bf80aa2739d187dE",
+      "address": 62920,
+      "bytes": 320
+    },
+    {
+      "name": "_ZN5alloc7raw_vec17capacity_overflow17hb8eb3b6a68e4589aE",
+      "address": 63240,
+      "bytes": 56
+    },
+    {
+      "name": "_ZN5alloc5alloc18handle_alloc_error17h246730432d41c00cE",
+      "address": 63296,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN5alloc5alloc18handle_alloc_error8rt_error17hf48ba99901f96995E",
+      "address": 63312,
+      "bytes": 16
+    },
+    {
+      "name": "__rg_oom",
+      "address": 63328,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN4core10intrinsics17const_eval_select17h23f4504aeafd1599E",
+      "address": 63344,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN5alloc3fmt6format17ha12412a331e71014E",
+      "address": 63360,
+      "bytes": 624
+    },
+    {
+      "name": "_ZN5alloc6string6String4push17h19d9693849c121bbE",
+      "address": 63984,
+      "bytes": 680
+    },
+    {
+      "name": "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$9write_str17h3fb735495c7f49beE",
+      "address": 64664,
+      "bytes": 168
+    },
+    {
+      "name": "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$10write_char17hb02847b0bda57bd3E",
+      "address": 64832,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$9write_fmt17hc4d9b26603435186E",
+      "address": 64864,
+      "bytes": 112
+    },
+    {
+      "name": "_ZN4core3ops8function6FnOnce9call_once17h38d202458b95b0d2E",
+      "address": 64976,
+      "bytes": 24
+    },
+    {
+      "name": "_ZN4core3ptr102drop_in_place$LT$$RF$core..iter..adapters..copied..Copied$LT$core..slice..iter..Iter$LT$u8$GT$$GT$$GT$17hc3422011319284b3E",
+      "address": 65000,
+      "bytes": 8
+    },
+    {
+      "name": "_ZN71_$LT$core..ops..range..Range$LT$Idx$GT$$u20$as$u20$core..fmt..Debug$GT$3fmt17haf63a3ae1aa73d13E",
+      "address": 65008,
+      "bytes": 280
+    },
+    {
+      "name": "_ZN36_$LT$T$u20$as$u20$core..any..Any$GT$7type_id17h569e97cd80b6ddd6E",
+      "address": 65288,
+      "bytes": 24
+    },
+    {
+      "name": "_ZN60_$LT$core..cell..BorrowError$u20$as$u20$core..fmt..Debug$GT$3fmt17ha89e8b6dc57e1600E",
+      "address": 65312,
+      "bytes": 64
+    },
+    {
+      "name": "_ZN4core4char7methods22_$LT$impl$u20$char$GT$16escape_debug_ext17h2aba5842d2761810E",
+      "address": 65376,
+      "bytes": 1496
+    },
+    {
+      "name": "_ZN73_$LT$core..panic..panic_info..PanicInfo$u20$as$u20$core..fmt..Display$GT$3fmt17h619b0ba0b1c47cd6E",
+      "address": 66872,
+      "bytes": 848
+    },
+    {
+      "name": "_ZN4core9panicking5panic17hdd553c70ae8c0b02E",
+      "address": 67720,
+      "bytes": 144
+    },
+    {
+      "name": "_ZN4core9panicking18panic_bounds_check17hd5712a92e773cb3dE",
+      "address": 67864,
+      "bytes": 224
+    },
+    {
+      "name": "_ZN4core9panicking9panic_fmt17hf4c8e0c0320ba65eE",
+      "address": 68088,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN4core6result13unwrap_failed17h3eff048ba7d0b7d3E",
+      "address": 68184,
+      "bytes": 256
+    },
+    {
+      "name": "_ZN4core3fmt5write17h6deddc9e0e49ff12E",
+      "address": 68440,
+      "bytes": 1144
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter12pad_integral17h3cff135159fb6f61E",
+      "address": 69584,
+      "bytes": 1832
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter12pad_integral12write_prefix17hfd132b3185fd816eE",
+      "address": 71416,
+      "bytes": 192
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter3pad17h95d582092fb38183E",
+      "address": 71608,
+      "bytes": 1584
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter9write_str17h35a6cd6eca8e7d10E",
+      "address": 73192,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN57_$LT$core..fmt..Formatter$u20$as$u20$core..fmt..Write$GT$9write_str17ha3bf34e1f36ed066E",
+      "address": 73192,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter9write_fmt17hd160b9d9d6ce81fbE",
+      "address": 73240,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN57_$LT$core..fmt..Formatter$u20$as$u20$core..fmt..Write$GT$9write_fmt17h3156471b5950736fE",
+      "address": 73240,
+      "bytes": 96
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter15debug_lower_hex17hc118d92c42eca497E",
+      "address": 73336,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN4core3fmt9Formatter15debug_upper_hex17h5e24bf29bb645c39E",
+      "address": 73368,
+      "bytes": 32
+    },
+    {
+      "name": "_ZN40_$LT$str$u20$as$u20$core..fmt..Debug$GT$3fmt17h0ccd1abb9ba1c780E",
+      "address": 73400,
+      "bytes": 2600
+    },
+    {
+      "name": "_ZN42_$LT$str$u20$as$u20$core..fmt..Display$GT$3fmt17h581686afadad3f85E",
+      "address": 76000,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN41_$LT$char$u20$as$u20$core..fmt..Debug$GT$3fmt17he516c7f433cff66bE",
+      "address": 76048,
+      "bytes": 1136
+    },
+    {
+      "name": "_ZN4core5slice5index26slice_start_index_len_fail17h5dc3b1757b0c3663E",
+      "address": 77184,
+      "bytes": 224
+    },
+    {
+      "name": "_ZN4core5slice5index24slice_end_index_len_fail17h6288c4c01da453d5E",
+      "address": 77408,
+      "bytes": 224
+    },
+    {
+      "name": "_ZN4core5slice5index22slice_index_order_fail17h9b6411e4172cd5c3E",
+      "address": 77632,
+      "bytes": 224
+    },
+    {
+      "name": "_ZN4core3str16slice_error_fail17h6bf7eae7e9043c99E",
+      "address": 77856,
+      "bytes": 1872
+    },
+    {
+      "name": "_ZN4core7unicode9printable5check17hd178f4e7df99e10dE",
+      "address": 79728,
+      "bytes": 784
+    },
+    {
+      "name": "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..LowerHex$u20$for$u20$i8$GT$3fmt17h55112197cb201851E",
+      "address": 80512,
+      "bytes": 368
+    },
+    {
+      "name": "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..LowerHex$u20$for$u20$u8$GT$3fmt17hfd71cab696e734efE",
+      "address": 80512,
+      "bytes": 368
+    },
+    {
+      "name": "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..UpperHex$u20$for$u20$i8$GT$3fmt17hf7bf05791bb896b3E",
+      "address": 80880,
+      "bytes": 368
+    },
+    {
+      "name": "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..UpperHex$u20$for$u20$u8$GT$3fmt17h275dc4970bdedabfE",
+      "address": 80880,
+      "bytes": 368
+    },
+    {
+      "name": "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..Debug$u20$for$u20$usize$GT$3fmt17hb308d529b897233dE",
+      "address": 81248,
+      "bytes": 1336
+    },
+    {
+      "name": "_ZN4core3fmt3num3imp51_$LT$impl$u20$core..fmt..Display$u20$for$u20$u8$GT$3fmt17hf70829338b3d6a96E",
+      "address": 82584,
+      "bytes": 376
+    },
+    {
+      "name": "_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$u32$GT$3fmt17hda2d758bff385d54E",
+      "address": 82960,
+      "bytes": 728
+    },
+    {
+      "name": "_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$u64$GT$3fmt17h9b65ec5e4ac65f25E",
+      "address": 83688,
+      "bytes": 728
+    },
+    {
+      "name": "_ZN4core3fmt3num3imp54_$LT$impl$u20$core..fmt..Display$u20$for$u20$usize$GT$3fmt17he5a784e6065fdcd9E",
+      "address": 83688,
+      "bytes": 728
+    },
+    {
+      "name": "_ZN53_$LT$core..fmt..Error$u20$as$u20$core..fmt..Debug$GT$3fmt17h1139a0e29e9f958fE",
+      "address": 84416,
+      "bytes": 64
+    },
+    {
+      "name": "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h02124e79d9212a5eE",
+      "address": 84480,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf0af58e82ed37ae0E",
+      "address": 84528,
+      "bytes": 56
+    },
+    {
+      "name": "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf3a63c54f6e3c118E",
+      "address": 84584,
+      "bytes": 48
+    },
+    {
+      "name": "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf903bf001613bad6E",
+      "address": 84632,
+      "bytes": 104
+    },
+    {
+      "name": "_ZN4core7unicode12unicode_data15grapheme_extend6lookup17hec6448a7786420b2E",
+      "address": 84736,
+      "bytes": 864
+    },
+    {
+      "name": "__adddf3",
+      "address": 85600,
+      "bytes": 16
+    },
+    {
+      "name": "__fixunsdfdi",
+      "address": 85616,
+      "bytes": 216
+    },
+    {
+      "name": "__muldf3",
+      "address": 85832,
+      "bytes": 16
+    },
+    {
+      "name": "_ZN17compiler_builtins5float3mul8__muldf317h3ea465e2a54c5482E",
+      "address": 85848,
+      "bytes": 2048
+    },
+    {
+      "name": "__gedf2",
+      "address": 87896,
+      "bytes": 288
+    },
+    {
+      "name": "memcpy",
+      "address": 88184,
+      "bytes": 280
+    },
+    {
+      "name": "memset",
+      "address": 88464,
+      "bytes": 280
+    },
+    {
+      "name": "memcmp",
+      "address": 88744,
+      "bytes": 352
+    },
+    {
+      "name": "__gtdf2",
+      "address": 89096,
+      "bytes": 288
+    },
+    {
+      "name": "_ZN17compiler_builtins5float3add8__adddf317h1e1d7f517e9a0d5dE",
+      "address": 89384,
+      "bytes": 2528
+    },
+    {
+      "name": "__floatundidf",
+      "address": 91912,
+      "bytes": 136
+    },
+    {
+      "name": "__multi3",
+      "address": 92048,
+      "bytes": 296
+    }
+  ],
+  "requested_symbol_order": [
+    "_ZN4core3ptr179drop_in_place$LT$core..result..Result$LT$spl_token_2022..extension..StateWithExtensions$LT$spl_token_2022..state..Account$GT$$C$solana_program..program_error..ProgramError$GT$$GT$17hf77e15da4f1a77efE",
+    "_ZN4core3ptr226drop_in_place$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$GT$17ha76ed1f78cfc23deE",
+    "_ZN4core3ptr44drop_in_place$LT$core..cell..BorrowError$GT$17h6be51cdf31a30c05E",
+    "_ZN4core3ptr61drop_in_place$LT$solana_program..instruction..Instruction$GT$17hb5f258de967ba480E",
+    "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$2$u5d$$GT$17h45115161e71f7c36E",
+    "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$3$u5d$$GT$17hfcc8ef274f316369E",
+    "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$4$u5d$$GT$17h8c445ff9692739feE",
+    "_ZN4core3ptr83drop_in_place$LT$$u5b$solana_program..account_info..AccountInfo$u3b$$u20$5$u5d$$GT$17h6bb003218e0addc5E",
+    "_ZN28spl_associated_token_account9processor19process_instruction17h081b777807729d1bE",
+    "_ZN28spl_associated_token_account9processor39process_create_associated_token_account17h8a057ca14d65954eE",
+    "_ZN28spl_associated_token_account9processor22process_recover_nested17ha144e13473d2d562E",
+    "_ZN28spl_associated_token_account5tools7account18create_pda_account17h224fddc134f02b94E",
+    "_ZN28spl_associated_token_account5tools7account15get_account_len17hd9ac06f50fe4f4c4E",
+    "_ZN28spl_associated_token_account51get_associated_token_address_and_bump_seed_internal17hdc0ef3703b036bdbE",
+    "entrypoint",
+    "__rg_alloc",
+    "__rg_dealloc",
+    "__rg_realloc",
+    "__rg_alloc_zeroed",
+    "custom_panic",
+    "_ZN103_$LT$spl_associated_token_account..error..AssociatedTokenAccountError$u20$as$u20$core..fmt..Display$GT$3fmt17hfedca2560991bd7aE",
+    "_ZN113_$LT$spl_associated_token_account..instruction..AssociatedTokenAccountInstruction$u20$as$u20$core..fmt..Debug$GT$3fmt17h2eac142a1f1e7a64E",
+    "_ZN124_$LT$spl_associated_token_account..instruction..AssociatedTokenAccountInstruction$u20$as$u20$borsh..de..BorshDeserialize$GT$11deserialize17h7aeb1600d1214541E",
+    "_ZN14spl_token_20229extension28StateWithExtensions$LT$S$GT$6unpack17hec222c7bc5908bd5E",
+    "_ZN14spl_token_20229extension28StateWithExtensions$LT$S$GT$6unpack17hfba8e6f90624ca44E",
+    "_ZN3std5error5Error7type_id17h1ecaee266971b1b9E",
+    "_ZN3std5error5Error9backtrace17ha3217e3b0d69a750E",
+    "_ZN3std5error5Error5cause17h148ca943443c1a96E",
+    "_ZN80_$LT$solana_program..account_info..AccountInfo$u20$as$u20$core..clone..Clone$GT$5clone17h0c0ea1c352d56847E",
+    "_ZN4core4cell16RefCell$LT$T$GT$6borrow17h2184066ecfb041adE",
+    "_ZN4core3fmt3num49_$LT$impl$u20$core..fmt..Debug$u20$for$u20$u8$GT$3fmt17hc6b06f52a5b8c794E",
+    "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h44fa8575df09e329E",
+    "__rust_alloc",
+    "__rust_dealloc",
+    "__rust_realloc",
+    "__rust_alloc_zeroed",
+    "__rust_alloc_error_handler",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17hf1af88e8f339ce83E",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17hdd26a0daa1db3a93E",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17h71926d0f82292f46E",
+    "_ZN5alloc7raw_vec11finish_grow17h948c140070144695E",
+    "_ZN14spl_token_20229extension12transfer_fee11instruction22TransferFeeInstruction4pack17h3b5acdf8e83ac706E",
+    "_ZN14spl_token_20229extension30check_min_len_and_not_multisig17hc07f9f1df05a986aE",
+    "_ZN14spl_token_202211instruction16TokenInstruction4pack17h75e22205eeaa3bb8E",
+    "_ZN14spl_token_202211instruction16TokenInstruction18pack_pubkey_option17h12be989b166985a9E",
+    "_ZN14spl_token_202211instruction19initialize_account317h86b4b758631f7007E",
+    "_ZN14spl_token_202211instruction13close_account17h2db72de871d6e158E",
+    "_ZN14spl_token_202211instruction16transfer_checked17h4e9356b722ccdf75E",
+    "_ZN14spl_token_202211instruction21get_account_data_size17h3e269d7e0f9ce52bE",
+    "_ZN14spl_token_202211instruction26initialize_immutable_owner17haa539ba8f146a27eE",
+    "_ZN91_$LT$spl_token_2022..state..Mint$u20$as$u20$solana_program..program_pack..IsInitialized$GT$14is_initialized17h0a7eca75f28e6efdE",
+    "_ZN82_$LT$spl_token_2022..state..Mint$u20$as$u20$solana_program..program_pack..Pack$GT$17unpack_from_slice17h92bc8192de610042E",
+    "_ZN94_$LT$spl_token_2022..state..Account$u20$as$u20$solana_program..program_pack..IsInitialized$GT$14is_initialized17h70aaadda2319b76eE",
+    "_ZN85_$LT$spl_token_2022..state..Account$u20$as$u20$solana_program..program_pack..Pack$GT$17unpack_from_slice17h95a48c44d0862c36E",
+    "_ZN82_$LT$spl_token_2022..state..AccountState$u20$as$u20$num_enum..TryFromPrimitive$GT$18try_from_primitive17h9858b6fe39f39560E",
+    "_ZN85_$LT$spl_token_2022..extension..AccountType$u20$as$u20$num_enum..TryFromPrimitive$GT$18try_from_primitive17h93c1370083105964E",
+    "_ZN9spl_token2id17h600cb0a46765c55eE",
+    "_ZN4core3ptr110drop_in_place$LT$$RF$alloc..vec..Vec$LT$$LP$u64$C$solana_program..stake_history..StakeHistoryEntry$RP$$GT$$GT$17h7cd37f6ec5c105edE",
+    "_ZN4core3ptr74drop_in_place$LT$solana_program..system_instruction..SystemInstruction$GT$17h870a69e496c383e1E",
+    "_ZN14solana_program12account_info11AccountInfo8lamports17h4960f463b8179a70E",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17h8c25df6e0ee5c27aE",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17h5bb61d393ae69dffE",
+    "_ZN5alloc7raw_vec11finish_grow17hf8b0ac51173b1884E",
+    "_ZN14solana_program10entrypoint11deserialize17he06dac9907558756E",
+    "_ZN87_$LT$solana_program..hash..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hd0e2714762f394f2E",
+    "_ZN89_$LT$solana_program..blake3..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hecdc8519440a28ddE",
+    "_ZN89_$LT$solana_program..keccak..Hash$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17hdfa3eee5653753e0E",
+    "_ZN91_$LT$solana_program..pubkey..Pubkey$u20$as$u20$core..convert..AsRef$LT$$u5b$u8$u5d$$GT$$GT$6as_ref17ha50bf11081ce6ec0E",
+    "_ZN14solana_program4hash4Hash14new_from_array17h9e08e189c69d5acaE",
+    "_ZN14solana_program6blake34Hash14new_from_array17h3e1b80b4b14f25cdE",
+    "_ZN14solana_program6keccak4Hash14new_from_array17h46e411f2d133297fE",
+    "_ZN14solana_program6pubkey6Pubkey14new_from_array17h8b275f5ae7bd776aE",
+    "_ZN14solana_program4hash4Hash8to_bytes17hdac0f2ed93049484E",
+    "_ZN14solana_program6blake34Hash8to_bytes17h7b5904fcddc05917E",
+    "_ZN14solana_program6keccak4Hash8to_bytes17h2042abfed7568ff2E",
+    "_ZN14solana_program6pubkey6Pubkey8to_bytes17hde348ddfdeba2cd7E",
+    "_ZN14solana_program11instruction11Instruction16new_with_bincode17h49d25a39c368110dE",
+    "_ZN14solana_program11instruction11AccountMeta3new17h359a95ef97c6e9cfE",
+    "_ZN14solana_program11instruction11AccountMeta12new_readonly17h31fd0b2fd8fb15c8E",
+    "_ZN14solana_program7program6invoke17h4bd636ee4594b604E",
+    "_ZN14solana_program7program13invoke_signed17hd97ff2df73cb0030E",
+    "_ZN14solana_program7program15get_return_data17h2682b8583f01f7f1E",
+    "_ZN14solana_program13program_error104_$LT$impl$u20$core..convert..From$LT$solana_program..program_error..ProgramError$GT$$u20$for$u20$u64$GT$4from17h39aa46444e42819aE",
+    "_ZN94_$LT$solana_program..program_error..ProgramError$u20$as$u20$core..convert..From$LT$u64$GT$$GT$4from17hafc9e6004ddb7619E",
+    "_ZN14solana_program6pubkey6Pubkey20find_program_address17h11a5079a6b1f199aE",
+    "_ZN14solana_program4rent4Rent15minimum_balance17h9e833cc74a81c973E",
+    "_ZN14solana_program18system_instruction14create_account17h993752147a26e092E",
+    "_ZN14solana_program18system_instruction6assign17hf44ab388415e665bE",
+    "_ZN14solana_program18system_instruction8transfer17ha1a945e19956cb0aE",
+    "_ZN14solana_program18system_instruction8allocate17h37b6716e207fa5ebE",
+    "_ZN14solana_program14system_program2id17hebebfee606cbb282E",
+    "_ZN14solana_program6sysvar4rent87_$LT$impl$u20$solana_program..sysvar..Sysvar$u20$for$u20$solana_program..rent..Rent$GT$3get17h77de8b081722581eE",
+    "_ZN74_$LT$bincode..config..DefaultOptions$u20$as$u20$core..default..Default$GT$7default17h78d285b70b601bdcE",
+    "_ZN7bincode6config14DefaultOptions3new17h0c9787bffabecb55E",
+    "_ZN243_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$std..error..Error$GT$11description17hc2d159c00742df80E",
+    "_ZN74_$LT$std..sys_common..wtf8..Wtf8Buf$u20$as$u20$core..ops..deref..Deref$GT$5deref17hb19d4fd1343214feE",
+    "_ZN77_$LT$std..sys_common..wtf8..Wtf8Buf$u20$as$u20$core..ops..deref..DerefMut$GT$9deref_mut17h46345b260022cab3E",
+    "_ZN244_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Display$GT$3fmt17h0412b39cd2c3074fE",
+    "_ZN242_$LT$std..error..$LT$impl$u20$core..convert..From$LT$alloc..string..String$GT$$u20$for$u20$alloc..boxed..Box$LT$dyn$u20$std..error..Error$u2b$core..marker..Send$u2b$core..marker..Sync$GT$$GT$..from..StringError$u20$as$u20$core..fmt..Debug$GT$3fmt17h4c53ffad96a2466cE",
+    "_ZN3std2io5error5Error4_new17hced81ae5af4b9eb5E",
+    "_ZN3std7process5abort17hbabee91bc571063bE",
+    "rust_oom",
+    "rust_begin_unwind",
+    "_ZN3std3sys3sbf7sol_log17ha6d0fead92c6f25aE",
+    "_ZN3std3sys3sbf5panic17h2e0a4e1b31fbbc8eE",
+    "_ZN3std3sys3sbf14abort_internal17h068c354c48aba757E",
+    "_ZN4core3ops8function6FnOnce9call_once17hadbac063d7ae0b73E",
+    "_ZN4core3ptr27drop_in_place$LT$$RF$u8$GT$17h85b9f0f2306b33adE",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$7reserve21do_reserve_and_handle17hb541cc3844fb6223E",
+    "_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$16reserve_for_push17hf712275cdfd5f1c5E",
+    "_ZN5alloc7raw_vec11finish_grow17h2bf80aa2739d187dE",
+    "_ZN5alloc7raw_vec17capacity_overflow17hb8eb3b6a68e4589aE",
+    "_ZN5alloc5alloc18handle_alloc_error17h246730432d41c00cE",
+    "_ZN5alloc5alloc18handle_alloc_error8rt_error17hf48ba99901f96995E",
+    "__rg_oom",
+    "_ZN4core10intrinsics17const_eval_select17h23f4504aeafd1599E",
+    "_ZN5alloc3fmt6format17ha12412a331e71014E",
+    "_ZN5alloc6string6String4push17h19d9693849c121bbE",
+    "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$9write_str17h3fb735495c7f49beE",
+    "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$10write_char17hb02847b0bda57bd3E",
+    "_ZN50_$LT$$RF$mut$u20$W$u20$as$u20$core..fmt..Write$GT$9write_fmt17hc4d9b26603435186E",
+    "_ZN4core3ops8function6FnOnce9call_once17h38d202458b95b0d2E",
+    "_ZN4core3ptr102drop_in_place$LT$$RF$core..iter..adapters..copied..Copied$LT$core..slice..iter..Iter$LT$u8$GT$$GT$$GT$17hc3422011319284b3E",
+    "_ZN71_$LT$core..ops..range..Range$LT$Idx$GT$$u20$as$u20$core..fmt..Debug$GT$3fmt17haf63a3ae1aa73d13E",
+    "_ZN36_$LT$T$u20$as$u20$core..any..Any$GT$7type_id17h569e97cd80b6ddd6E",
+    "_ZN60_$LT$core..cell..BorrowError$u20$as$u20$core..fmt..Debug$GT$3fmt17ha89e8b6dc57e1600E",
+    "_ZN4core4char7methods22_$LT$impl$u20$char$GT$16escape_debug_ext17h2aba5842d2761810E",
+    "_ZN73_$LT$core..panic..panic_info..PanicInfo$u20$as$u20$core..fmt..Display$GT$3fmt17h619b0ba0b1c47cd6E",
+    "_ZN4core9panicking5panic17hdd553c70ae8c0b02E",
+    "_ZN4core9panicking18panic_bounds_check17hd5712a92e773cb3dE",
+    "_ZN4core9panicking9panic_fmt17hf4c8e0c0320ba65eE",
+    "_ZN4core6result13unwrap_failed17h3eff048ba7d0b7d3E",
+    "_ZN4core3fmt5write17h6deddc9e0e49ff12E",
+    "_ZN4core3fmt9Formatter12pad_integral17h3cff135159fb6f61E",
+    "_ZN4core3fmt9Formatter12pad_integral12write_prefix17hfd132b3185fd816eE",
+    "_ZN4core3fmt9Formatter3pad17h95d582092fb38183E",
+    "_ZN4core3fmt9Formatter9write_str17h35a6cd6eca8e7d10E",
+    "_ZN57_$LT$core..fmt..Formatter$u20$as$u20$core..fmt..Write$GT$9write_str17ha3bf34e1f36ed066E",
+    "_ZN4core3fmt9Formatter9write_fmt17hd160b9d9d6ce81fbE",
+    "_ZN57_$LT$core..fmt..Formatter$u20$as$u20$core..fmt..Write$GT$9write_fmt17h3156471b5950736fE",
+    "_ZN4core3fmt9Formatter15debug_lower_hex17hc118d92c42eca497E",
+    "_ZN4core3fmt9Formatter15debug_upper_hex17h5e24bf29bb645c39E",
+    "_ZN40_$LT$str$u20$as$u20$core..fmt..Debug$GT$3fmt17h0ccd1abb9ba1c780E",
+    "_ZN42_$LT$str$u20$as$u20$core..fmt..Display$GT$3fmt17h581686afadad3f85E",
+    "_ZN41_$LT$char$u20$as$u20$core..fmt..Debug$GT$3fmt17he516c7f433cff66bE",
+    "_ZN4core5slice5index26slice_start_index_len_fail17h5dc3b1757b0c3663E",
+    "_ZN4core5slice5index24slice_end_index_len_fail17h6288c4c01da453d5E",
+    "_ZN4core5slice5index22slice_index_order_fail17h9b6411e4172cd5c3E",
+    "_ZN4core3str16slice_error_fail17h6bf7eae7e9043c99E",
+    "_ZN4core7unicode9printable5check17hd178f4e7df99e10dE",
+    "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..LowerHex$u20$for$u20$i8$GT$3fmt17h55112197cb201851E",
+    "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..LowerHex$u20$for$u20$u8$GT$3fmt17hfd71cab696e734efE",
+    "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..UpperHex$u20$for$u20$i8$GT$3fmt17hf7bf05791bb896b3E",
+    "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..UpperHex$u20$for$u20$u8$GT$3fmt17h275dc4970bdedabfE",
+    "_ZN4core3fmt3num52_$LT$impl$u20$core..fmt..Debug$u20$for$u20$usize$GT$3fmt17hb308d529b897233dE",
+    "_ZN4core3fmt3num3imp51_$LT$impl$u20$core..fmt..Display$u20$for$u20$u8$GT$3fmt17hf70829338b3d6a96E",
+    "_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$u32$GT$3fmt17hda2d758bff385d54E",
+    "_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$u64$GT$3fmt17h9b65ec5e4ac65f25E",
+    "_ZN4core3fmt3num3imp54_$LT$impl$u20$core..fmt..Display$u20$for$u20$usize$GT$3fmt17he5a784e6065fdcd9E",
+    "_ZN53_$LT$core..fmt..Error$u20$as$u20$core..fmt..Debug$GT$3fmt17h1139a0e29e9f958fE",
+    "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h02124e79d9212a5eE",
+    "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf0af58e82ed37ae0E",
+    "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf3a63c54f6e3c118E",
+    "_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17hf903bf001613bad6E",
+    "_ZN4core7unicode12unicode_data15grapheme_extend6lookup17hec6448a7786420b2E",
+    "__adddf3",
+    "__fixunsdfdi",
+    "__muldf3",
+    "_ZN17compiler_builtins5float3mul8__muldf317h3ea465e2a54c5482E",
+    "__gedf2",
+    "memcpy",
+    "memset",
+    "memcmp",
+    "__gtdf2",
+    "_ZN17compiler_builtins5float3add8__adddf317h1e1d7f517e9a0d5dE",
+    "__floatundidf",
+    "__multi3"
+  ],
+  "reference_executable_read": false,
+  "executable_bytes_written": false
+}

@@ -1,0 +1,8 @@
+   Compiling blake3 v1.3.1
+   Compiling solana-program v1.10.33
+   Compiling solana-zk-token-sdk v1.10.33
+   Compiling spl-token v3.4.0 (/build/token/program)
+   Compiling spl-memo v3.0.1 (/build/memo/program)
+   Compiling spl-token-2022 v0.4.2 (/build/token/program-2022)
+   Compiling spl-associated-token-account v1.1.0 (/build/associated-token-account/program)
+    Finished release [optimized] target(s) in 17.24s

@@ -1,0 +1,13 @@
+{
+  "status": "FAILED",
+  "historical_uploader_recipe": null,
+  "recipe": "independent source compilation with reconstructed symbol order",
+  "source_commit": "f5ce86d43dd31ddefb96d4e8cdd67dd073dc5dca",
+  "image": "solanafoundation/solana-verifiable-build@sha256:ee9ad7809009a99a70f659f7cba959e0c3c124e10f771b524914fd42f2b605a8",
+  "original_program_mounted": false,
+  "reference_opened": false,
+  "binary_patching": false,
+  "padding": false,
+  "error_type": "ValueError",
+  "error": "Source index contains a symlink, submodule or unresolved entry"
+}

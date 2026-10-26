@@ -1,0 +1,81 @@
+[
+  {
+    "Id": "sha256:f9987ad0786c6d99083673836b2b81303ef463ef7a5f304eec244cda40c04405",
+    "RepoTags": [],
+    "RepoDigests": [
+      "solanafoundation/solana-verifiable-build@sha256:ee9ad7809009a99a70f659f7cba959e0c3c124e10f771b524914fd42f2b605a8"
+    ],
+    "Parent": "",
+    "Comment": "buildkit.dockerfile.v0",
+    "Created": "2024-11-09T22:20:33.446134153Z",
+    "DockerVersion": "",
+    "Author": "",
+    "Config": {
+      "Hostname": "",
+      "Domainname": "",
+      "User": "",
+      "AttachStdin": false,
+      "AttachStdout": false,
+      "AttachStderr": false,
+      "Tty": false,
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Env": [
+        "PATH=/root/.local/share/solana/install/active_release/bin:/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "RUSTUP_HOME=/usr/local/rustup",
+        "CARGO_HOME=/usr/local/cargo",
+        "RUST_VERSION=1.59.0"
+      ],
+      "Cmd": [
+        "/bin/sh",
+        "-c",
+        "/bin/bash"
+      ],
+      "ArgsEscaped": true,
+      "Image": "",
+      "Volumes": null,
+      "WorkingDir": "/build",
+      "Entrypoint": null,
+      "OnBuild": null,
+      "Labels": {
+        "org.opencontainers.image.created": "2024-11-09T22:19:42.540Z",
+        "org.opencontainers.image.description": "CLI tool for deterministically building and verifying executable against on-chain programs or buffer accounts",
+        "org.opencontainers.image.licenses": "",
+        "org.opencontainers.image.revision": "602c0cbcc7cb51d145118a77d313135e33cffdf1",
+        "org.opencontainers.image.source": "https://github.com/solana-developers/solana-verifiable-build",
+        "org.opencontainers.image.title": "solana-verifiable-build",
+        "org.opencontainers.image.url": "https://github.com/solana-developers/solana-verifiable-build",
+        "org.opencontainers.image.version": "master"
+      }
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 2011224893,
+    "GraphDriver": {
+      "Data": {
+        "LowerDir": "/var/lib/docker/overlay2/ee84fa1b7f770f52a5481b7bb2d421ec9b799711252f9bec582db538b97c5ddb/diff:/var/lib/docker/overlay2/ce3c7169e3b356672a0251f1c08e27a6870cbc6e1637d42d7867db4c0d76da9b/diff:/var/lib/docker/overlay2/1cdf547d2e2b82e42a23d64ff98dfe93f32dbae93615d33780fe2148d7c36f14/diff:/var/lib/docker/overlay2/6118ef4dd604091423c40d6816d7aebeaf249064cd1f90fe9efb7d8d4457c724/diff:/var/lib/docker/overlay2/ad2102e321cd465933f32f50f1685571a6aad4bb48743559dd8cf242c61c4d83/diff:/var/lib/docker/overlay2/98d7030fe99571bd03e1ff657914a5d56a22d21ccfef9b1ad8dd0c2087313e76/diff:/var/lib/docker/overlay2/cc85ae8d594ab64c514aaa8d6ec83c4905dace5f576c99b66419943c1ddee3fe/diff:/var/lib/docker/overlay2/bf1d5e94b25451346b3e5367be8285504c4b2f56089ea4041df8702c89d8bbc5/diff",
+        "MergedDir": "/var/lib/docker/overlay2/f92c0ec26a244e5233dd29f109f30b574aa510e30e17fff464c880a3f5efdb3d/merged",
+        "UpperDir": "/var/lib/docker/overlay2/f92c0ec26a244e5233dd29f109f30b574aa510e30e17fff464c880a3f5efdb3d/diff",
+        "WorkDir": "/var/lib/docker/overlay2/f92c0ec26a244e5233dd29f109f30b574aa510e30e17fff464c880a3f5efdb3d/work"
+      },
+      "Name": "overlay2"
+    },
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:4ac8bc2cd0bed27b5d7bcdf724530b8f718618bb2e2b466a70a7136975378bc6",
+        "sha256:348622fdcc617bbef1a8d7ac19b47b695109164160a507f1837289a414c3a70c",
+        "sha256:d59769727d800c08c09f47e72906d5723958e2d7684a68ad54097ec294e80dc8",
+        "sha256:7a7698da17f29db593cf6d1a35127e494beb644e1819ee99d0036f12f54e694d",
+        "sha256:c5579a205adc296258840de0c2e452ee4c0be5b6c4e1143e93c48fac0de52e32",
+        "sha256:2b0ae17ba49fd6c8a4a1dcab5d5bd6540add7fef3d1a172df58ecdd725297be4",
+        "sha256:48a43f5de13ceb053a83947797f8d772cda0a96060469df38bef7c6328efc1f3",
+        "sha256:76d3b55d2a85f1d4da9cab481dc06f5ef145fcb64dad0afda03f7098c75ecfbc",
+        "sha256:f53b69c7554da64e0dfa77be59a1aee3ebf290e6e4d522f62c571cf30b3b5b43"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "0001-01-01T00:00:00Z"
+    }
+  }
+]

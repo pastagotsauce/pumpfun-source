@@ -1,0 +1,16 @@
+[
+  [
+    "git",
+    "-C",
+    "/home/runner/work/pumpfun-source/pumpfun-source/work/ata-source",
+    "rev-parse",
+    "HEAD"
+  ],
+  [
+    "git",
+    "-C",
+    "/home/runner/work/pumpfun-source/pumpfun-source/work/ata-source",
+    "status",
+    "--porcelain"
+  ]
+]
