@@ -1,0 +1,36 @@
+[
+  {
+    "image": "original",
+    "sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+    "bytes": 777408,
+    "reference_pc": 632832,
+    "reference_raw": "18050000f01e0b000000000000000000",
+    "location_record": 728816,
+    "record_raw": "0000000028cd0a0055000000000000000e0b00000e000000",
+    "file_pointer": 707880,
+    "file_length": 85,
+    "file_raw_hex": "2f686f6d652f72756e6e65722f776f726b2f706c6174666f726d2d746f6f6c732f706c6174666f726d2d746f6f6c732f6f75742f727573742f6c6962726172792f616c6c6f632f7372632f737472696e672e727300",
+    "file_display": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+    "line": 2830,
+    "column": 14,
+    "code_and_data_relocation_type": 8,
+    "representation": "Stored V0 data pointer high32; conditional on documented loader relocation semantics"
+  },
+  {
+    "image": "selected-ca5d",
+    "sha256": "ca5d4f54b14e2f67c4eca56fcac29b54801906cecf23c463801916fd9d6b6621",
+    "bytes": 599784,
+    "reference_pc": 464840,
+    "reference_raw": "18050000208708000000000000000000",
+    "location_record": 558880,
+    "record_raw": "00000000603d080056000000000000000e0b00000e000000",
+    "file_pointer": 540000,
+    "file_length": 86,
+    "file_raw_hex": "2f55736572732f72756e6e65722f776f726b2f706c6174666f726d2d746f6f6c732f706c6174666f726d2d746f6f6c732f6f75742f727573742f6c6962726172792f616c6c6f632f7372632f737472696e672e727300",
+    "file_display": "/Users/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+    "line": 2830,
+    "column": 14,
+    "code_and_data_relocation_type": 8,
+    "representation": "Stored V0 data pointer high32; conditional on documented loader relocation semantics"
+  }
+]

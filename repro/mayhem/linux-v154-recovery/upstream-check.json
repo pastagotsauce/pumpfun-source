@@ -1,0 +1,140 @@
+{
+  "scope": "Bounded public-main/PR check; no claim about all private or unindexed branches",
+  "observed_utc": "2026-10-26 08:35:28 UTC",
+  "checked_head": "0b29240ac1d92fde0f361629f444e538ba525af0",
+  "mayhem_directory": {
+    "url": "https://api.github.com/repos/lalalune/pumpfun-source/contents/repro/mayhem?ref=0b29240ac1d92fde0f361629f444e538ba525af0",
+    "names": [
+      "build-comparison.json",
+      "build.log.gz",
+      "burn-formatting-gap-review",
+      "buy-result-error-main-twentyfour",
+      "buy-result-error-twentyfour",
+      "compiler-v154-main",
+      "compiler-v154-runtime",
+      "compiler-v154-source-retarget",
+      "differential.json.gz",
+      "eighteen",
+      "extend-differential.json.gz",
+      "fee-recipient-differential.json.gz",
+      "field-role-crosswalk",
+      "global-params-remaining-field-review",
+      "mayhem_recovered.so",
+      "nineteen",
+      "quote-withdraw-differential.json.gz",
+      "recovered-dispatch-25-from-main-v152",
+      "remaining-static",
+      "sell-result-error-main-twentyfour",
+      "sell-result-error-twentyfour",
+      "sweeps-differential.json.gz",
+      "twenty",
+      "twentyfour",
+      "twentyone",
+      "twentytwo",
+      "withdraw-differential.json.gz"
+    ]
+  },
+  "commit_search": {
+    "repository": "lalalune/pumpfun-source",
+    "query": "mayhem linux",
+    "results": []
+  },
+  "mayhem_pr_search": {
+    "query": "mayhem",
+    "results": [
+      {
+        "number": 30,
+        "title": "Publish pass 36 parser boundary and legacy error evidence",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/30"
+      },
+      {
+        "number": 27,
+        "title": "Publish pass 35 application evidence and reconciliation",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/27"
+      },
+      {
+        "number": 15,
+        "title": "Restore verified reconstruction sources and publish pass29 evidence",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/15"
+      },
+      {
+        "number": 13,
+        "title": "Preserve complete Mayhem helper analysis and incoming Pump build evidence",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/13"
+      },
+      {
+        "number": 12,
+        "title": "Reconcile main with verified reconstructions and execution exclusions",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/12"
+      },
+      {
+        "number": 10,
+        "title": "Publish verified pass 25 reconstruction checkpoint",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/10"
+      },
+      {
+        "number": 9,
+        "title": "Recover Pump CTO errors and Relay borrow ownership with retained compiler evidence",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/9"
+      },
+      {
+        "number": 2,
+        "title": "Integrate recovery PRs with reproducible combined build and replay evidence",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/2"
+      },
+      {
+        "number": 4,
+        "title": "Document Mayhem signer boundary and genuine Pump trade CPIs",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/4"
+      },
+      {
+        "number": 6,
+        "title": "Recover bounded Pump Mayhem virtual-params handler with synthetic CPI proof",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/6"
+      },
+      {
+        "number": 5,
+        "title": "Integrate recovered Pump routes with upstream two-curve source",
+        "url": "https://github.com/lalalune/pumpfun-source/pull/5"
+      }
+    ]
+  },
+  "recent_commits": [
+    {
+      "sha": "0b29240ac1d92fde0f361629f444e538ba525af0",
+      "message": "Add restructure maps for pump, pump_amm, mayhem (recovered targets + current->recovered)\n\nCompletes the mapping for all 4 contracts. Documents each recovered module tree (Location-\nbearing files) + the inferable current->recovered file mapping, with honest caveats: the\nrecovered tree is PARTIAL (only panic-Location-bearing files appear), the reconstruction\ngroups by operation vs the original by interface (requires merging + renaming the shared\n`handler` fn), so a faithful compiling tree for these three is partly inferred (unlike\npump_fees near-1:1). mayhem is the most determinable.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>",
+      "date": "2026-10-26T08:12:09Z"
+    },
+    {
+      "sha": "48c44d709f85b44f03cb617319e3a69a0cb018a6",
+      "message": "Merge pull request #31 from AlleyBo55/independent-ebpf-crosscheck\n\nAdd independent sBPF cross-check of ATA reserve_for_push ordering",
+      "date": "2026-10-26T07:57:09Z"
+    },
+    {
+      "sha": "a16c9485360f24943736a35164eda5448fca1422",
+      "message": "Merge pull request #28 from SYMBaiEX/codex/collector-reproducible-build\n\nReproduce the tested collector executable and symbols",
+      "date": "2026-10-26T07:44:59Z"
+    },
+    {
+      "sha": "1f6a532877c61823789c7b59cbcbddf25ee58355",
+      "message": "Complete pump_fees restructured reference tree (all recovered module files, compiling)\n\nFinishes the oracle-guided restructure: every recovered pump_fees module file is now\nmaterialized and the crate compiles (v1.44). fee_sharing group (create_social_fee_pda,\nclaim_social_fee_pda, create_donation_fee_pda, admin_cto_sharing_config, update_fee_shares,\nupdate_fee_shares_v2) + buyback + withdraw moved cleanly (bodies preserved); inline admin\nhandlers delegated into instructions/admin/* and shared helpers into common/mod.rs\n(structural-only, bodies regress as expected). Oracle: 2/30 Location sites now match exactly\n(up from 0), several files MISSING->PARTIAL. Reference artifact under repro/ (not active\nsource; not byte-closing). See pump-fees-restructured/README.md + ../RESTRUCTURE-MAP.md.\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>",
+      "date": "2026-10-26T07:43:38Z"
+    },
+    {
+      "sha": "6e6acf288004e9c16429a95f4b68041398bbbcfe",
+      "message": "Merge branch 'lalalune:main' into independent-ebpf-crosscheck",
+      "date": "2026-10-26T07:30:22Z"
+    },
+    {
+      "sha": "4b0d5f580d9a28b084fa28b3b1af9c450b5a08dc",
+      "message": "Protect ATA cross-check reports and qualify oracle conclusions",
+      "date": "2026-10-26T07:29:41Z"
+    }
+  ],
+  "distinguished_existing_work": [
+    "repro/function-inventory/2026-10-24-374fcf0/research/mayhem-linux-v152-build-plan/REPORT.md: v1.52 plan, not selected v1.54 experiment",
+    "repro/mayhem/compiler-v154-main/main/build-attempt.json: selected Darwin v1.54 direct Cargo recipe",
+    "PR38 Fees Linux current-source build and PR37 Metaplex registry provenance excluded"
+  ],
+  "finding": "No exact unchanged-14-source Linux v1.54 execution found in checked records."
+}
